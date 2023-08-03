@@ -1,9 +1,10 @@
+@import './vendor/nprogress.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
-  .btn-icon > svg {
-    @apply h-4 w-4;
-  }
+    .btn-icon > svg {
+        @apply h-4 w-4;
+    }
 }
