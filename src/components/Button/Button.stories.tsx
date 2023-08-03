@@ -26,14 +26,14 @@ const meta: Meta<ButtonProps> = {
 type Story = StoryObj<typeof Button>
 
 export const Default: Story = {
-    render: (_props) => (
+    render: (props) => (
         <Button {...props} onClick={() => {}}>
             Default
         </Button>
     ),
 }
 export const Color: Story = {
-    render: (_props) => (
+    render: (props) => (
         <div className="flex gap-4">
             {ButtonColors.map((color) => (
                 <Button {...props} color={color} onClick={() => {}}>
@@ -45,7 +45,7 @@ export const Color: Story = {
 }
 
 export const Size: Story = {
-    render: (_props) => (
+    render: (props) => (
         <div className="flex gap-4">
             {ButtonSizes.map((size) => (
                 <Button {...props} size={size} onClick={() => {}}>
@@ -57,7 +57,7 @@ export const Size: Story = {
 }
 
 export const Outlined: Story = {
-    render: (_props) => (
+    render: (props) => (
         <div className="flex gap-4">
             {ButtonColors.map((color) => (
                 <Button {...props} outlined color={color} onClick={() => {}}>
@@ -69,7 +69,7 @@ export const Outlined: Story = {
 }
 
 export const Async: Story = {
-    render: (_props) => (
+    render: (props) => (
         <Button
             {...props}
             onClick={async () => {
@@ -83,7 +83,7 @@ export const Async: Story = {
 }
 
 export const Loading: Story = {
-    render: (_props) => (
+    render: (props) => (
         <div className="flex gap-4">
             <Button {...props} outlined loading>
                 Loading
@@ -96,7 +96,7 @@ export const Loading: Story = {
 }
 
 export const Disabled: Story = {
-    render: (_props) => (
+    render: (props) => (
         <div className="flex gap-4">
             {ButtonColors.map((color) => (
                 <Button {...props} color={color} onClick={() => {}} disabled>
@@ -108,7 +108,7 @@ export const Disabled: Story = {
 }
 
 export const Icon: Story = {
-    render: (_props) => (
+    render: (props) => (
         <div className="flex gap-4">
             <Button onClick={() => {}} startDecorator={<User />} {...props}>
                 Icon

@@ -1,5 +1,3 @@
-type Props = {}
-
-export const Overview = (_props: Props) => {
+export const Overview = () => {
     return <div>Overview</div>
 }

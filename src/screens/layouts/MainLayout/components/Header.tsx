@@ -1,9 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { ROUTES } from '../../../../constants'
 
-type Props = {}
-
-export const Header = (_props: Props) => {
+export const Header = () => {
     const navigate = useNavigate()
 
     return (

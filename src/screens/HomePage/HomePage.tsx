@@ -1,5 +1,3 @@
-type Props = {}
-
-export const HomePage = (_props: Props) => {
+export const HomePage = () => {
     return <div>HomePage</div>
 }
