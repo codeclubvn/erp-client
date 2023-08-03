@@ -1,0 +1,74 @@
+{
+    "name": "react-boilerplate",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc && vite build",
+        "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+        "preview": "vite preview",
+        "format": "prettier -c --write \"*/**\"",
+        "postinstall": "husky install",
+        "storybook": "storybook dev -p 6006",
+        "build-storybook": "storybook build"
+    },
+    "dependencies": {
+        "@tailwindcss/forms": "^0.5.4",
+        "classnames": "^2.3.2",
+        "immer": "^10.0.2",
+        "lodash": "^4.17.21",
+        "lucide-react": "^0.263.1",
+        "nprogress": "^0.2.0",
+        "prettier-plugin-tailwindcss": "^0.4.1",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-hook-form": "^7.45.2",
+        "react-hot-toast": "^2.4.1",
+        "react-router-dom": "^6.14.2",
+        "swr": "^2.2.0",
+        "tailwind-merge": "^1.14.0",
+        "tailwind-variants": "^0.1.13"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^17.6.7",
+        "@commitlint/config-conventional": "^17.6.7",
+        "@storybook/addon-essentials": "^7.1.1",
+        "@storybook/addon-interactions": "^7.1.1",
+        "@storybook/addon-links": "^7.1.1",
+        "@storybook/addon-onboarding": "^1.0.8",
+        "@storybook/blocks": "^7.1.1",
+        "@storybook/react": "^7.1.1",
+        "@storybook/react-vite": "^7.1.1",
+        "@storybook/testing-library": "^0.2.0",
+        "@types/nprogress": "^0.2.0",
+        "@types/react": "^18.2.15",
+        "@types/react-dom": "^18.2.7",
+        "@types/tailwindcss": "^3.1.0",
+        "@typescript-eslint/eslint-plugin": "^6.0.0",
+        "@typescript-eslint/parser": "^6.0.0",
+        "@vitejs/plugin-react-swc": "^3.3.2",
+        "autoprefixer": "^10.4.14",
+        "eslint": "^8.45.0",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "eslint-plugin-react-refresh": "^0.4.3",
+        "husky": "^8.0.3",
+        "lint-staged": "^13.2.3",
+        "postcss": "^8.4.27",
+        "prettier": "2.8.8 ",
+        "storybook": "^7.1.1",
+        "tailwindcss": "^3.3.3",
+        "tailwindcss-animate": "^1.0.6",
+        "typescript": "^5.0.2",
+        "vite": "^4.4.5"
+    },
+    "lint-staged": {
+        "**/*.{json,css,scss,md}": [
+            "prettier --write"
+        ],
+        "**/*.{js,jsx,ts,tsx}": [
+            "prettier --write",
+            "eslint --fix"
+        ]
+    }
+}
