@@ -1,6 +1,7 @@
 import { Eye } from 'lucide-react'
 import { Button, FormControl, FormHelperText, Input } from '../../components'
 import { useForm } from 'react-hook-form'
+import { IconEyeOutline } from '../../icons'
 
 export const SignUp = () => {
     const {
@@ -44,7 +45,7 @@ export const SignUp = () => {
                             placeholder="Mật khẩu"
                             defaultValue=""
                             type="password"
-                            endDecorator={<Eye />}
+                            endDecorator={IconEyeOutline}
                         />
                     </FormControl>
                 </div>
