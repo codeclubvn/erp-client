@@ -17,18 +17,35 @@ export const SignUp = () => {
         <div className="p-4">
             SignUp
             <form className="space-y-2" onSubmit={handleSubmit(onSubmit)}>
-                <FormControl error={!!errors.input}>
-                    <Input
-                        placeholder="Tên đăng nhập"
-                        defaultValue=""
-                        {...register('input', { required: true })}
-                    />
-                    {errors.input && (
-                        <FormHelperText className="text-red-600">
-                            Tên đăng nhập không hợp lệ.
-                        </FormHelperText>
-                    )}
-                </FormControl>
+                <div className="flex w-1/2 flex-col space-y-4">
+                    <div className="flex space-x-7">
+                        <FormControl error={!!errors.input}>
+                            <Input
+                                placeholder="Tên"
+                                defaultValue=""
+                                {...register('input', { required: true })}
+                            />
+                            {errors.input && (
+                                <FormHelperText className="text-red-600">
+                                    Tên không hợp lệ.
+                                </FormHelperText>
+                            )}
+                        </FormControl>
+                        <FormControl>
+                            <Input placeholder="Họ" defaultValue="" />
+                        </FormControl>
+                    </div>
+                    <FormControl>
+                        <Input placeholder="Tên đăng nhập" defaultValue="" />
+                    </FormControl>
+                    <FormControl>
+                        <Input
+                            placeholder="Mật khẩu"
+                            defaultValue=""
+                            type="password"
+                        />
+                    </FormControl>
+                </div>
                 <div>
                     <Button type="submit">Submit</Button>
                 </div>
