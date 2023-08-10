@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { HomePage, Overview, Pos } from './screens'
+import { HomePage, Login, Overview, Pos, SignUp } from './screens'
 import { MainLayout } from './screens/layouts'
 import { ROUTES } from './constants'
 
@@ -11,6 +11,8 @@ export const routes = (
                 <Route path={ROUTES.Overview} Component={Overview} />
                 <Route path={ROUTES.POS} Component={Pos} />
             </Route>
+            <Route path={ROUTES.SignUp} Component={SignUp} />
+            <Route path={ROUTES.Login} Component={Login} />
         </Routes>
     </BrowserRouter>
 )
