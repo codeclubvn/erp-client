@@ -11,6 +11,10 @@ export default {
                 sans: ['Inter', ...theme.fontFamily.serif],
             },
             colors: {
+                mint: {
+                    green: '#44AEC3',
+                    dark: '#44AEC3',
+                },
                 primary: {
                     50: '#EBF5FF',
                     100: '#E1EFFE',
