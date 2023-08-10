@@ -14,12 +14,15 @@ const styles = tv({
             'peer w-full text-[#6a6a6a] h-6.5 text-1.5xl font-semibold border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0',
             'disabled:cursor-not-allowed disabled:bg-gray-50',
         ],
-        placeholder:
-            'absolute start-5 top-6 -translate-y-1/2 transition-all text-[#A19E9E] peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-2xl peer-placeholder-shown:text-[#6a6a6a] peer-focus:top-6 peer-focus:text-base peer-focus:text-mint-green',
+        placeholder: [
+            'absolute start-5 top-6 -translate-y-1/2 transition-all text-[#A19E9E] ',
+            'peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-2xl peer-placeholder-shown:text-[#6a6a6a] ',
+            'peer-focus:top-6 peer-focus:text-base peer-focus:text-mint-green',
+        ],
         startDecorator:
-            'absolute inset-y-0 flex items-center left-3 pointer-events-none text-gray-500 peer-focus:text-mint-green',
+            'absolute inset-y-0 flex items-center left-7 pointer-events-none text-gray-500 peer-focus:text-mint-green',
         endDecorator:
-            'absolute inset-y-0 flex items-center right-3 pointer-events-none text-gray-500 peer-focus:text-mint-green',
+            'absolute inset-y-0 flex items-center right-7 pointer-events-none text-gray-500 peer-focus:text-mint-green',
     },
     variants: {
         hasLeft: {
@@ -62,7 +65,6 @@ const styles = tv({
         hasRight: false,
         fullWidth: false,
         disabled: false,
-        isInput: true,
     },
 })
 

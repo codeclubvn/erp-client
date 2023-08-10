@@ -1,3 +1,4 @@
+import { Eye } from 'lucide-react'
 import { Button, FormControl, FormHelperText, Input } from '../../components'
 import { useForm } from 'react-hook-form'
 
@@ -16,8 +17,8 @@ export const SignUp = () => {
     return (
         <div className="p-4">
             SignUp
-            <form className="space-y-2" onSubmit={handleSubmit(onSubmit)}>
-                <div className="flex w-1/2 flex-col space-y-4">
+            <form className="w-1/2 space-y-2" onSubmit={handleSubmit(onSubmit)}>
+                <div className="flex  flex-col space-y-4">
                     <div className="flex space-x-7">
                         <FormControl error={!!errors.input}>
                             <Input
@@ -43,6 +44,7 @@ export const SignUp = () => {
                             placeholder="Mật khẩu"
                             defaultValue=""
                             type="password"
+                            endDecorator={<Eye size={26} />}
                         />
                     </FormControl>
                 </div>
