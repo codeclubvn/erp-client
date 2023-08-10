@@ -7,11 +7,11 @@ import FormControlContext from '../Form/FormControlContext'
 const styles = tv({
     slots: {
         label: [
-            'relative inline-flex items-end h-20 overflow-hidden rounded-md border border-[#E9EBF2] bg-[#E9EBF2] px-5 py-4 shadow-sm cursor-text',
-            'focus-within:ring-1 focus-within:ring-mint-green focus-within:bg-transparent focus-within:border-mint-green',
+            'relative inline-flex items-end h-20 overflow-hidden rounded-md border border-[#E9EBF2] bg-[#E9EBF2] px-5 py-4 shadow-sm cursor-text transition-all',
+            'focus-within:ring-1 focus-within:ring-mint-green focus-within:bg-transparent focus-within:border-mint-green ',
         ],
         input: [
-            'peer w-full text-[#6a6a6a] h-6.5 text-2xl font-semibold border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0',
+            'peer w-full text-[#6a6a6a] h-6.5 text-1.5xl font-semibold border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0',
             'disabled:cursor-not-allowed disabled:bg-gray-50',
         ],
         placeholder:
