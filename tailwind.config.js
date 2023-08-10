@@ -10,6 +10,9 @@ export default {
                 ...theme.fontFamily,
                 sans: ['Inter', ...theme.fontFamily.serif],
             },
+            spacing: {
+                [6.5]: '1.625rem',
+            },
             colors: {
                 mint: {
                     green: '#44AEC3',

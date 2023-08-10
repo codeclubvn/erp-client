@@ -7,15 +7,15 @@ import FormControlContext from '../Form/FormControlContext'
 const styles = tv({
     slots: {
         label: [
-            'relative inline-flex overflow-hidden rounded-md border border-mint-green px-3 pt-6 shadow-sm cursor-text',
-            'focus-within:border-mint-green focus-within:ring-1 focus-within:ring-mint-green',
+            'relative inline-flex items-end h-20 overflow-hidden rounded-md border border-[#E9EBF2] bg-[#E9EBF2] px-5 py-4 shadow-sm cursor-text',
+            'focus-within:border-mint-green focus-within:ring-1 focus-within:ring-mint-green focus-within:bg-transparent focus-within:border-mint-green',
         ],
         input: [
-            'peer text-[#6a6a6a] text-2xl font-semibold h-8 border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm',
+            'peer text-[#6a6a6a] h-6.5 text-2xl font-semibold border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0',
             'disabled:cursor-not-allowed disabled:bg-gray-50',
         ],
         placeholder:
-            'absolute start-3 top-3 -translate-y-1/2 transition-all text-[#A19E9E] peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-lg peer-placeholder-shown:text-[#6a6a6a] peer-focus:top-3 peer-focus:text-base peer-focus:text-mint-green',
+            'absolute start-5 top-6 -translate-y-1/2 transition-all text-[#A19E9E] peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-2xl peer-placeholder-shown:text-[#6a6a6a] peer-focus:top-6 peer-focus:text-base peer-focus:text-mint-green',
         startDecorator:
             'absolute inset-y-0 flex items-center left-3 pointer-events-none text-gray-500 peer-focus:text-mint-green',
         endDecorator:
