@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { wait } from '../../utils'
 import { VariantProps, tv } from 'tailwind-variants'
 
 export const ButtonSizes = ['xs', 'sm', 'base', 'lg', 'xl'] as const
@@ -100,17 +99,19 @@ export const Button = ({
     outlined = false,
     disabled: disabledProp = false,
     loading: loadingProp = false,
+    type,
     ...props
 }: ButtonProps) => {
     const [fetching, setFetching] = useState(false)
     const isAsyncFunction = onClick?.constructor.name === 'AsyncFunction'
-    const disabled = disabledProp || fetching || !onClick
+    const disabled = disabledProp || fetching || (!onClick && type != 'submit')
     const loading = fetching || loadingProp
 
     const onClickHandler = isAsyncFunction
         ? (e) => {
               setFetching(true)
-              Promise.all([onClick(e), wait()]).then(() => {
+              //   Promise.all([onClick(e), wait()]).then(() => {
+              Promise.all([onClick(e)]).then(() => {
                   setFetching(false)
               })
           }
@@ -139,6 +140,7 @@ export const Button = ({
             disabled={disabled}
             onClick={onClickHandler}
             className={buttonVariants({ size, color, outlined, disabled })}
+            type={type}
         >
             {startDecorator && (
                 <span className="btn-icon">{startDecorator}</span>
