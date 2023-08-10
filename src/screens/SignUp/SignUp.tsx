@@ -1,4 +1,3 @@
-import { User } from 'lucide-react'
 import { Button, FormControl, FormHelperText, Input } from '../../components'
 import { useForm } from 'react-hook-form'
 
@@ -18,9 +17,8 @@ export const SignUp = () => {
         <div className="p-4">
             SignUp
             <form className="space-y-2" onSubmit={handleSubmit(onSubmit)}>
-                <FormControl className="w-full" error={!!errors.input}>
+                <FormControl error={!!errors.input}>
                     <Input
-                        startDecorator={<User />}
                         placeholder="Tên đăng nhập"
                         defaultValue=""
                         {...register('input', { required: true })}
