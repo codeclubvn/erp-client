@@ -16,7 +16,7 @@ type ButtonColor = (typeof ButtonColors)[number]
 
 export const buttonVariants = tv({
     base: [
-        'inline-flex flex-row content-center items-center gap-2 rounded-lg px-3 py-2 align-top text-white',
+        'inline-flex flex-row content-center items-center gap-2 rounded-lg px-3 py-2 align-top text-white select-none',
     ],
     variants: {
         size: {

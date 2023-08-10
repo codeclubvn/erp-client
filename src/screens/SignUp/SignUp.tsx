@@ -1,19 +1,15 @@
-import { Eye } from 'lucide-react'
 import { Button, FormControl, FormHelperText, Input } from '../../components'
 import { useForm } from 'react-hook-form'
-import { IconEyeOutline } from '../../icons'
+import { PasswordInput } from './components/PasswordButton'
 
 export const SignUp = () => {
     const {
         register,
         handleSubmit,
-        watch,
         formState: { errors },
     } = useForm()
 
-    const onSubmit = (data) => console.log(data)
-
-    console.log('duy watch', errors, watch('input')) // watch input value by passing the name of it
+    const onSubmit = (data) => console.log('duy submit', data)
 
     return (
         <div className="p-4">
@@ -21,11 +17,11 @@ export const SignUp = () => {
             <form className="w-1/2 space-y-2" onSubmit={handleSubmit(onSubmit)}>
                 <div className="flex  flex-col space-y-4">
                     <div className="flex space-x-7">
-                        <FormControl error={!!errors.input}>
+                        <FormControl error={!!errors.name}>
                             <Input
                                 placeholder="Tên"
                                 defaultValue=""
-                                {...register('input', { required: true })}
+                                {...register('name', { required: true })}
                             />
                             {errors.input && (
                                 <FormHelperText className="text-red-600">
@@ -33,19 +29,25 @@ export const SignUp = () => {
                                 </FormHelperText>
                             )}
                         </FormControl>
-                        <FormControl>
-                            <Input placeholder="Họ" defaultValue="" />
+                        <FormControl error={!!errors.last}>
+                            <Input
+                                placeholder="Họ"
+                                defaultValue=""
+                                {...register('last', { required: true })}
+                            />
                         </FormControl>
                     </div>
-                    <FormControl>
-                        <Input placeholder="Tên đăng nhập" defaultValue="" />
-                    </FormControl>
-                    <FormControl>
+                    <FormControl error={!!errors.username}>
                         <Input
-                            placeholder="Mật khẩu"
+                            placeholder="Tên đăng nhập"
                             defaultValue=""
-                            type="password"
-                            endDecorator={IconEyeOutline}
+                            {...register('username', { required: true })}
+                        />
+                    </FormControl>
+                    <FormControl error={!!errors.password}>
+                        <PasswordInput
+                            defaultValue=""
+                            {...register('password', { required: true })}
                         />
                     </FormControl>
                 </div>

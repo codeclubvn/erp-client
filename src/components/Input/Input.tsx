@@ -21,11 +21,11 @@ const styles = tv({
             'peer-focus:top-6 peer-focus:text-base peer-focus:text-mint-green',
         ],
         startDecorator: [
-            'absolute inset-y-0 flex items-center left-7 pointer-events-none text-gray-500 btn-icon ',
+            'absolute inset-y-0 flex items-center left-7 text-gray-500 btn-icon ',
             'peer-focus:text-mint-green',
         ],
         endDecorator: [
-            'absolute inset-y-0 flex items-center right-7 pointer-events-none text-gray-500 btn-icon ',
+            'absolute inset-y-0 flex items-center right-7 text-gray-500 btn-icon ',
             'peer-focus:text-mint-green',
         ],
     },
