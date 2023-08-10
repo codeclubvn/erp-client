@@ -9,15 +9,8 @@
     }
 }
 
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-    /* Revert text color */
-    -webkit-text-fill-color: unset !important;
-    color: unset !important;
-    caret-color: unset !important;
-
-    /* Revert background color */
-    transition: background-color 5000s ease-in-out 0s;
+@layer components {
+    .btn-icon > svg {
+        @apply h-6.5 w-6.5;
+    }
 }
