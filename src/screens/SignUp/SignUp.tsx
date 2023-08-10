@@ -44,7 +44,7 @@ export const SignUp = () => {
                             placeholder="Mật khẩu"
                             defaultValue=""
                             type="password"
-                            endDecorator={<Eye size={26} />}
+                            endDecorator={<Eye />}
                         />
                     </FormControl>
                 </div>

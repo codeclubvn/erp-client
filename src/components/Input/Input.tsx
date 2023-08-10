@@ -8,6 +8,7 @@ const styles = tv({
     slots: {
         label: [
             'relative inline-flex items-end h-20 overflow-hidden rounded-md border border-[#E9EBF2] bg-[#E9EBF2] px-5 py-4 shadow-sm cursor-text transition-all',
+            'hover:border-mint-green',
             'focus-within:ring-1 focus-within:ring-mint-green focus-within:bg-transparent focus-within:border-mint-green ',
         ],
         input: [
@@ -19,10 +20,14 @@ const styles = tv({
             'peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-2xl peer-placeholder-shown:text-[#6a6a6a] ',
             'peer-focus:top-6 peer-focus:text-base peer-focus:text-mint-green',
         ],
-        startDecorator:
-            'absolute inset-y-0 flex items-center left-7 pointer-events-none text-gray-500 peer-focus:text-mint-green',
-        endDecorator:
-            'absolute inset-y-0 flex items-center right-7 pointer-events-none text-gray-500 peer-focus:text-mint-green',
+        startDecorator: [
+            'absolute inset-y-0 flex items-center left-7 pointer-events-none text-gray-500 btn-icon ',
+            'peer-focus:text-mint-green',
+        ],
+        endDecorator: [
+            'absolute inset-y-0 flex items-center right-7 pointer-events-none text-gray-500 btn-icon ',
+            'peer-focus:text-mint-green',
+        ],
     },
     variants: {
         hasLeft: {
