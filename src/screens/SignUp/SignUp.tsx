@@ -17,7 +17,7 @@ export const SignUp = () => {
         <div className="p-4">
             SignUp
             <form className="space-y-2" onSubmit={handleSubmit(onSubmit)}>
-                <div className="flex w-1/2 flex-auto flex-col space-y-4">
+                <div className="flex w-1/2 flex-col space-y-4">
                     <div className="flex space-x-7">
                         <FormControl error={!!errors.input}>
                             <Input

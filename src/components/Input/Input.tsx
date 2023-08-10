@@ -8,10 +8,10 @@ const styles = tv({
     slots: {
         label: [
             'relative inline-flex items-end h-20 overflow-hidden rounded-md border border-[#E9EBF2] bg-[#E9EBF2] px-5 py-4 shadow-sm cursor-text',
-            'focus-within:border-mint-green focus-within:ring-1 focus-within:ring-mint-green focus-within:bg-transparent focus-within:border-mint-green',
+            'focus-within:ring-1 focus-within:ring-mint-green focus-within:bg-transparent focus-within:border-mint-green',
         ],
         input: [
-            'peer text-[#6a6a6a] h-6.5 text-2xl font-semibold border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0',
+            'peer w-full text-[#6a6a6a] h-6.5 text-2xl font-semibold border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0',
             'disabled:cursor-not-allowed disabled:bg-gray-50',
         ],
         placeholder:
@@ -42,7 +42,7 @@ const styles = tv({
         error: {
             true: {
                 label: [
-                    'border-red-500',
+                    'border-red-500 bg-red-50',
                     'focus-within:border-red-600 focus-within:ring-1 focus-within:ring-red-600',
                 ],
                 placeholder:
@@ -70,7 +70,6 @@ export interface InputProps
     extends React.InputHTMLAttributes<HTMLInputElement> {
     fullWidth?: boolean
     error?: boolean
-    wrapperClassName?: string
     startDecorator?: React.ReactNode
     startDecoratorClassName?: string
     endDecorator?: React.ReactNode
@@ -80,7 +79,6 @@ export interface InputProps
 export const Input = forwardRef<HTMLInputElement, InputProps>(
     (props: InputProps, ref) => {
         const {
-            wrapperClassName,
             startDecorator,
             startDecoratorClassName,
             endDecorator,
@@ -91,6 +89,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             className,
             placeholder,
             autoComplete = 'off',
+            defaultValue = '',
             ...rest
         } = props
         const id = useId()
@@ -111,6 +110,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             <>
                 <input
                     id={id}
+                    key={defaultValue + ''}
                     ref={ref}
                     className={cn(baseStyles.input(), className)}
                     disabled={disabled}

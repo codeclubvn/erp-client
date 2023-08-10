@@ -37,7 +37,10 @@ export const FormControl = React.forwardRef<HTMLDivElement, FormControlProps>(
             <FormControlContext.Provider value={contextValue}>
                 <div
                     ref={ref}
-                    className={cn('relative inline-flex flex-col', className)}
+                    className={cn(
+                        'relative inline-flex w-full flex-col',
+                        className,
+                    )}
                     {...rest}
                 />
             </FormControlContext.Provider>
