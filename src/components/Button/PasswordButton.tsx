@@ -1,17 +1,19 @@
 import { forwardRef, useState } from 'react'
-import { Input } from '../../../components'
-import { IconEyeOutline } from '../../../icons'
+import { Input } from '..'
+import { IconEyeOutline } from '../../icons'
 
 type Props = {} & React.ComponentProps<typeof Input>
 export const PasswordInput = forwardRef<HTMLInputElement, Props>(
-    (props: Props, ref) => {
+    ({ placeholder, ...props }, ref) => {
         const [type, setType] = useState<'password' | 'text'>('password')
+
+        placeholder = placeholder || 'Mật khẩu'
 
         return (
             <Input
                 {...props}
                 ref={ref}
-                placeholder="Mật khẩu"
+                placeholder={placeholder}
                 defaultValue=""
                 type={type}
                 endDecorator={

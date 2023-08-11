@@ -7,7 +7,8 @@ import FormControlContext from '../Form/FormControlContext'
 const styles = tv({
     slots: {
         label: [
-            'relative inline-flex items-end h-20 overflow-hidden rounded-md border border-[#E9EBF2] bg-[#E9EBF2] px-5 py-4 shadow-sm cursor-text transition-all',
+            'relative inline-flex items-end h-20 overflow-hidden rounded-md border px-5 py-4 shadow-sm cursor-text transition-all',
+            ' border-[#E9EBF2] bg-[#E9EBF2]',
             'hover:border-mint-green',
             'focus-within:ring-1 focus-within:ring-mint-green focus-within:bg-transparent focus-within:border-mint-green ',
         ],
@@ -50,7 +51,7 @@ const styles = tv({
         error: {
             true: {
                 label: [
-                    'border-red-500 bg-red-50',
+                    'border-red-500 bg-red-50 hover:border-red-500',
                     'focus-within:border-red-600 focus-within:ring-1 focus-within:ring-red-600',
                 ],
                 placeholder:
@@ -77,6 +78,7 @@ export interface InputProps
     extends React.InputHTMLAttributes<HTMLInputElement> {
     fullWidth?: boolean
     error?: boolean
+    wrapperClassName?: string
     startDecorator?: React.ReactNode
     startDecoratorClassName?: string
     endDecorator?: React.ReactNode
@@ -86,6 +88,7 @@ export interface InputProps
 export const Input = forwardRef<HTMLInputElement, InputProps>(
     (props: InputProps, ref) => {
         const {
+            wrapperClassName,
             startDecorator,
             startDecoratorClassName,
             endDecorator,
@@ -131,7 +134,10 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             </>
         )
         return (
-            <label htmlFor={id} className={baseStyles.label()}>
+            <label
+                htmlFor={id}
+                className={cn(baseStyles.label(), wrapperClassName)}
+            >
                 {child}
                 <span
                     className={cn(

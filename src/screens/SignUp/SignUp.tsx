@@ -1,6 +1,6 @@
 import { Button, FormControl, FormHelperText, Input } from '../../components'
 import { useForm } from 'react-hook-form'
-import { PasswordInput } from './components/PasswordButton'
+import { PasswordInput } from '../../components/Button/PasswordButton'
 
 export const SignUp = () => {
     const {
@@ -14,7 +14,7 @@ export const SignUp = () => {
     return (
         <div className="p-4">
             SignUp
-            <form className="w-1/2 space-y-2" onSubmit={handleSubmit(onSubmit)}>
+            <form className="space-y-2" onSubmit={handleSubmit(onSubmit)}>
                 <div className="flex  flex-col space-y-4">
                     <div className="flex space-x-7">
                         <FormControl error={!!errors.name}>
@@ -48,6 +48,13 @@ export const SignUp = () => {
                         <PasswordInput
                             defaultValue=""
                             {...register('password', { required: true })}
+                        />
+                    </FormControl>
+                    <FormControl error={!!errors.repassword}>
+                        <PasswordInput
+                            defaultValue=""
+                            placeholder="Nhập lại mật khẩu"
+                            {...register('repassword', { required: true })}
                         />
                     </FormControl>
                 </div>
