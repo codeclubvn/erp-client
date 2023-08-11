@@ -78,6 +78,7 @@ export interface InputProps
     extends React.InputHTMLAttributes<HTMLInputElement> {
     fullWidth?: boolean
     error?: boolean
+    wrapperClassName?: string
     startDecorator?: React.ReactNode
     startDecoratorClassName?: string
     endDecorator?: React.ReactNode
@@ -87,6 +88,7 @@ export interface InputProps
 export const Input = forwardRef<HTMLInputElement, InputProps>(
     (props: InputProps, ref) => {
         const {
+            wrapperClassName,
             startDecorator,
             startDecoratorClassName,
             endDecorator,
@@ -132,7 +134,10 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             </>
         )
         return (
-            <label htmlFor={id} className={baseStyles.label()}>
+            <label
+                htmlFor={id}
+                className={cn(baseStyles.label(), wrapperClassName)}
+            >
                 {child}
                 <span
                     className={cn(
