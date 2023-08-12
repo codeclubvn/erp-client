@@ -1,35 +1,9 @@
-import { useNavigate } from 'react-router-dom'
-import { ROUTES } from '../../../../constants'
-
 export const Header = () => {
-    const navigate = useNavigate()
-
     return (
-        <div>
-            <div
-                className="cursor-pointer"
-                onClick={() => {
-                    navigate(ROUTES.HomePage)
-                }}
-            >
-                HomePage
-            </div>
-            <div
-                className="cursor-pointer"
-                onClick={() => {
-                    navigate(ROUTES.Overview)
-                }}
-            >
-                {ROUTES.Overview}
-            </div>
-            <div
-                className="cursor-pointer"
-                onClick={() => {
-                    navigate(ROUTES.POS)
-                }}
-            >
-                {ROUTES.POS}
-            </div>
+        <div className="z-header fixed left-0 top-0 w-full flex-none bg-red-50">
+            <header className="relative">
+                <div className="h-20">Header</div>
+            </header>
         </div>
     )
 }
