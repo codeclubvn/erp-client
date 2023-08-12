@@ -5,7 +5,7 @@ import { LeftMenu } from './LeftMenu'
 
 export const MainLayout = () => {
     return (
-        <div className="flex min-h-screen w-screen">
+        <div className="flex min-h-screen w-screen flex-col">
             <Header />
             <div className="page-content flex w-full flex-col bg-green-900">
                 <div className="flex w-screen flex-auto">

@@ -3,6 +3,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    :root {
+        --headerHeight: 5rem;
+    }
+}
+
 @layer components {
     .btn-icon > svg {
         @apply h-4 w-4;
@@ -17,6 +23,6 @@
 
 @layer components {
     .page-content::before {
-        @apply pointer-events-none invisible block h-20 flex-none content-[''];
+        @apply pointer-events-none invisible block h-[var(--headerHeight)] flex-none content-[''];
     }
 }
