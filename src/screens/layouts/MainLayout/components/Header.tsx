@@ -1,7 +1,9 @@
 export const Header = () => {
     return (
-        <div className="fixed left-0 right-0 top-0 flex h-20 space-x-2 bg-green-50">
-            Header
+        <div className="z-header fixed left-0 top-0 w-full flex-none bg-red-50">
+            <header className="relative">
+                <div className="h-20">Header</div>
+            </header>
         </div>
     )
 }

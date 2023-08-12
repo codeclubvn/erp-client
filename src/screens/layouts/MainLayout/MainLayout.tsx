@@ -5,12 +5,14 @@ import { LeftMenu } from './LeftMenu'
 
 export const MainLayout = () => {
     return (
-        <div className="h-[200vh]">
-            <div className="absolute bottom-0 top-20 flex min-w-full bg-red-50">
-                <Header />
-                <LeftMenu />
-                <div className="bg-red-50">
-                    <Outlet />
+        <div className="flex min-h-screen w-screen">
+            <Header />
+            <div className="page-content flex w-full flex-col bg-green-900">
+                <div className="flex w-screen flex-auto">
+                    <LeftMenu />
+                    <div className="flex-auto bg-green-50">
+                        <Outlet />
+                    </div>
                 </div>
             </div>
             <NProgressHandler />

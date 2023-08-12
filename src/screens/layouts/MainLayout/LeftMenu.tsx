@@ -10,14 +10,14 @@ export const LeftMenu = () => {
     const navigate = useNavigate()
 
     return (
-        <div
-            className={cx(
-                'bg-blue-50',
-                { 'w-72': !isExpand },
-                { 'w-14': isExpand },
-            )}
-        >
-            <div className="sticky left-0 top-20">
+        <div className="bg-blue-50">
+            <div
+                className={cx(
+                    'sticky left-0 top-20',
+                    { 'w-72': !isExpand },
+                    { 'w-14': isExpand },
+                )}
+            >
                 <div className="truncate">LeftMenu</div>
                 <div
                     className="cursor-pointer truncate"
