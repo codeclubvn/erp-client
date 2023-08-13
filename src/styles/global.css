@@ -11,17 +11,9 @@
 
 @layer components {
     .btn-icon > svg {
-        @apply h-4 w-4;
-    }
-}
-
-@layer components {
-    .btn-icon > svg {
         @apply h-6.5 w-6.5;
     }
-}
 
-@layer components {
     .page-content::before {
         @apply pointer-events-none invisible block h-[var(--headerHeight)] flex-none content-[''];
     }
