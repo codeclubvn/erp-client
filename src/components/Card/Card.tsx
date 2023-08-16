@@ -1,24 +1,6 @@
 import * as React from 'react'
 import { VariantProps, tv } from 'tailwind-variants'
 
-export const CardSizes = ['base'] as const
-type CardSize = (typeof CardSizes)[number]
-
-export const CardRoundeds = ['base'] as const
-type CardRounded = (typeof CardRoundeds)[number]
-
-export const CardBgs = ['base', 'danger'] as const
-type CardBg = (typeof CardBgs)[number]
-
-export const CardTitleStyle = ['base'] as const
-type CardTitleStyle = (typeof CardTitleStyle)[number]
-
-export const CardPriceStyles = ['base'] as const
-type CardPriceStyle = (typeof CardPriceStyles)[number]
-
-export const CardPercentStyles = ['percentLow', 'percentHigh'] as const
-type CardPercentStyle = (typeof CardPercentStyles)[number]
-
 export const CardVariants = tv({
     base: ['rounded-[24px] flex flex-col justify-between shadow-[]'],
     variants: {
@@ -47,15 +29,15 @@ export const CardVariants = tv({
 export interface CardProps
     extends React.HTMLAttributes<HTMLDivElement>,
         VariantProps<typeof CardVariants> {
-    size: CardSize
+    size: 'base'
     price?: string
     content?: string
     percentValue?: string
-    background: CardBg
-    titleStyle: CardTitleStyle
-    borderRadius?: CardRounded
-    priceStyle?: CardPriceStyle
-    percentStyle?: CardPercentStyle
+    background: 'base' | 'danger'
+    titleStyle: 'base'
+    borderRadius?: 'base'
+    priceStyle?: 'base'
+    percentStyle?: 'percentLow' | 'percentHigh'
 }
 
 export const Card = ({
