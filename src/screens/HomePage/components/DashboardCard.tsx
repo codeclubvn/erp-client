@@ -13,9 +13,9 @@ export const DashboardCardVariants = tv({
         },
         percentStyle: {
             percentLow:
-                'text-[16px] text-[#FFC13A] font-["Nunito"] not-italic font-[700] leading-[187.5%] -tracking-[0.5px] ms-[8px]',
+                'text-base text-[#FFC13A] font-["Nunito"] not-italic font-[700] leading-[187.5%] -tracking-[0.5px] ms-[8px]',
             percentHigh:
-                'text-[16px] text-[#4D81E7] font-["Nunito"] not-italic font-[700] leading-[187.5%] -tracking-[0.5px] ms-[8px]',
+                'text-base text-[#4D81E7] font-["Nunito"] not-italic font-[700] leading-[187.5%] -tracking-[0.5px] ms-[8px]',
         },
     },
 })
