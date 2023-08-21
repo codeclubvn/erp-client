@@ -1,8 +1,6 @@
-import { Helmet } from 'react-helmet'
 import { useForm } from 'react-hook-form'
 import { Button, FormControl, FormHelperText, Input } from '../../components'
 import { PasswordInput } from '../../components/Button/PasswordButton'
-import titles from '../../constants/titles'
 export const SignUp = () => {
     const {
         register,
@@ -14,9 +12,6 @@ export const SignUp = () => {
 
     return (
         <div className="p-4">
-            <Helmet>
-                <title>{titles.signup}</title>
-            </Helmet>
             SignUp
             <form className="space-y-2" onSubmit={handleSubmit(onSubmit)}>
                 <div className="flex  flex-col space-y-4">
