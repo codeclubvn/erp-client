@@ -1,3 +1,7 @@
 export const Overview = () => {
-    return <div>Overview</div>
+    return (
+        <>
+            <h1>Overview Page</h1>
+        </>
+    )
 }
