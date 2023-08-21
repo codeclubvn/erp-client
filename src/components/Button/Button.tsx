@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { VariantProps, tv } from 'tailwind-variants'
 
-export const ButtonSizes = ['xs', 'sm', 'base', 'lg', 'xl'] as const
+export const ButtonSizes = ['xs', 'sm', 'base', 'lg', 'xl', 'xxl'] as const
 type ButtonSize = (typeof ButtonSizes)[number]
 
 export const ButtonColors = [
@@ -11,8 +11,24 @@ export const ButtonColors = [
     'white',
     'green',
     'red',
+    'aqua',
 ] as const
 type ButtonColor = (typeof ButtonColors)[number]
+export const ButtonWidths = [615] as const
+
+type ButtonWidth = (typeof ButtonWidths)[number]
+
+export const ButtonHeights = [80] as const
+type ButtonHeight = (typeof ButtonHeights)[number]
+
+export const ButtonDisplays = ['flex'] as const
+type ButtonDisplay = (typeof ButtonDisplays)[number]
+
+export const ButtonJustifyContents = ['center'] as const
+type ButtonJustifyContent = (typeof ButtonJustifyContents)[number]
+
+export const ButtonBorderRadius = [40] as const
+type ButtonBorderRadius = (typeof ButtonBorderRadius)[number]
 
 export const buttonVariants = tv({
     base: [
@@ -25,6 +41,7 @@ export const buttonVariants = tv({
             base: 'text-base',
             lg: 'text-lg',
             xl: 'text-xl',
+            xxl: 'text-2xl',
         },
         color: {
             primary: 'bg-primary-700',
@@ -33,6 +50,22 @@ export const buttonVariants = tv({
             white: 'bg-white text-gray-800',
             green: 'bg-green-700',
             red: 'bg-red-700',
+            aqua: 'bg-[#44AEC3]',
+        },
+        width: {
+            615: 'w-[615px]',
+        },
+        height: {
+            80: 'h-[80px]',
+        },
+        display: {
+            flex: 'flex',
+        },
+        justifyContent: {
+            center: 'justify-center',
+        },
+        borderRadius: {
+            40: 'rounded-[40px]',
         },
         outlined: {
             true: 'border-[1px] bg-transparent',
@@ -87,6 +120,11 @@ export interface ButtonProps
     color?: ButtonColor
     outlined?: boolean
     disabled?: boolean
+    width?: ButtonWidth
+    height?: ButtonHeight
+    display?: ButtonDisplay
+    justifyContent?: ButtonJustifyContent
+    borderRadius?: ButtonBorderRadius
 }
 
 export const Button = ({
@@ -100,6 +138,11 @@ export const Button = ({
     disabled: disabledProp = false,
     loading: loadingProp = false,
     type,
+    width,
+    height,
+    display,
+    justifyContent,
+    borderRadius,
     ...props
 }: ButtonProps) => {
     const [fetching, setFetching] = useState(false)
@@ -139,7 +182,17 @@ export const Button = ({
             {...props}
             disabled={disabled}
             onClick={onClickHandler}
-            className={buttonVariants({ size, color, outlined, disabled })}
+            className={buttonVariants({
+                size,
+                color,
+                outlined,
+                disabled,
+                width,
+                height,
+                display,
+                justifyContent,
+                borderRadius,
+            })}
             type={type}
         >
             {startDecorator && (
