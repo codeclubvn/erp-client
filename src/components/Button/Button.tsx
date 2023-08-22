@@ -14,11 +14,11 @@ export const ButtonColors = [
     'aqua',
 ] as const
 type ButtonColor = (typeof ButtonColors)[number]
-export const ButtonWidths = [615] as const
+export const ButtonWidths = [615, 520] as const
 
 type ButtonWidth = (typeof ButtonWidths)[number]
 
-export const ButtonHeights = [80] as const
+export const ButtonHeights = [80, 60] as const
 type ButtonHeight = (typeof ButtonHeights)[number]
 
 export const ButtonDisplays = ['flex'] as const
@@ -54,9 +54,11 @@ export const buttonVariants = tv({
         },
         width: {
             615: 'w-[615px]',
+            520: 'w-[520px]',
         },
         height: {
             80: 'h-[80px]',
+            60: 'h-[60px]',
         },
         display: {
             flex: 'flex',
