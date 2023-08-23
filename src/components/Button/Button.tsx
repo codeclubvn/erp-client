@@ -14,11 +14,11 @@ export const ButtonColors = [
     'aqua',
 ] as const
 type ButtonColor = (typeof ButtonColors)[number]
-export const ButtonWidths = [615] as const
+export const ButtonWidths = [615, 520] as const
 
 type ButtonWidth = (typeof ButtonWidths)[number]
 
-export const ButtonHeights = [80] as const
+export const ButtonHeights = [80, 60] as const
 type ButtonHeight = (typeof ButtonHeights)[number]
 
 export const ButtonDisplays = ['flex'] as const
