@@ -1,12 +1,12 @@
-import Person from '../../icons/loginImages/person.svg'
-import Laptop from '../../icons/loginImages/laptop.svg'
-import Girf from '../../icons/loginImages/girl.svg'
-import Number from '../../icons/loginImages/number.svg'
-import Box from '../../icons/loginImages/box.svg'
-import Coin from '../../icons/loginImages/coin.svg'
-import Column from '../../icons/loginImages/column.svg'
+import Person from '../../../public/loginImages/person.svg'
+import Laptop from '../../../public/loginImages/laptop.svg'
+import Girf from '../../../public/loginImages/girl.svg'
+import Number from '../../../public/loginImages/number.svg'
+import Box from '../../../public/loginImages/box.svg'
+import Coin from '../../../public/loginImages/coin.svg'
+import Column from '../../../public/loginImages/column.svg'
 export const LoginImages = () => (
-    <div className="relative hidden h-[100vh] w-[650px] bg-[url('./src/icons/loginImages/Union.svg')] bg-cover lg:block">
+    <div className="relative hidden h-[100vh] w-[650px] bg-[url('./public/loginImages/Union.svg')] bg-cover lg:block">
         <img
             src={Number}
             className="absolute left-[112px] top-[30px] h-[60px] w-[130px]"

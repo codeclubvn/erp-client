@@ -73,5 +73,5 @@ export default {
             },
         },
     },
-    plugins: [formPlugin, animatePlugin],
+    plugins: [animatePlugin],
 }
