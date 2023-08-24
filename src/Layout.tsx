@@ -1,14 +1,14 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { MainLayout } from './screens/layouts'
-import data from './utils/data'
 import { Login } from './screens'
 import { SignUp } from './screens'
+import routerList from './constants/routes'
 function Layout() {
     return (
         <BrowserRouter>
             <div>
                 <Routes>
-                    {data.map((item, index) => {
+                    {routerList.map((item, index) => {
                         const Page = item.component
                         return (
                             <Route

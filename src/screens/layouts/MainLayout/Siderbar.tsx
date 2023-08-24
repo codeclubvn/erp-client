@@ -1,9 +1,10 @@
 import { NavLink } from 'react-router-dom'
-import data from '../../../utils/data'
+import routerList from '../../../constants/routes'
+
 export const Siderbar = () => {
     return (
         <nav className="col-span-1">
-            {data.map((item) => (
+            {routerList.map((item) => (
                 <NavLink
                     to={item.href}
                     key={item.title}
