@@ -1,6 +1,5 @@
 export * from './HomePage'
-export * from './Pos'
-export * from './Overview'
+export * from './User'
 export * from './SignUp'
 export * from './Login'
 export * from './Dashboard'

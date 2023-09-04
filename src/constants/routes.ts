@@ -1,11 +1,20 @@
-import { User } from 'lucide-react'
-import {Dashboard, Manage, Money, Order, Product} from '../screens'
+import { Dashboard, Manage, Money, Order, Product, User } from '../screens'
+import {
+    DashboardIcon,
+    MangageIcon,
+    MoneyIcon,
+    OrderIcon,
+    UserIcon,
+    ProductIcon,
+} from '../icons/iconSiderbar'
 
 export const ROUTES = {
     HomePage: '/',
     Order: '/order',
-    Overview: '/overview',
     POS: '/pos',
+    Manage: '/manage',
+    Money: '/money',
+    User: '/user',
     SignUp: '/signup',
     Login: '/login',
 }
@@ -13,38 +22,38 @@ export const ROUTES = {
 const routerList = [
     {
         title: 'Dashboard',
-        icon: './src/icons/iconSiderbar/home-2.svg',
+        icon: DashboardIcon,
         href: ROUTES.HomePage,
         component: Dashboard,
     },
     {
         title: 'Đơn hàng',
-        icon: './src/icons/iconSiderbar/story.svg',
+        icon: OrderIcon,
         href: ROUTES.Order,
         component: Order,
     },
     {
         title: 'Sản phẩm',
-        icon: './src/icons/iconSiderbar/note-favorite.svg',
-        href: '/product',
+        icon: ProductIcon,
+        href: ROUTES.POS,
         component: Product,
     },
     {
         title: 'Khách hàng',
-        icon: './src/icons/iconSiderbar/profile-2user.svg',
-        href: '/user',
+        icon: UserIcon,
+        href: ROUTES.User,
         component: User,
     },
     {
         title: 'Thu chi',
-        icon: './src/icons/iconSiderbar/empty-wallet.svg',
-        href: '/money',
+        icon: MoneyIcon,
+        href: ROUTES.Money,
         component: Money,
     },
     {
         title: 'Quản lý kho',
-        icon: './src/icons/iconSiderbar/box.svg',
-        href: '/manage',
+        icon: MangageIcon,
+        href: ROUTES.Manage,
         component: Manage,
     },
 ]
@@ -53,7 +62,6 @@ export const defaultTitle = 'Default'
 
 export const routeTitleMapper = {
     [ROUTES.HomePage]: 'HomePage',
-    [ROUTES.Overview]: 'Overview',
     [ROUTES.POS]: 'POS',
     [ROUTES.SignUp]: 'SignUp',
     [ROUTES.Login]: 'Login',
