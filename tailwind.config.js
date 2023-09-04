@@ -7,8 +7,7 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                ...theme.fontFamily,
-                sans: ['Inter', ...theme.fontFamily.serif],
+                font: ['Raleway', 'sans'],
             },
             spacing: {
                 [6.5]: '1.625rem',
