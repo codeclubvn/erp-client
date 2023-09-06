@@ -5,6 +5,7 @@ import Number from '../../icons/loginImages/number.svg'
 import Box from '../../icons/loginImages/box.svg'
 import Coin from '../../icons/loginImages/coin.svg'
 import Column from '../../icons/loginImages/column.svg'
+
 export const LoginImages = () => (
     <div className="relative h-[100vh] w-[650px] bg-[url('./src/icons/loginImages/Union.svg')] bg-cover">
         <img
