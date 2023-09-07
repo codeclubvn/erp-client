@@ -36,18 +36,23 @@ function Data() {
                         <p>Số lượng hàng trong kho</p>
 
                         <ChartPie />
-                        <p className="flex  w-[140px] items-center">
-                            <span className="mr-2 block h-2 w-2 rounded-full bg-[#44AEC3]"></span>
-                            Tổng kho <span className="ml-2">24.3%</span>
-                        </p>
-                        <p className="flex w-[140px] items-center ">
-                            <span className="mr-2 block h-2 w-2 rounded-full bg-[#629AEE]"></span>
-                            Còn hàng <span className="ml-2">41.8%</span>
-                        </p>
-                        <p className="flex w-[140px] items-center ">
-                            <span className="mr-2 block h-2 w-2 rounded-full bg-[#FFC13A]"></span>
-                            Hêt hàng <span className="ml-2">10.8%</span>
-                        </p>
+                        <div className='flex flex-col items-start'>
+                            <div className="flex space-x-2 items-center">
+                                <div className="block h-2 w-2 rounded-full bg-[#44AEC3]" />
+                                <div>Tổng kho </div>
+                                <div className="">24.3%</div>
+                            </div>
+                            <div className="flex space-x-2 items-center">
+                                <div className="block h-2 w-2 rounded-full bg-[#629AEE]" />
+                                <div>Còn hàng</div>
+                                <div className="">41.8%</div>
+                            </div>
+                            <div className="flex space-x-2 items-center">
+                                <div className="block h-2 w-2 rounded-full bg-[#FFC13A]" />
+                                <div>Hêt hàng</div>
+                                <div className="">10.8%</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className="col-span-3 flex flex-col items-center px-4 py-5 shadow-xl">
