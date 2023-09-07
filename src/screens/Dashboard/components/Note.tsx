@@ -9,7 +9,7 @@ export const Note = () => (
                 <img src="./public/image/folder.svg" alt="" />
                 <p className="text-2xl font-[600]">1000</p>
             </div>
-            <div className="flex flex-auto flex-col  items-center border-x-2 border-dashed border-[#858D92]">
+            <div className="flex flex-auto flex-col items-center  border-x-2 border-dashed border-[#858D92] px-2">
                 <h2>Lượt mua</h2>
                 <img src="./public/image/circle.svg" alt="" />
                 <p className="text-2xl font-[600]">1000</p>

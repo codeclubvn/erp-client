@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { DropIcon } from '../../../icons/AccountIcon'
-import { Date } from './Date'
+import { DayPicker } from './DayPicker'
 import { Link } from 'react-router-dom'
 const time = [
     {
@@ -27,7 +27,7 @@ export const Calendar = () => {
         setOpenDate(!openDate)
     }
     return (
-        <div className=" mt-6 rounded-2xl px-2 pb-4 text-center shadow-xl">
+        <div className=" mt-6 h-[515px] rounded-2xl px-2 pb-4 text-center shadow-xl">
             <div className="bg-[#EAF3F4]">
                 <div className="flex items-center justify-between  rounded-xl bg-[#F8F9FB] px-2 py-2 shadow-2xl">
                     <h2 className="font-[600]">ĐƠN GẦN ĐÂY</h2>
@@ -37,7 +37,7 @@ export const Calendar = () => {
                     >
                         <button>Tháng 6</button>
                         <DropIcon />
-                        {openDate ? <Date /> : ''}
+                        {openDate ? <DayPicker /> : ''}
                     </div>
                 </div>
                 <div className="mt-4 flex justify-between rounded-xl px-4 pb-2">
@@ -78,7 +78,10 @@ export const Calendar = () => {
                 </div>
                 <ul>
                     {time.map((item, index) => (
-                        <li className="flex items-center border-b-[1px] border-dashed py-3">
+                        <li
+                            key={index}
+                            className="flex items-center border-b-[1px] border-dashed py-3"
+                        >
                             <p>{item.hour}</p>
                             <span
                                 className={`mx-2 block h-2 w-2 rounded-full bg-[${

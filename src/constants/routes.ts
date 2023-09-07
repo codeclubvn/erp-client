@@ -11,7 +11,7 @@ import {
 export const ROUTES = {
     HomePage: '/',
     Order: '/order',
-    POS: '/pos',
+    Product: '/product',
     Manage: '/manage',
     Money: '/money',
     User: '/user',
@@ -35,7 +35,7 @@ const routerList = [
     {
         title: 'Sản phẩm',
         icon: ProductIcon,
-        href: ROUTES.POS,
+        href: ROUTES.Product,
         component: Product,
     },
     {
@@ -62,7 +62,7 @@ export const defaultTitle = 'Default'
 
 export const routeTitleMapper = {
     [ROUTES.HomePage]: 'HomePage',
-    [ROUTES.POS]: 'POS',
+    [ROUTES.Product]: 'POS',
     [ROUTES.SignUp]: 'SignUp',
     [ROUTES.Login]: 'Login',
 }

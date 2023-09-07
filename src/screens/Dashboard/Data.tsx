@@ -1,7 +1,7 @@
 import { BoxIcon, FlowIcon, ChartPie } from './components/index'
 function Data() {
     return (
-        <div className="mt-6 shadow-xl">
+        <div className="mt-6 shadow-xl ">
             <h2 className="mb-6 text-2xl ">Tổng hợp số liệu</h2>
             <div className="grid grid-cols-5 gap-4 ">
                 <div className="col-span-2">
@@ -50,7 +50,7 @@ function Data() {
                         </p>
                     </div>
                 </div>
-                <div className="col-span-3 flex flex-col items-center px-4 py-5 shadow-xl">
+                <div className="col-span-3 flex flex-col items-center rounded-xl px-4 py-5 shadow-xl">
                     <h2 className="text-xl font-[600]">Sản phẩm bán chạy</h2>
                     <p>Các sản phẩm bán chạy trong 7 ngày gần nhất</p>
                     <img
