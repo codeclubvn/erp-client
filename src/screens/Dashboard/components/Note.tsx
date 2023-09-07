@@ -5,7 +5,6 @@ export const Note = () => (
         <div className="mx-2 flex justify-between rounded-xl px-4 py-4 shadow-xl">
             <div className="flex flex-auto flex-col items-center">
                 <h2>Số mặt hàng</h2>
-
                 <img src="./public/image/folder.svg" alt="" />
                 <p className="text-2xl font-[600]">1000</p>
             </div>

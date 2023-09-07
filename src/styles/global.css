@@ -5,7 +5,7 @@
 @tailwind utilities;
 @layer base {
     :root {
-        --headerHeight: 5rem;
+        --headerHeight: 72px;
     }
 }
 
