@@ -6,22 +6,22 @@ export const Note = () => (
             <div className="flex flex-auto flex-col items-center">
                 <h2>Số mặt hàng</h2>
                 <img src="./public/image/folder.svg" alt="" />
-                <p className="text-2xl font-[600]">1000</p>
+                <p className="text-2xl font-semibold">1000</p>
             </div>
             <div className="flex flex-auto flex-col  items-center border-x-2 border-dashed border-[#858D92]">
                 <h2>Lượt mua</h2>
                 <img src="./public/image/circle.svg" alt="" />
-                <p className="text-2xl font-[600]">1000</p>
+                <p className="text-2xl font-semibold">1000</p>
             </div>
             <div className=" flex flex-auto flex-col items-center">
                 <h2>Trả hàng</h2>
                 <img src="./public/image/bag.svg" alt="" />
-                <p className="text-2xl font-[600]">1000</p>
+                <p className="text-2xl font-semibold">1000</p>
             </div>
         </div>
         <div className=" mt-6 rounded-2xl px-4 pt-2 shadow-xl">
             <div className="flex items-center  justify-between rounded-xl px-2 py-2 shadow-2xl">
-                <h2 className="font-[600]">ĐÃ GHIM</h2>
+                <h2 className="font-semibold">ĐÃ GHIM</h2>
                 <PinnedIcon />
             </div>
             <div className="mt-4 max-h-[300px] overflow-auto">
@@ -44,7 +44,7 @@ export const Note = () => (
         </div>
         <div className=" mt-6 rounded-2xl px-2 pb-4 text-center shadow-xl">
             <div className="flex items-center  justify-between rounded-xl px-2 py-2 pt-4 shadow-2xl">
-                <h2 className="font-[600]">NHẮC NỢ</h2>
+                <h2 className="font-semibold">NHẮC NỢ</h2>
                 <PinnedIcon />
             </div>
             <div className=" flex flex-col items-center justify-center ">

@@ -32,7 +32,7 @@ function Data() {
                         </div>
                     </div>
                     <div className="flex flex-col  items-center rounded-xl px-4 py-5 shadow-xl">
-                        <h2 className="text-xl font-[600]">Tổng kho</h2>
+                        <h2 className="text-xl font-semibold">Tổng kho</h2>
                         <p>Số lượng hàng trong kho</p>
 
                         <ChartPie />
@@ -56,7 +56,7 @@ function Data() {
                     </div>
                 </div>
                 <div className="col-span-3 flex flex-col items-center px-4 py-5 shadow-xl">
-                    <h2 className="text-xl font-[600]">Sản phẩm bán chạy</h2>
+                    <h2 className="text-xl font-semibold">Sản phẩm bán chạy</h2>
                     <p>Các sản phẩm bán chạy trong 7 ngày gần nhất</p>
                     <img
                         src="./public/image/noItem.svg"
