@@ -54,9 +54,11 @@ export const buttonVariants = tv({
         },
         width: {
             615: 'w-[615px]',
+            520: 'w-[520px]',
         },
         height: {
             80: 'h-[80px]',
+            60: 'h-[60px]',
         },
         display: {
             flex: 'flex',

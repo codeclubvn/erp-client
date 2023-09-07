@@ -1,9 +1,12 @@
+import { Search } from './Search'
+import Logo from '../../../../../public/loginImages/number.svg'
+import { Account } from './Account'
 export const Header = () => {
     return (
-        <div className="z-header fixed left-0 top-0 w-full flex-none bg-red-50">
-            <header className="relative">
-                <div className="h-20">Header</div>
-            </header>
-        </div>
+        <header className="z-5 fixed flex w-full items-center justify-between bg-white px-6 py-2 shadow-xl">
+            <img src={Logo} className="h-[56px] w-[214px]" alt="" />
+            <Search />
+            <Account />
+        </header>
     )
 }

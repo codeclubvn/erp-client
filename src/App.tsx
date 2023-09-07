@@ -1,7 +1,6 @@
-import { routes } from './routes'
-
+import Layout from './Layout'
 function App() {
-    return <>{routes}</>
+    return <Layout />
 }
 
 export default App
