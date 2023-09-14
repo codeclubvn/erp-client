@@ -1,9 +1,9 @@
-import { LinkName } from '../../components/LinkName'
+import { LinkDerectory } from '../../components/LinkDerectory'
 
 export const Money = () => {
     return (
         <h1>
-            <LinkName />
+            <LinkDerectory />
         </h1>
     )
 }

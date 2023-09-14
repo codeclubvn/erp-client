@@ -1,11 +1,11 @@
 import { BoxIcon, FlowIcon, ChartPie } from './components/index'
 function Data() {
     return (
-        <div className="mt-6 shadow-xl ">
+        <div className="mt-10 overflow-hidden rounded-xl ">
             <h2 className="mb-6 text-2xl ">Tổng hợp số liệu</h2>
             <div className="grid grid-cols-5 gap-4 ">
                 <div className="col-span-2">
-                    <div className="rounded-xl px-6 py-4 shadow-xl">
+                    <div className="rounded-xl bg-white  px-6 py-4 shadow-xl">
                         <div className="grid grid-cols-3 gap-3">
                             <div className="col-span-1">
                                 <BoxIcon />
@@ -31,7 +31,7 @@ function Data() {
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-col  items-center rounded-xl px-4 py-5 shadow-xl">
+                    <div className="mt-4 flex flex-col items-center rounded-xl bg-white px-4 py-5 shadow-xl">
                         <h2 className="text-xl font-semibold">Tổng kho</h2>
                         <p>Số lượng hàng trong kho</p>
 
@@ -56,7 +56,7 @@ function Data() {
                     </div>
                 </div>
 
-                <div className="col-span-3 flex flex-col items-center px-4 py-5 shadow-xl">
+                <div className="col-span-3 flex flex-col items-center rounded-xl bg-white px-4 py-5 shadow-xl ">
                     <h2 className="text-xl font-semibold">Sản phẩm bán chạy</h2>
                     <p>Các sản phẩm bán chạy trong 7 ngày gần nhất</p>
                     <img

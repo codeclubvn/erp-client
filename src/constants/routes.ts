@@ -7,6 +7,9 @@ import {
     UserIcon,
     ProductIcon,
 } from '../icons/iconSiderbar'
+import { CategoryProduct } from '../screens/Product/components/CategoryProduct'
+import { CreateProduct } from '../screens/Product/components/CreateProduct'
+import { CreateOrder } from '../screens/Order/component/CreateOrder'
 
 export const ROUTES = {
     HomePage: '/',
@@ -31,12 +34,28 @@ const routerList = [
         icon: OrderIcon,
         href: ROUTES.Order,
         component: Order,
+        children: [
+            {
+                url: 'order/tao-don-hang',
+                childComponent: CreateOrder,
+            },
+        ],
     },
     {
         title: 'Sản phẩm',
         icon: ProductIcon,
         href: ROUTES.Product,
         component: Product,
+        children: [
+            {
+                url: 'product/danh-muc-san-pham',
+                childComponent: CategoryProduct,
+            },
+            {
+                url: 'product/tao-san-pham',
+                childComponent: CreateProduct,
+            },
+        ],
     },
     {
         title: 'Khách hàng',

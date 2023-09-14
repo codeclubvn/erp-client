@@ -96,7 +96,7 @@ export const SignUp = () => {
                             size="xxl"
                             borderRadius={40}
                         >
-                            Tạo tài khoảnnnnn
+                            Tạo tài khoản
                         </Button>
                     </div>
                 </form>

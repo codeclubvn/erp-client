@@ -3,38 +3,42 @@ import { MainLayout } from './screens/layouts'
 import { Login } from './screens'
 import { SignUp } from './screens'
 import routerList from './constants/routes'
-import { CreateOrder } from './screens/Order/components/CreateOrder'
+import { PageNotFound } from './screens/PageNotFound'
+import { CategoryProduct } from './screens/Product/components/CategoryProduct'
+import { Fragment } from 'react'
 function Router() {
     return (
         <BrowserRouter>
-            <div>
-                <Routes>
+            <Routes>
+                <Route path="/" element={<MainLayout />}>
                     {routerList.map((item, index) => {
                         const Page = item.component
+                        const itemChildren = item.children
                         return (
-                            <Route
-                                key={index}
-                                path={item.href}
-                                element={
-                                    <MainLayout>
-                                        <Page />
-                                    </MainLayout>
-                                }
-                            />
+                            <Fragment key={index}>
+                                <Route path={item.href} element={<Page />} />
+                                {itemChildren
+                                    ? itemChildren.map((item, index) => {
+                                          const ItemChildren =
+                                              item.childComponent
+                                          return (
+                                              <Route
+                                                  key={index}
+                                                  path={item.url}
+                                                  element={<ItemChildren />}
+                                              />
+                                          )
+                                      })
+                                    : ''}
+                            </Fragment>
                         )
                     })}
-                    <Route
-                        path="order/:userId"
-                        element={
-                            <MainLayout>
-                                <CreateOrder />
-                            </MainLayout>
-                        }
-                    />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/signup" element={<SignUp />} />
-                </Routes>
-            </div>
+                </Route>
+
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<SignUp />} />
+                <Route path="*" element={<PageNotFound />} />
+            </Routes>
         </BrowserRouter>
     )
 }

@@ -9,6 +9,15 @@ export default {
             fontFamily: {
                 font: ['Raleway', 'sans'],
             },
+            keyframes: {
+                scale: {
+                    '0%': { opacity: 0 },
+                    '100%': { opacity: 1 },
+                },
+            },
+            animation: {
+                scale: 'scale 0.3s ease-in',
+            },
             spacing: {
                 [6.5]: '1.625rem',
             },
