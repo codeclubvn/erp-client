@@ -1,5 +1,3 @@
-import { AddCircleIcon } from '../../components/SVG/SVG'
-
 export const PurchaseOrders = () => {
     return (
         <>
@@ -10,7 +8,7 @@ export const PurchaseOrders = () => {
                         <span>Trang chủ • Đơn hàng</span>
                     </div>
                     <button className="flex text-gray-400">
-                        <AddCircleIcon /> <span>Tạo đơn hàng</span>
+                        {/* <AddCircleIcon /> <span>Tạo đơn hàng</span> */}
                     </button>
                 </div>
             </div>

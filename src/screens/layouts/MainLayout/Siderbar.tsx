@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import routerList from '../../../constants/routes'
+
 export const Siderbar = () => {
     return (
         <nav className="z-2 sticky left-0 top-[56px] col-span-1 h-[100vh]">
