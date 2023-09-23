@@ -49,7 +49,7 @@ function Overview() {
                         <p className="text-xl text-[#44AEC3]">300</p>
                     </div>
                     <div className="flex w-12 rounded-xl bg-[#44AEC3]">
-                        <div className="m-auto w-8 mix-blend-screen brightness-125 contrast-125">
+                        <div className="m-auto p-1 mix-blend-screen brightness-125 contrast-125">
                             <IconPending />
                         </div>
                     </div>
@@ -60,7 +60,7 @@ function Overview() {
                         <p className="text-xl text-[#87B7FF]">10</p>
                     </div>
                     <div className="flex w-12 rounded-xl bg-[#87B7FF]">
-                        <div className="m-auto w-8 mix-blend-screen brightness-125 contrast-125">
+                        <div className="m-auto p-1 mix-blend-screen brightness-125 contrast-125">
                             <IconDelivering />
                         </div>
                     </div>
@@ -71,7 +71,7 @@ function Overview() {
                         <p className="text-xl text-[#ffc13a]">47</p>
                     </div>
                     <div className="flex w-12 rounded-xl bg-[#ffc13a]">
-                        <div className="m-auto w-8 mix-blend-screen brightness-125 contrast-125">
+                        <div className="m-auto p-1 mix-blend-screen brightness-125 contrast-125">
                             <IconDelivered />
                         </div>
                     </div>
