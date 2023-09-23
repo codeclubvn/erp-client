@@ -1,6 +1,6 @@
 import { styled } from '@mui/material'
 import { DataGrid } from '@mui/x-data-grid'
-import { IDataGridProps } from '../../types/table.interface'
+import { IDataGridProps } from './table.interface'
 
 const StyledDataGrid = styled(DataGrid, {
     shouldForwardProp: (prop) => prop !== 'checkBox',

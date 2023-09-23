@@ -1,10 +1,24 @@
 import { MenuItem, Select, SelectChangeEvent } from '@mui/material'
-import { IPanigation } from '../../types/table.interface'
+import { GridRowSelectionModel } from '@mui/x-data-grid'
 import {
-    SvgIconArrowDown,
-    SvgIconArrowLeft,
-    SvgIconArrowRight,
+    IconArrowDown,
+    IconArrowLeft,
+    IconArrowRight,
 } from '../../svg/IconComponents'
+
+export interface IPanigation {
+    selectionRow?: GridRowSelectionModel
+    rowRange?: {
+        firstRowIndex: number
+        lastRowIndex: number
+    }
+    totalRow: number
+    pageSize: number
+    pageOption: number[]
+    labelPageOption?: string
+    onChangePage: (params: number) => void
+    onChangePageSize: (params: string) => void
+}
 
 export const Panigation = ({
     selectionRow = [],
@@ -34,7 +48,7 @@ export const Panigation = ({
                         className="inline-block cursor-pointer p-1 hover:text-black"
                         onClick={() => onChangePage(-1)}
                     >
-                        <SvgIconArrowLeft />
+                        <IconArrowLeft />
                     </span>
                     {rowRange && (
                         <div className="flex items-center leading-[24px] text-[#6A6A6A]">
@@ -51,7 +65,7 @@ export const Panigation = ({
                         className="inline-block cursor-pointer p-1 hover:text-black"
                         onClick={() => onChangePage(1)}
                     >
-                        <SvgIconArrowRight />
+                        <IconArrowRight />
                     </span>
                 </div>
                 {!!pageOption.length && (
@@ -87,7 +101,7 @@ export const Panigation = ({
                                 borderWidth: '0.5px !important',
                             },
                         }}
-                        IconComponent={SvgIconArrowDown}
+                        IconComponent={IconArrowDown}
                     >
                         {pageOption.map((item: number, index: number) => {
                             return (

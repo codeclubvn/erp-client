@@ -1,7 +1,7 @@
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import { DatePicker as ComponentDatePicker } from '@mui/x-date-pickers/DatePicker'
-import { SvgIconNoteFavorite } from '../../../svg/IconComponents'
+import { IconNoteFavorite } from '../../../svg/IconComponents'
 
 export function DatePicker() {
     return (
@@ -11,7 +11,7 @@ export function DatePicker() {
                 <ComponentDatePicker
                     label="Chọn ngày"
                     slots={{
-                        openPickerIcon: SvgIconNoteFavorite,
+                        openPickerIcon: IconNoteFavorite,
                     }}
                     sx={{
                         width: '145px',

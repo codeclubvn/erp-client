@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-export const SvgIconArrowDown = (props: SVGProps<SVGSVGElement>) => (
+const SvgIconArrowDown = (props: SVGProps<SVGSVGElement>) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         width={18}
@@ -13,3 +13,4 @@ export const SvgIconArrowDown = (props: SVGProps<SVGSVGElement>) => (
         />
     </svg>
 )
+export default SvgIconArrowDown

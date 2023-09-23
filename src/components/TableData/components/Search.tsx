@@ -1,4 +1,4 @@
-import { SvgIconSearchNormal } from '../../../svg/IconComponents'
+import { IconSearchNormal } from '../../../svg/IconComponents'
 
 export const Search = ({ onChange, value }) => {
     return (
@@ -13,7 +13,7 @@ export const Search = ({ onChange, value }) => {
                 onChange={(e) => onChange(e)}
             />
             <span className="absolute left-3">
-                <SvgIconSearchNormal />
+                <IconSearchNormal />
             </span>
         </div>
     )

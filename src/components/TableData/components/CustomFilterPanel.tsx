@@ -1,13 +1,17 @@
 import { forwardRef, useCallback, useMemo } from 'react'
-import { Button, Tooltip } from '@mui/material'
+import { Button, ButtonProps, Tooltip } from '@mui/material'
 import {
     GridPreferencePanelsValue,
+    ToolbarPropsOverrides,
     gridFilteredTopLevelRowCountSelector,
     gridPreferencePanelStateSelector,
 } from '@mui/x-data-grid'
 import { useGridApiContext, useGridSelector } from '@mui/x-data-grid'
-import { ICustomFilterPanel } from '../../../types/table.interface'
-import { SvgIconSort } from '../../../svg/IconComponents'
+import { IconSort } from '../../../svg/IconComponents'
+
+export interface ICustomFilterPanel
+    extends Pick<ToolbarPropsOverrides, 'disableColumnFilterProp'>,
+        ButtonProps {}
 
 export const CustomFilterPanel = forwardRef<
     HTMLButtonElement,
@@ -18,7 +22,6 @@ export const CustomFilterPanel = forwardRef<
         apiRef,
         gridFilteredTopLevelRowCountSelector,
     )
-
     const preferencePanel = useGridSelector(
         apiRef,
         gridPreferencePanelStateSelector,
@@ -73,7 +76,7 @@ export const CustomFilterPanel = forwardRef<
                     color: '#02173F',
                     textTransform: 'capitalize',
                 }}
-                startIcon={<SvgIconSort />}
+                startIcon={<IconSort />}
             >
                 {apiRef!.current.getLocaleText('toolbarFilters')}
             </Button>

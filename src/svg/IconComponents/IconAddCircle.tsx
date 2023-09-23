@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-export const SvgIconAddCircle = (props: SVGProps<SVGSVGElement>) => (
+const SvgIconAddCircle = (props: SVGProps<SVGSVGElement>) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         width={24}
@@ -21,3 +21,4 @@ export const SvgIconAddCircle = (props: SVGProps<SVGSVGElement>) => (
         />
     </svg>
 )
+export default SvgIconAddCircle

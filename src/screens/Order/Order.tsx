@@ -1,5 +1,5 @@
 import { Statistics, OrderTable } from './components'
-import { SvgIconAddCircle, SvgIconDownload } from '../../svg/IconComponents'
+import { IconAddCircle, IconDownload } from '../../svg/IconComponents'
 
 export const Order = () => {
     return (
@@ -15,13 +15,13 @@ export const Order = () => {
                         </span>
                     </div>
                     <button className="flex gap-[2px] rounded-[16px] bg-[#44AEC3] px-[14px] py-[17.25px] text-white">
-                        <SvgIconAddCircle /> <span>Tạo đơn hàng</span>
+                        <IconAddCircle /> <span>Tạo đơn hàng</span>
                     </button>
                 </div>
                 <Statistics />
                 <h2 className="mb-7 mt-[56px] flex text-[24px] font-semibold leading-[28px] text-[#485162]">
                     Thống kế đơn hàng{' '}
-                    <SvgIconDownload
+                    <IconDownload
                         width={'28px'}
                         height={'28px'}
                         className="ms-[24px]"

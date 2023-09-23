@@ -30,8 +30,6 @@ export const CustomPagination = (props: FooterPropsOverrides) => {
         apiRef.current.setPageSize(Number(value))
     }
 
-    console.log('panigation re-render')
-
     return (
         <Panigation
             onChangePage={handlePageChange}
@@ -39,7 +37,7 @@ export const CustomPagination = (props: FooterPropsOverrides) => {
             pageOption={someCustomPageOption}
             labelPageOption={someContentOption}
             pageSize={pageSize}
-            rowRange={rowRange}
+            rowRange={rowRange!}
             totalRow={totalRow}
             selectionRow={totalSelectionRow}
         />

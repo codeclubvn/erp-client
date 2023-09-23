@@ -1,12 +1,11 @@
-import { useRef } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import { GridRowId } from '@mui/x-data-grid'
 import { TableData, Status } from '../../../components'
-import { SvgIconAction, SvgIconSetting } from '../../../svg/IconComponents'
+import { IconAction, IconSetting } from '../../../svg/IconComponents'
 import {
     GridColWithDefaultOptional,
     defaultGridColValues,
-} from '../../../types/table.interface'
+} from '../../../components/TableData/table.interface'
 import { getOrders } from '../../../services/orderAPI'
 import { MoreAction } from './MoreAction'
 
@@ -85,7 +84,7 @@ export function OrderTable() {
             type: 'actions',
             minWidth: 100,
             renderHeader: () => {
-                return <SvgIconSetting />
+                return <IconSetting />
             },
             renderCell: (params) => (
                 <MoreAction
@@ -95,20 +94,18 @@ export function OrderTable() {
                         handleSelectAction(action, params.row.id)
                     }}
                 >
-                    <SvgIconAction />
+                    <IconAction />
                 </MoreAction>
             ),
         },
     ]
-
-    const test = useRef(true)
 
     const handleSelectAction = (action: string, id: GridRowId) => {
         console.log(action, id)
     }
 
     const { data = [], isLoading } = useQuery({
-        queryKey: ['orders', test.current],
+        queryKey: ['orders'],
         queryFn: getOrders,
     })
 

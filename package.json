@@ -13,7 +13,7 @@
         "storybook": "storybook dev -p 6006",
         "build-storybook": "storybook build",
         "prepare": "husky install",
-        "svg": "npx @svgr/cli --out-dir src/svg/%npm_config_to% -- src/svg/%npm_config_from% "
+        "convert-svg": "svgr --out-dir src/svg/icons -- ./src/svg/iconcomponents"
     },
     "dependencies": {
         "@emotion/react": "^11.11.1",

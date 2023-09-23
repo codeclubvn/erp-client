@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { GridRowModel } from '@mui/x-data-grid'
-import { IDataGridProps, IHandleNameChange } from '../../types/table.interface'
+import { IDataGridProps, IHandleNameChange } from './table.interface'
 import { IOrder } from '../../types/orders.interface'
+import StyledDataGrid from './StyledDataGrid'
 import {
     CustomToolbar,
     CustomNoRowsOverlay,
@@ -10,7 +11,6 @@ import {
     CustomLoadingOverlay,
     CustomNoResultOverlay,
 } from './components'
-import StyledDataGrid from './StyledDataGrid'
 
 export function TableData(props: IDataGridProps) {
     const {
@@ -24,9 +24,7 @@ export function TableData(props: IDataGridProps) {
         onHandleSearch,
     } = props
 
-    const [filteredRows, setFilteredRows] = useState<IOrder[] | null>(null)
-
-    console.log('OrderTable re-render')
+    const [filteredRows, setFilteredRows] = useState<IOrder[]>()
 
     const requestSearch = (searchValue: string) => {
         if (searchValue) {
@@ -35,7 +33,7 @@ export function TableData(props: IDataGridProps) {
         }
 
         if (!searchValue && filteredRows) {
-            setFilteredRows(null)
+            setFilteredRows(undefined)
             onHandleSearch()
         }
     }

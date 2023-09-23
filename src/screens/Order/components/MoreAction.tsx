@@ -1,5 +1,18 @@
+import { GridRowId } from '@mui/x-data-grid'
 import { useEffect, useState } from 'react'
-import { IAction, IPopupActions } from '../../../types/orders.interface'
+
+export interface IPopupActions {
+    items: IAction[]
+    onChange: (params: IAction) => void
+    children: JSX.Element
+    id: GridRowId
+}
+
+export interface IAction {
+    title: string
+    icon: JSX.Element
+    action: string
+}
 
 export const MoreAction = ({
     children,

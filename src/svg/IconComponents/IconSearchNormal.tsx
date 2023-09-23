@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-export const SvgIconSearchNormal = (props: SVGProps<SVGSVGElement>) => (
+const SvgIconSearchNormal = (props: SVGProps<SVGSVGElement>) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         width={16}
@@ -17,3 +17,4 @@ export const SvgIconSearchNormal = (props: SVGProps<SVGSVGElement>) => (
         />
     </svg>
 )
+export default SvgIconSearchNormal
