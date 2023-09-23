@@ -1,4 +1,4 @@
-import { IconSearchNormal } from '../../../svg/IconComponents'
+import { IconSearchNormal } from '../../../svgs'
 
 export const Search = ({ onChange, value }) => {
     return (

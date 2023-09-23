@@ -1,5 +1,5 @@
 import { Statistics, OrderTable } from './components'
-import { IconAddCircle, IconDownload } from '../../svg/IconComponents'
+import { IconAddCircle, IconDownload } from '../../svgs'
 
 export const Order = () => {
     return (

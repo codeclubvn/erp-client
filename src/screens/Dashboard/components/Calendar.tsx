@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import { DropIcon } from '../../../icons/AccountIcon'
 import { Date } from './Date'
 import { Link } from 'react-router-dom'
+import { IconDrop } from '../../../svgs'
+
 const time = [
     {
         hour: '2:00 pm',
@@ -21,6 +22,7 @@ const time = [
     },
 ]
 const COLORS = ['#44AEC3', '#629AEE', '#FFC13A']
+
 export const Calendar = () => {
     const [openDate, setOpenDate] = useState(false)
     const handleOpenDate = () => {
@@ -36,7 +38,7 @@ export const Calendar = () => {
                         className="relative flex cursor-pointer items-center gap-2"
                     >
                         <button>Tháng 6</button>
-                        <DropIcon />
+                        <IconDrop />
                         {openDate ? <Date /> : ''}
                     </div>
                 </div>
@@ -78,7 +80,10 @@ export const Calendar = () => {
                 </div>
                 <ul>
                     {time.map((item, index) => (
-                        <li className="flex items-center border-b-[1px] border-dashed py-3">
+                        <li
+                            key={index}
+                            className="flex items-center border-b-[1px] border-dashed py-3"
+                        >
                             <p>{item.hour}</p>
                             <span
                                 className={`mx-2 block h-2 w-2 rounded-full bg-[${

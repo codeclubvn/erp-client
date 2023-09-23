@@ -7,7 +7,7 @@ import {
     gridPreferencePanelStateSelector,
 } from '@mui/x-data-grid'
 import { useGridApiContext, useGridSelector } from '@mui/x-data-grid'
-import { IconSort } from '../../../svg/IconComponents'
+import { IconSort } from '../../../svgs'
 
 export interface ICustomFilterPanel
     extends Pick<ToolbarPropsOverrides, 'disableColumnFilterProp'>,

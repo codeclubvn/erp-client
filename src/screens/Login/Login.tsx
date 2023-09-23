@@ -1,8 +1,9 @@
 import { LoginImages } from './LoginImages'
 import { Button, FormControl, Input } from '../../components'
 import { PasswordInput } from '../../components/Button/PasswordButton'
-
 import { Link } from 'react-router-dom'
+import { IconFace, IconGmail, IconZalo } from '../../svgs'
+
 export const Login = () => {
     return (
         <div className="flex max-h-[1024px] max-w-[1440px] items-center">
@@ -56,11 +57,7 @@ export const Login = () => {
                 </div>
                 <div className="my-4 flex justify-center">
                     <button className="mt-3 flex items-center justify-center ">
-                        <img
-                            src="./public/logoGmail.svg"
-                            className="w-10"
-                            alt=""
-                        />
+                        <IconGmail />
                         <p className="ml-4 text-xl">Đăng nhập với Google</p>
                     </button>
                 </div>
@@ -71,11 +68,11 @@ export const Login = () => {
                 </div>
                 <div className="mt-4 flex items-center justify-evenly">
                     <button className="mr-6 mt-3 flex items-center justify-center rounded-lg border-[1px] px-6 py-1">
-                        <img src="./public/logoFace.svg" alt="" />
+                        <IconFace />
                         <p className="ml-4 text-xl">Facebook</p>
                     </button>
                     <button className="mt-3 flex w-[170px] items-center justify-center rounded-lg border-[1px] px-6 py-1">
-                        <img src="./public/logoZalo.png" alt="" />
+                        <IconZalo />
                         <p className="ml-4 text-xl">Zalo</p>
                     </button>
                 </div>

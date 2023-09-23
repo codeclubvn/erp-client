@@ -13,7 +13,7 @@
         "storybook": "storybook dev -p 6006",
         "build-storybook": "storybook build",
         "prepare": "husky install",
-        "convert-svg": "svgr --out-dir src/svg/icons -- ./src/svg/iconcomponents"
+        "convert-svg": "mkdirp -p src/svgs && svgr --out-dir src/svgs -- src/assets/svg"
     },
     "dependencies": {
         "@emotion/react": "^11.11.1",
@@ -30,6 +30,7 @@
         "date-fns": "^2.30.0",
         "immer": "^10.0.2",
         "lucide-react": "^0.263.1",
+        "mkdirp": "^3.0.1",
         "moment": "^2.29.4",
         "nprogress": "^0.2.0",
         "react": "^18.2.0",
@@ -64,6 +65,7 @@
         "@typescript-eslint/parser": "^6.0.0",
         "@vitejs/plugin-react-swc": "^3.3.2",
         "autoprefixer": "^10.4.14",
+        "babel-plugin-jsx-remove-attributes": "^1.0.0",
         "eslint": "^8.45.0",
         "eslint-plugin-react-hooks": "^4.6.0",
         "eslint-plugin-react-refresh": "^0.4.3",

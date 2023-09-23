@@ -1,7 +1,7 @@
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import { DatePicker as ComponentDatePicker } from '@mui/x-date-pickers/DatePicker'
-import { IconNoteFavorite } from '../../../svg/IconComponents'
+import { IconNoteFavorite } from '../../../svgs'
 
 export function DatePicker() {
     return (

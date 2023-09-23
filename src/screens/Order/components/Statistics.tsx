@@ -1,9 +1,4 @@
-import {
-    ImgDelivered,
-    ImgPending,
-    ImgCancel,
-    ImgRefund,
-} from '../../../svg/ImgComponents'
+import { ImgDelivered, ImgPending, ImgCancel, ImgRefund } from '../../../svgs'
 
 export const Statistics = () => {
     const cardCN =

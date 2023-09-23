@@ -1,10 +1,6 @@
 import { MenuItem, Select, SelectChangeEvent } from '@mui/material'
 import { GridRowSelectionModel } from '@mui/x-data-grid'
-import {
-    IconArrowDown,
-    IconArrowLeft,
-    IconArrowRight,
-} from '../../svg/IconComponents'
+import { IconArrowDown, IconArrowLeft, IconArrowRight } from '../../svgs'
 
 export interface IPanigation {
     selectionRow?: GridRowSelectionModel

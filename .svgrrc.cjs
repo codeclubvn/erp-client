@@ -3,7 +3,7 @@ module.exports = {
     typescript: true,
     ignoreExisting: true,
     jsxRuntime: 'automatic',
-    indexTemplate: require('./defaultTemplate.cjs'),
+    indexTemplate: require('./indexTemplate.cjs'),
     svgo: true,
     jsx: {
         babelConfig: {
@@ -14,6 +14,7 @@ module.exports = {
                         values: [{ value: 'none', newValue: 'currentColor' }],
                     },
                 ],
+                // ['./remove-svg-attr.cjs'],
             ],
         },
     },

@@ -1,29 +1,36 @@
-import { Client, Calendar, PinnedIcon, SubIcon } from './index'
+import { Client, Calendar } from './index'
+import ImgMoney from '../../../assets/images/imgMoney.png'
+import {
+    IconBag,
+    IconDrawstringBag,
+    IconFolder,
+    IconPinned,
+    IconSub,
+} from '../../../svgs'
 
 export const Note = () => (
     <div className=" my-4 bg-[#F8F9FB]">
         <div className="mx-2 flex justify-between rounded-xl px-4 py-4 shadow-xl">
             <div className="flex flex-auto flex-col items-center">
                 <h2>Số mặt hàng</h2>
-
-                <img src="./public/image/folder.svg" alt="" />
+                <IconFolder />
                 <p className="text-2xl font-[600]">1000</p>
             </div>
             <div className="flex flex-auto flex-col  items-center border-x-2 border-dashed border-[#858D92]">
                 <h2>Lượt mua</h2>
-                <img src="./public/image/circle.svg" alt="" />
+                <IconDrawstringBag />
                 <p className="text-2xl font-[600]">1000</p>
             </div>
             <div className=" flex flex-auto flex-col items-center">
                 <h2>Trả hàng</h2>
-                <img src="./public/image/bag.svg" alt="" />
+                <IconBag />
                 <p className="text-2xl font-[600]">1000</p>
             </div>
         </div>
         <div className=" mt-6 rounded-2xl px-4 pt-2 shadow-xl">
             <div className="flex items-center  justify-between rounded-xl px-2 py-2 shadow-2xl">
                 <h2 className="font-[600]">ĐÃ GHIM</h2>
-                <PinnedIcon />
+                <IconPinned />
             </div>
             <div className="mt-4 max-h-[300px] overflow-auto">
                 <Client
@@ -46,7 +53,7 @@ export const Note = () => (
         <div className=" mt-6 rounded-2xl px-2 pb-4 text-center shadow-xl">
             <div className="flex items-center  justify-between rounded-xl px-2 py-2 pt-4 shadow-2xl">
                 <h2 className="font-[600]">NHẮC NỢ</h2>
-                <PinnedIcon />
+                <IconPinned />
             </div>
             <div className=" flex flex-col items-center justify-center ">
                 <div className="mt-4 flex w-[75%] justify-between ">
@@ -60,17 +67,17 @@ export const Note = () => (
                     </div>
                 </div>
                 <div className="my-5">
-                    <img src="./public/image/money.svg" alt="" />
+                    <img src={ImgMoney} alt="money" />
                 </div>
                 <p>Chưa có giao dịch nào!</p>
             </div>
             <div className="mt-4 flex justify-center gap-4">
                 <div className="flex">
-                    <SubIcon />
+                    <IconSub />
                     <p className="ml-2">Tôi cho nợ</p>
                 </div>
                 <div className="flex">
-                    <SubIcon />
+                    <IconSub />
                     <p className="ml-2">Tôi mượn nợ</p>
                 </div>
             </div>

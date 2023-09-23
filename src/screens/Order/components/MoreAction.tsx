@@ -34,7 +34,7 @@ export const MoreAction = ({
     }
 
     const renderDropdownAction = (
-        <div className="max-h-[min(80vh, 734px)] flex w-full flex-col overflow-y-auto overflow-x-hidden rounded-lg border-[1px] border-solid border-[#dfe1e6] py-2">
+        <div className="max-h-[min(80vh, 734px)] flex w-full flex-col overflow-y-auto overflow-x-hidden rounded-lg border-[1px] border-solid border-[#dfe1e6] py-2 ">
             {listAction.map((action: IAction, index: number) => (
                 <button
                     key={index}
@@ -54,7 +54,7 @@ export const MoreAction = ({
                     e.stopPropagation()
                     // setIsActive(!isActive)
                 }}
-                className="flex justify-center"
+                className="flex justify-center text-[#858D92]"
             >
                 {children}
             </div>

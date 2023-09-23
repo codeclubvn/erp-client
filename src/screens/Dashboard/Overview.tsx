@@ -1,10 +1,10 @@
 import {
-    ColumnBlue,
-    ColumnYellow,
-    DeliveredIcon,
-    DeliveringIcon,
-    WaitIcon,
-} from './components/Icon'
+    IconDelivered,
+    IconDelivering,
+    IconPending,
+    ImgColBlue,
+    ImgColYellow,
+} from '../../svgs'
 
 function Overview() {
     return (
@@ -23,7 +23,7 @@ function Overview() {
                         </p>
                     </div>
                     <div className="flex items-end ">
-                        <ColumnBlue className="mb-1 ml-4 h-12 w-[60px] " />
+                        <ImgColBlue className="mb-1 ml-4 h-12 w-[60px] " />
                     </div>
                 </div>
                 <div className="flex flex-auto rounded-md px-4 py-4 shadow-xl">
@@ -38,7 +38,7 @@ function Overview() {
                         </p>
                     </div>
                     <div className="flex items-end ">
-                        <ColumnYellow className="mb-1 ml-4 h-12 w-[60px] " />
+                        <ImgColYellow className="mb-1 ml-4 h-12 w-[60px] " />
                     </div>
                 </div>
             </div>
@@ -49,7 +49,9 @@ function Overview() {
                         <p className="text-xl text-[#44AEC3]">300</p>
                     </div>
                     <div className="flex w-12 rounded-xl bg-[#44AEC3]">
-                        <WaitIcon className="m-auto w-8 mix-blend-screen brightness-125 contrast-125" />
+                        <div className="m-auto w-8 mix-blend-screen brightness-125 contrast-125">
+                            <IconPending />
+                        </div>
                     </div>
                 </li>
                 <li className="flex rounded-xl px-4 py-2 shadow-xl">
@@ -58,7 +60,9 @@ function Overview() {
                         <p className="text-xl text-[#87B7FF]">10</p>
                     </div>
                     <div className="flex w-12 rounded-xl bg-[#87B7FF]">
-                        <DeliveringIcon className="m-auto w-8 mix-blend-screen brightness-125 contrast-125" />
+                        <div className="m-auto w-8 mix-blend-screen brightness-125 contrast-125">
+                            <IconDelivering />
+                        </div>
                     </div>
                 </li>
                 <li className="flex rounded-xl px-4 py-2 shadow-xl">
@@ -67,7 +71,9 @@ function Overview() {
                         <p className="text-xl text-[#ffc13a]">47</p>
                     </div>
                     <div className="flex w-12 rounded-xl bg-[#ffc13a]">
-                        <DeliveredIcon className="m-auto w-8 mix-blend-screen brightness-125 contrast-125" />
+                        <div className="m-auto w-8 mix-blend-screen brightness-125 contrast-125">
+                            <IconDelivered />
+                        </div>
                     </div>
                 </li>
             </ul>

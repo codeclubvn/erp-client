@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 import { GridRowId } from '@mui/x-data-grid'
 import { TableData, Status } from '../../../components'
-import { IconAction, IconSetting } from '../../../svg/IconComponents'
+import { IconAction, IconSetting } from '../../../svgs'
 import {
     GridColWithDefaultOptional,
     defaultGridColValues,

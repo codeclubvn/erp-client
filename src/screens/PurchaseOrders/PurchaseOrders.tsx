@@ -1,3 +1,5 @@
+import { IconAddCircle } from '../../svgs'
+
 export const PurchaseOrders = () => {
     return (
         <>
@@ -8,7 +10,7 @@ export const PurchaseOrders = () => {
                         <span>Trang chủ • Đơn hàng</span>
                     </div>
                     <button className="flex text-gray-400">
-                        {/* <AddCircleIcon /> <span>Tạo đơn hàng</span> */}
+                        <IconAddCircle /> <span>Tạo đơn hàng</span>
                     </button>
                 </div>
             </div>
