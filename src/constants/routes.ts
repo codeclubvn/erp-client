@@ -2,10 +2,10 @@ import { Dashboard, Manage, Money, Order, Product, User } from '../screens'
 import {
     IconUser,
     IconManage,
-    IconMoney,
     IconProduct,
     IconDashboard,
     IconOrder,
+    IconWallet,
 } from '../svgs'
 
 export const ROUTES = {
@@ -46,7 +46,7 @@ const routerList = [
     },
     {
         title: 'Thu chi',
-        icon: IconMoney,
+        icon: IconWallet,
         href: ROUTES.Money,
         component: Money,
     },
