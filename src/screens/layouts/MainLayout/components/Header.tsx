@@ -8,7 +8,6 @@ export const Header = () => {
             <div className="h-[56px] w-[214px]">
                 <ImgNumber />
             </div>
-
             <Search />
             <Account />
         </header>

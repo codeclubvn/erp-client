@@ -32,7 +32,7 @@ export const Calendar = () => {
         <div className=" mt-6 rounded-2xl px-2 pb-4 text-center shadow-xl">
             <div className="bg-[#EAF3F4]">
                 <div className="flex items-center justify-between  rounded-xl bg-[#F8F9FB] px-2 py-2 shadow-2xl">
-                    <h2 className="font-[600]">ĐƠN GẦN ĐÂY</h2>
+                    <h2 className="font-semibold">ĐƠN GẦN ĐÂY</h2>
                     <div
                         onClick={handleOpenDate}
                         className="relative flex cursor-pointer items-center gap-2"
@@ -74,7 +74,7 @@ export const Calendar = () => {
                 </div>
             </div>
             <div className="px-4">
-                <div className="mt-4 flex items-center justify-between text-xl font-[600]">
+                <div className="mt-4 flex items-center justify-between text-xl font-semibold">
                     <h1>13-04-2023</h1>
                     <span className="text-3xl">...</span>
                 </div>

@@ -3,7 +3,7 @@ import routerList from '../../../constants/routes'
 
 export const Siderbar = () => {
     return (
-        <nav className="z-2 sticky left-0 top-[56px] col-span-1 h-[100vh]">
+        <nav className="sticky left-0 top-[var(--headerHeight)] col-span-1 h-screen">
             {routerList.map((item) => {
                 const Icon = item.icon
                 return (
