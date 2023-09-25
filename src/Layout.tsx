@@ -6,26 +6,23 @@ import routerList from './constants/routes'
 function Layout() {
     return (
         <BrowserRouter>
-            <div>
-                <Routes>
-                    {routerList.map((item, index) => {
+            <Routes>
+                <Route path="/" element={<MainLayout />}>
+                    {routerList.map((item) => {
                         const Page = item.component
                         return (
                             <Route
-                                key={index}
+                                key={item.href}
                                 path={item.href}
-                                element={
-                                    <MainLayout>
-                                        <Page />
-                                    </MainLayout>
-                                }
+                                element={<Page />}
                             />
                         )
                     })}
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/signup" element={<SignUp />} />
-                </Routes>
-            </div>
+                </Route>
+
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<SignUp />} />
+            </Routes>
         </BrowserRouter>
     )
 }

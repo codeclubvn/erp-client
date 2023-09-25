@@ -1,12 +1,12 @@
 import { Dashboard, Manage, Money, Order, Product, User } from '../screens'
 import {
-    DashboardIcon,
-    MangageIcon,
-    MoneyIcon,
-    OrderIcon,
-    UserIcon,
-    ProductIcon,
-} from '../icons/iconSiderbar'
+    IconUser,
+    IconManage,
+    IconProduct,
+    IconDashboard,
+    IconOrder,
+    IconWallet,
+} from '../svgs'
 
 export const ROUTES = {
     HomePage: '/',
@@ -22,37 +22,37 @@ export const ROUTES = {
 const routerList = [
     {
         title: 'Dashboard',
-        icon: DashboardIcon,
+        icon: IconDashboard,
         href: ROUTES.HomePage,
         component: Dashboard,
     },
     {
         title: 'Đơn hàng',
-        icon: OrderIcon,
+        icon: IconOrder,
         href: ROUTES.Order,
         component: Order,
     },
     {
         title: 'Sản phẩm',
-        icon: ProductIcon,
+        icon: IconProduct,
         href: ROUTES.POS,
         component: Product,
     },
     {
         title: 'Khách hàng',
-        icon: UserIcon,
+        icon: IconUser,
         href: ROUTES.User,
         component: User,
     },
     {
         title: 'Thu chi',
-        icon: MoneyIcon,
+        icon: IconWallet,
         href: ROUTES.Money,
         component: Money,
     },
     {
         title: 'Quản lý kho',
-        icon: MangageIcon,
+        icon: IconManage,
         href: ROUTES.Manage,
         component: Manage,
     },

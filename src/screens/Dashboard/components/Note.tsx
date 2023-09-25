@@ -1,4 +1,12 @@
-import { Client, Calendar, PinnedIcon, SubIcon } from './index'
+import { Client, Calendar } from './index'
+import ImgMoney from '../../../assets/images/imgMoney.png'
+import {
+    IconBag,
+    IconDrawstringBag,
+    IconFolder,
+    IconPinned,
+    IconSub,
+} from '../../../svgs'
 
 export const Note = () => (
     <div className=" my-4 bg-[#F8F9FB]">
@@ -59,17 +67,17 @@ export const Note = () => (
                     </div>
                 </div>
                 <div className="my-5">
-                    <img src="./public/image/money.svg" alt="" />
+                    <img src={ImgMoney} alt="money" />
                 </div>
                 <p>Chưa có giao dịch nào!</p>
             </div>
             <div className="mt-4 flex justify-center gap-4">
                 <div className="flex">
-                    <SubIcon />
+                    <IconSub />
                     <p className="ml-2">Tôi cho nợ</p>
                 </div>
                 <div className="flex">
-                    <SubIcon />
+                    <IconSub />
                     <p className="ml-2">Tôi mượn nợ</p>
                 </div>
             </div>

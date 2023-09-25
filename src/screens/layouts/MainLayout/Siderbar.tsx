@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import routerList from '../../../constants/routes'
+
 export const Siderbar = () => {
     return (
         <nav className="sticky left-0 top-[var(--headerHeight)] col-span-1 h-screen">
@@ -21,8 +22,7 @@ export const Siderbar = () => {
                         }}
                     >
                         <div className="flex w-[55%]">
-                            <Icon className="my-auto h-6 w-6" />
-
+                            <Icon className="my-auto h-[27px] w-[27px]" />
                             <p className="ml-4">{item.title}</p>
                         </div>
                     </NavLink>
