@@ -30,7 +30,7 @@ export const Note = () => (
         <div className=" mt-6 rounded-2xl px-4 pt-2 shadow-xl">
             <div className="flex items-center  justify-between rounded-xl px-2 py-2 shadow-2xl">
                 <h2 className="font-semibold">ĐÃ GHIM</h2>
-                <PinnedIcon />
+                <IconPinned />
             </div>
             <div className="mt-4 max-h-[300px] overflow-auto">
                 <Client
@@ -53,7 +53,7 @@ export const Note = () => (
         <div className=" mt-6 rounded-2xl px-2 pb-4 text-center shadow-xl">
             <div className="flex items-center  justify-between rounded-xl px-2 py-2 pt-4 shadow-2xl">
                 <h2 className="font-semibold">NHẮC NỢ</h2>
-                <PinnedIcon />
+                <IconPinned />
             </div>
             <div className=" flex flex-col items-center justify-center ">
                 <div className="mt-4 flex w-[75%] justify-between ">
