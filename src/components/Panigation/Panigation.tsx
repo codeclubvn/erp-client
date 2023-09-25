@@ -2,9 +2,11 @@ import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai'
 import { useEffect, useRef, useState } from 'react'
 
 export interface ProductProps {
+    id: number
     title: string
-    price: string
+    price: number
     image: string
+    quantity?: number
 }
 interface PaginationProps {
     onListItemChange: (_newList: ProductProps[]) => void

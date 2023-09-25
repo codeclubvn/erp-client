@@ -2,11 +2,11 @@ import { CiSearch } from 'react-icons/ci'
 import { useEffect, useState } from 'react'
 import { RefObject, createRef } from 'react'
 import { listProduct } from '../../../constants'
-import { useDebounce } from '@uidotdev/usehooks'
+import { useDebounce } from '../../../hooks/useDebounce'
 import HeadlessTippy from '@tippyjs/react/headless'
 interface ItemProp {
     title: string
-    price: string
+    price: number
     image: string
 }
 export const SearchResult = () => {
@@ -20,11 +20,20 @@ export const SearchResult = () => {
             setSearchResult([])
             return
         }
-        const searchItembyTitle = (searchValue) => {
-            const textSearchResult = searchValue.toLowerCase()
+        const normalizeString = (str: string) => {
+            return str
+                .toLowerCase()
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '')
+        }
+        const searchItembyTitle = (searchValue: string) => {
+            const normalizedSearchValue = normalizeString(searchValue)
+            const regex = new RegExp(normalizedSearchValue, 'i')
+
             const listItem = listProduct.filter((item) =>
-                item.title.toLowerCase().includes(textSearchResult),
+                regex.test(normalizeString(item.title)),
             )
+
             return listItem
         }
         setSearchResult(searchItembyTitle(debouncedValue))

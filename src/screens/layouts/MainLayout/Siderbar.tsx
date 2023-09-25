@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom'
 import routerList from '../../../constants/routes'
 export const Siderbar = () => {
     return (
-        <nav className="sticky left-0 top-[var(--headerHeight)] col-span-1 mt-6 h-screen bg-white">
+        <nav className="sticky left-0 top-[var(--headerHeight)] col-span-1 mt-6 h-full bg-white">
             {routerList.map((item) => {
                 const Icon = item.icon
                 return (

@@ -1,71 +1,40 @@
-import { useState } from 'react'
+import { useForm } from 'react-hook-form'
 import { StarIcon } from '../../Dashboard/components'
 import { AiOutlineClose } from 'react-icons/ai'
-import { RefObject, createRef } from 'react'
-interface MessageProps {
-    titleMessage?: string
-    priceMessage?: string
-    imageMessage?: string
+import { useState } from 'react'
+import { handleKeyPress } from '../../../constants/handleKeyPressNumber'
+interface AddCategoryProps {
+    title: string
+    quatity: number
+    image: string
 }
-
 export default function AddCategory({ onClick }) {
-    const nameRef: RefObject<HTMLInputElement> = createRef()
-    const quatityRef: RefObject<HTMLInputElement> = createRef()
-    const fileRef: RefObject<HTMLInputElement> = createRef()
-    const [value, setValue] = useState({
-        title: '',
-        price: '',
-        image: '',
-    })
+    const [selectedFileURL, setSelectedFileURL] = useState('')
 
-    const [error, setError] = useState<MessageProps>({})
-    const handleInput = (e) => {
-        const { id, value } = e.target
-        if (id === 'image' && value instanceof File) {
-            const url = URL.createObjectURL(value)
-            setValue((prevValue) => ({
-                ...prevValue,
-                image: url,
-            }))
-        } else
-            setValue((prevValue) => ({
-                ...prevValue,
-                [id]: value,
-            }))
-    }
-    const handleFocusInput = (field) => {
-        setError((prevError) => ({
-            ...prevError,
-            [field]: '',
-        }))
-    }
-    const handleKeyPress = (e) => {
-        if (
-            !(
-                (e.keyCode >= 48 && e.keyCode <= 57) ||
-                e.keyCode === 8 ||
-                (e.keyCode >= 96 && e.keyCode <= 105)
-            )
-        ) {
-            e.preventDefault()
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+        reset,
+    } = useForm<AddCategoryProps>()
+
+    const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        if (event.target.files && event.target.files.length > 0) {
+            if (selectedFileURL) {
+                URL.revokeObjectURL(selectedFileURL)
+            }
+            const file = event.target.files[0]
+            const url = URL.createObjectURL(file)
+            setSelectedFileURL(url)
         }
     }
-    const handleSubmit = (e) => {
-        e.preventDefault()
-
-        const validateMessage: Partial<MessageProps> = {}
-        if (!value.title || !value.title.trim()) {
-            validateMessage.titleMessage = 'Vui lòng nhập trường này'
+    const onSubmit = (data: AddCategoryProps) => {
+        if (selectedFileURL) {
+            data.image = selectedFileURL
         }
-
-        if (!value.price || !value.price.trim()) {
-            validateMessage.priceMessage = 'Vui lòng nhập số lượng'
-        }
-
-        if (!value.image || !value.image.trim()) {
-            validateMessage.imageMessage = 'Vui lòng nhập hình ảnh'
-        }
-        setError(validateMessage)
+        alert('Bạn đã tạo sản phẩm thành công')
+        console.log(data)
+        reset()
     }
     return (
         <div className="fixed left-0 top-0 h-screen w-screen bg-[#f8f9fb]/50 ">
@@ -88,7 +57,10 @@ export default function AddCategory({ onClick }) {
                         onClick={onClick}
                     />
                 </div>
-                <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                <form
+                    onSubmit={handleSubmit(onSubmit)}
+                    className="flex flex-col gap-4"
+                >
                     <div className="flex gap-4">
                         <div className="flex-1">
                             <div>
@@ -99,49 +71,41 @@ export default function AddCategory({ onClick }) {
                                     <StarIcon />
                                 </div>
                                 <input
-                                    id="title"
+                                    {...register('title', {
+                                        required: true,
+                                    })}
                                     type="text"
-                                    ref={nameRef}
                                     className="mt-2 w-full rounded-full border-[1px] px-4 py-1 shadow-xl outline-none "
-                                    onChange={handleInput}
-                                    onFocus={() =>
-                                        handleFocusInput('titleMessage')
-                                    }
-                                    value={value.title}
                                 />
+                                {errors?.title?.type === 'required' && (
+                                    <p className="my-1 text-[10px] font-semibold text-red-600">
+                                        Nhập tên danh mục
+                                    </p>
+                                )}
                             </div>
-                            {error.titleMessage && (
-                                <p className="mt-2 text-xs font-semibold text-red-600">
-                                    {error.titleMessage}
-                                </p>
-                            )}
                         </div>
                         <div className="flex-1">
                             <div>
                                 <div className="flex items-center">
-                                    <label htmlFor="price" className="mr-2">
+                                    <label htmlFor="quatity" className="mr-2">
                                         Số lượng
                                     </label>
                                     <StarIcon />
                                 </div>
                                 <input
-                                    id="price"
+                                    {...register('quatity', {
+                                        required: true,
+                                    })}
+                                    onKeyPress={handleKeyPress}
                                     type="text"
-                                    ref={quatityRef}
                                     className="mt-2 w-full rounded-full border-[1px] px-4 py-1 shadow-xl outline-none "
-                                    onChange={handleInput}
-                                    onFocus={() =>
-                                        handleFocusInput('priceMessage')
-                                    }
-                                    onKeyDown={handleKeyPress}
-                                    value={value.price}
                                 />
+                                {errors?.quatity?.type === 'required' && (
+                                    <p className="my-1 text-[10px] font-semibold text-red-600">
+                                        Nhập số lượng
+                                    </p>
+                                )}
                             </div>
-                            {error.priceMessage && (
-                                <p className="mt-2 text-xs font-semibold text-red-600">
-                                    {error.priceMessage}
-                                </p>
-                            )}
                         </div>
                     </div>
                     <div className="flex-1">
@@ -155,20 +119,18 @@ export default function AddCategory({ onClick }) {
 
                             <div className="mt-2">
                                 <input
+                                    {...register('image')}
                                     className=""
                                     type="file"
                                     id="image"
-                                    ref={fileRef}
-                                    accept="image/*"
-                                    onChange={handleInput}
-                                    onFocus={() =>
-                                        handleFocusInput('imageMessage')
-                                    }
-                                    value={value.image}
+                                    {...register('image', {
+                                        required: true,
+                                    })}
+                                    onChange={handleFileChange}
                                 />
-                                {error.imageMessage && (
-                                    <p className="mt-2 text-xs font-semibold text-red-600">
-                                        {error.imageMessage}
+                                {errors?.image?.type === 'required' && (
+                                    <p className="my-1 text-[10px] font-semibold text-red-600">
+                                        Upload ảnh lên
                                     </p>
                                 )}
                             </div>

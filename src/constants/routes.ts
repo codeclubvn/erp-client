@@ -9,7 +9,7 @@ import {
 } from '../icons/iconSiderbar'
 import { CategoryProduct } from '../screens/Product/components/CategoryProduct'
 import { CreateProduct } from '../screens/Product/components/CreateProduct'
-import { CreateOrder } from '../screens/Order/component/CreateOrder'
+import { CreatOrderContextProvider } from '../screens/Order/context/CreatOrderContext'
 
 export const ROUTES = {
     HomePage: '/',
@@ -37,7 +37,7 @@ const routerList = [
         children: [
             {
                 url: 'order/tao-don-hang',
-                childComponent: CreateOrder,
+                childComponent: CreatOrderContextProvider,
             },
         ],
     },
