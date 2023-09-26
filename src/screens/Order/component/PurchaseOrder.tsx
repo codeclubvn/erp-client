@@ -1,6 +1,7 @@
-import { DeleteIcon, EditIcon, MoreIcon } from './IconOrder'
 import { useCreatOrderContext } from '../context/CreatOrderContext'
 import { useState } from 'react'
+import IconEdit from '../../../svgs/IconEdit'
+import { IconDelete, IconMore } from '../../../svgs'
 
 export default function PurchaseOrder() {
     const [voucherValue, setVoucherValue] = useState(0)
@@ -72,7 +73,7 @@ export default function PurchaseOrder() {
                                     </div>
                                 </div>
                                 <div onClick={() => removeFromCart(item.id)}>
-                                    <DeleteIcon className="cursor-pointer" />
+                                    <IconDelete className="cursor-pointer" />
                                 </div>
                             </li>
                         )
@@ -119,11 +120,11 @@ export default function PurchaseOrder() {
                 </li>
                 <li className="my-2 flex items-center">
                     <p className="mr-2">Vận chuyển</p>
-                    <MoreIcon className="cursor-pointer" />
+                    <IconMore className="cursor-pointer" />
                 </li>
                 <li className="mb-2 flex items-center">
                     <p className="mr-2">Voucher giảm giá</p>
-                    <EditIcon className="h-[18px] w-[18px] cursor-pointer" />
+                    <IconEdit className=" h-4 w-4 cursor-pointer object-cover" />
                 </li>
             </ul>
             <div className="mt-6 flex justify-between px-4 text-xl font-semibold text-[#02173F]">

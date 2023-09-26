@@ -1,4 +1,4 @@
-import { EditIcon } from './IconOrder'
+import { IconEdit } from '../../../svgs'
 
 export default function UserInfo() {
     return (
@@ -7,7 +7,7 @@ export default function UserInfo() {
                 <header className="text-[20px] font-semibold text-[#485162]">
                     Thông tin khách hàng
                 </header>
-                <EditIcon className="cursor-pointer" />
+                <IconEdit className="cursor-pointer" />
             </div>
             <h2 className="my-2 text-[18px] font-semibold text-[#44AEC3]">
                 Huyền Trang
