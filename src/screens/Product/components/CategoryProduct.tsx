@@ -1,13 +1,17 @@
 import { LinkDerectory } from '../../../components/LinkDerectory'
-import { FilterIcon, SumIcon } from '../../Dashboard/components'
+// import { FilterIcon, SumIcon } from '../../Dashboard/components'
 import { useState } from 'react'
 import AddCategory from './AddCategory'
-import { SearchResult } from './SearchResult'
-import Panigation from '../../../components/Panigation/Panigation'
-import { ProductProps } from '../../../components/Panigation/Panigation'
+import PanigationQ from '../../../components/Panigation/PanigationQ'
 import { listProduct } from '../../../constants'
+import { IconAdd } from '../../../svgs'
+interface ProductProps {
+    title: string
+    price: number
+    image: string
+}
 export function CategoryProduct() {
-    const [addCategory, setAddCategory] = useState(false)
+    const [isAddCategory, setIsAddCategory] = useState(false)
 
     const [listItem, setListItem] = useState<ProductProps[]>([])
     const handleListItemChange = (newList: ProductProps[]) => {
@@ -18,16 +22,16 @@ export function CategoryProduct() {
         <main className="relative rounded-2xl bg-[#f8f9fb] px-6 pb-6 pt-10">
             <LinkDerectory />
             <div className="my-6 mt-10 flex items-center gap-4">
-                <SearchResult />
+                {/* <SearchResult /> */}
                 <div className="flex cursor-pointer rounded-full bg-[#bde0e4] px-4 py-2">
                     <p className="mr-2 text-[#858D92]">Lọc</p>
-                    <FilterIcon />
+                    {/* <FilterIcon /> */}
                 </div>
                 <button
-                    onClick={() => setAddCategory(true)}
+                    onClick={() => setIsAddCategory(true)}
                     className="flex h-10 items-center justify-center rounded-2xl border-none bg-[#44AEC3] px-4 text-white outline-none"
                 >
-                    <SumIcon className="mix-blend-screen" />
+                    <IconAdd />
                     <p className="ml-2">Thêm danh mục</p>
                 </button>
             </div>
@@ -55,12 +59,12 @@ export function CategoryProduct() {
                 ))}
             </ul>
 
-            <Panigation
+            <PanigationQ
                 onListItemChange={handleListItemChange}
                 listItemRender={listProduct}
             />
-            {addCategory ? (
-                <AddCategory onClick={() => setAddCategory(!addCategory)} />
+            {isAddCategory ? (
+                <AddCategory onClick={() => setIsAddCategory(!isAddCategory)} />
             ) : (
                 ''
             )}

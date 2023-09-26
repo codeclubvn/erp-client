@@ -82,6 +82,11 @@ export default {
                     900: '#771D1D',
                 },
             },
+
+            boxShadow: {
+                ['3xl']:
+                    '0 1.8px 2.2px 0 rgba(0,0,0,0.02), 0 8px 10px 0 rgba(0,0,0,0.03)',
+            },
         },
     },
     plugins: [animatePlugin],

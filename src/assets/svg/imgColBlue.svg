@@ -1,0 +1,12 @@
+ <svg
+        width="60"
+        height="45"
+        viewBox="0 0 60 45"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <rect y="22" width="12" height="23" rx="2" fill="#4D81E7" />
+        <rect x="16" width="12" height="45" rx="2" fill="#4D81E7" />
+        <rect x="32" y="22" width="12" height="23" rx="2" fill="#4D81E7" />
+        <rect x="48" width="12" height="45" rx="2" fill="#4D81E7" />
+    </svg>

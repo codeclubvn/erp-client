@@ -1,7 +1,6 @@
 import { HTMLAttributes, ReactNode } from 'react'
-
-import { Card } from '../../../components'
 import { VariantProps, tv } from 'tailwind-variants'
+import { Card } from '../../../components'
 
 export const DashboardCardVariants = tv({
     variants: {

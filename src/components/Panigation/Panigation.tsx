@@ -1,103 +1,116 @@
-import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai'
-import { useEffect, useRef, useState } from 'react'
+import { MenuItem, Select, SelectChangeEvent } from '@mui/material'
+import { GridRowSelectionModel } from '@mui/x-data-grid'
+import { IconArrowDown, IconArrowLeft, IconArrowRight } from '../../svgs'
 
-export interface ProductProps {
-    id: number
-    title: string
-    price: number
-    image: string
-    quantity?: number
+export interface IPanigation {
+    selectionRow?: GridRowSelectionModel
+    rowRange?: {
+        firstRowIndex: number
+        lastRowIndex: number
+    }
+    totalRow: number
+    pageSize: number
+    pageOption: number[]
+    labelPageOption?: string
+    // eslint-disable-next-line no-unused-vars
+    onChangePage: (params: number) => void
+    // eslint-disable-next-line no-unused-vars
+    onChangePageSize: (params: string) => void
 }
-interface PaginationProps {
-    onListItemChange: (_newList: ProductProps[]) => void
-    listItemRender: ProductProps[]
-}
-export default function Panigation(props: PaginationProps) {
-    const { onListItemChange, listItemRender } = props
-    const inputRef = useRef(12)
-    const [pagination, setPagination] = useState(1)
-    const [totalPages, setTotalPages] = useState(
-        Math.ceil(listItemRender.length / 12),
-    )
-    const nextPage = (data: ProductProps[], currentPage: number) => {
-        const totalItem = inputRef.current
 
-        const startIndex = currentPage * totalItem
-        const lastIndex = startIndex + totalItem
-
-        const newData = data.slice(startIndex, lastIndex)
-        return newData
+export const Panigation = ({
+    selectionRow = [],
+    rowRange,
+    totalRow,
+    pageSize,
+    pageOption,
+    labelPageOption = 'hàng',
+    onChangePage,
+    onChangePageSize,
+}: IPanigation) => {
+    const handleChange = (e: SelectChangeEvent) => {
+        onChangePageSize(e.target.value)
     }
-    // set listItem to render when the page changes
-    const [listItem, setListItem] = useState(nextPage(listItemRender, 0))
-    onListItemChange(listItem)
-
-    useEffect(() => {
-        setListItem(nextPage(listItemRender, pagination - 1))
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [pagination])
-
-    // nextPage
-    const nextCount = () => {
-        if (pagination >= totalPages) return
-        else {
-            setPagination((pev) => pev + 1)
-        }
-    }
-    // returnPage
-    const reCount = () => {
-        if (pagination === 1) return
-        else {
-            setPagination((pev) => pev - 1)
-        }
-    }
-    //select page 12 24 36
-    const sellectListItem = (number: number) => {
-        const newList = listItemRender.slice(0, number)
-        return newList
-    }
-    const handleNumberValue = (e) => {
-        const numberPage = parseInt(e.target.value)
-        inputRef.current = numberPage
-        const toltalPageCurrent = Math.ceil(listItemRender.length / numberPage)
-        setTotalPages(toltalPageCurrent)
-        setListItem(sellectListItem(numberPage))
-        setPagination(1)
-    }
-
     return (
-        <div className="mt-6 flex justify-end">
-            <div className="mr-6 flex w-[100px] items-center justify-between  text-[#858D92]">
-                <AiOutlineLeft
-                    onClick={reCount}
-                    className={`${
-                        pagination <= 1
-                            ? 'cursor-not-allowed'
-                            : 'cursor-pointer'
-                    } text-xl`}
-                />
-                <p>{pagination}</p>
-                <p>-</p>
-                <p>{totalPages}</p>
-                <AiOutlineRight
-                    onClick={nextCount}
-                    className={`${
-                        pagination >= totalPages
-                            ? 'cursor-not-allowed'
-                            : 'cursor-pointer'
-                    } text-xl`}
-                />
+        <div className="flex min-h-[32px] items-center justify-between pb-[20px] pe-[65px] ps-[50px] pt-[15px] text-[#858D92]">
+            <div className="px-[10px] text-[#6a6a6a]">
+                {!!selectionRow.length && (
+                    <p>
+                        Có <span>{selectionRow.length}</span> hàng được chọn
+                    </p>
+                )}
             </div>
-            <select
-                onChange={handleNumberValue}
-                name=""
-                id=""
-                className=" z-10 cursor-pointer rounded-full border-[1px] px-2 py-2  text-[#858D92] outline-none "
-            >
-                <option value="12">12 sản phẩm</option>
-                <option value="24">24 sản phẩm</option>
-                <option value="36">36 sản phẩm</option>
-            </select>
+            <div className="flex">
+                <div className="te me-2 flex items-center">
+                    <span
+                        className="inline-block cursor-pointer p-1 hover:text-black"
+                        onClick={() => onChangePage(-1)}
+                    >
+                        <IconArrowLeft />
+                    </span>
+                    {rowRange && (
+                        <div className="flex items-center leading-[24px] text-[#6A6A6A]">
+                            <span className="inline-block min-w-[23px] text-center ">
+                                {rowRange?.firstRowIndex + 1}
+                            </span>
+                            <span className="inline-block">-</span>
+                            <span className="inline-block min-w-[23px] text-center">
+                                {totalRow}
+                            </span>
+                        </div>
+                    )}
+                    <span
+                        className="inline-block cursor-pointer p-1 hover:text-black"
+                        onClick={() => onChangePage(1)}
+                    >
+                        <IconArrowRight />
+                    </span>
+                </div>
+                {!!pageOption.length && (
+                    <Select
+                        value={pageSize ? `${pageSize}` : ''}
+                        onChange={handleChange}
+                        inputProps={{
+                            'aria-label': 'Without label',
+                        }}
+                        sx={{
+                            fontSize: '14px',
+                            textAlign: 'center',
+                            width: 105,
+                            height: 32,
+                            borderRadius: '16px',
+                            borderColor: '#858D92',
+                            color: '#858D92',
+                            ':hover': {
+                                '.MuiOutlinedInput-notchedOutline': {
+                                    borderColor: 'inherit !important',
+                                },
+                            },
+                            '.MuiSelect-icon': {
+                                top: 'unset',
+                                right: '12px',
+                            },
+                            '& > div': {
+                                padding: '16.5px 18px',
+                            },
+
+                            '.MuiOutlinedInput-notchedOutline': {
+                                borderColor: 'inherit !important',
+                                borderWidth: '0.5px !important',
+                            },
+                        }}
+                        IconComponent={IconArrowDown}
+                    >
+                        {pageOption.map((item: number, index: number) => {
+                            return (
+                                <MenuItem value={item} key={index}>
+                                    {item + ' ' + labelPageOption}
+                                </MenuItem>
+                            )
+                        })}
+                    </Select>
+                )}
+            </div>
         </div>
     )
 }

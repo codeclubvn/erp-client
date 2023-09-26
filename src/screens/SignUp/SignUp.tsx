@@ -2,10 +2,8 @@ import { useForm } from 'react-hook-form'
 import { Button, FormControl, FormHelperText, Input } from '../../components'
 import { PasswordInput } from '../../components/Button/PasswordButton'
 import { Link } from 'react-router-dom'
-import layOutSigUp from '../../../public/Vector 1.png'
-import logoZalo from '../../../public/logoZalo.png'
-import logoFace from '../../../public/logoFace.svg'
-import logoGmail from '../../../public/logoGmail.svg'
+import { IconFace, IconGmail, IconZalo } from '../../svgs'
+import Background from '../../assets/images/imgSignupBG.png'
 
 export const SignUp = () => {
     const {
@@ -106,18 +104,18 @@ export const SignUp = () => {
                 <div className="mx-auto mb-[8px] mt-1 w-[300px] border"></div>
                 <div className="flex items-center justify-center">
                     <div className="">
-                        <img src={logoGmail} alt="" />
+                        <IconGmail />
                     </div>
                     <div className="mx-5">
-                        <img src={logoFace} alt="" />
+                        <IconFace />
                     </div>
                     <div>
-                        <img src={logoZalo} alt="" />
+                        <IconZalo />
                     </div>
                 </div>
             </div>
             <div>
-                <img src={layOutSigUp} alt="layOutSigUp" />
+                <img src={Background} alt="layOutSigUp" />
             </div>
         </div>
     )

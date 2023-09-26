@@ -1,12 +1,12 @@
 import { Dashboard, Manage, Money, Order, Product, User } from '../screens'
 import {
-    DashboardIcon,
-    MangageIcon,
-    MoneyIcon,
-    OrderIcon,
-    UserIcon,
-    ProductIcon,
-} from '../icons/iconSiderbar'
+    IconUser,
+    IconManage,
+    IconProduct,
+    IconDashboard,
+    IconOrder,
+    IconWallet,
+} from '../svgs'
 import { CategoryProduct } from '../screens/Product/components/CategoryProduct'
 import { CreateProduct } from '../screens/Product/components/CreateProduct'
 import { CreatOrderContextProvider } from '../screens/Order/context/CreatOrderContext'
@@ -25,13 +25,13 @@ export const ROUTES = {
 const routerList = [
     {
         title: 'Dashboard',
-        icon: DashboardIcon,
+        icon: IconDashboard,
         href: ROUTES.HomePage,
         component: Dashboard,
     },
     {
         title: 'Đơn hàng',
-        icon: OrderIcon,
+        icon: IconOrder,
         href: ROUTES.Order,
         component: Order,
         children: [
@@ -43,7 +43,8 @@ const routerList = [
     },
     {
         title: 'Sản phẩm',
-        icon: ProductIcon,
+
+        icon: IconProduct,
         href: ROUTES.Product,
         component: Product,
         children: [
@@ -59,19 +60,19 @@ const routerList = [
     },
     {
         title: 'Khách hàng',
-        icon: UserIcon,
+        icon: IconUser,
         href: ROUTES.User,
         component: User,
     },
     {
         title: 'Thu chi',
-        icon: MoneyIcon,
+        icon: IconWallet,
         href: ROUTES.Money,
         component: Money,
     },
     {
         title: 'Quản lý kho',
-        icon: MangageIcon,
+        icon: IconManage,
         href: ROUTES.Manage,
         component: Manage,
     },

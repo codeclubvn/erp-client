@@ -1,4 +1,6 @@
-import { BoxIcon, FlowIcon, ChartPie } from './components/index'
+import { ImgCalendar, ImgTraffic, ImgTrafficPercent } from '../../svgs'
+import { ChartPie } from './components/index'
+
 function Data() {
     return (
         <div className="mt-10 overflow-hidden rounded-xl ">
@@ -8,7 +10,7 @@ function Data() {
                     <div className="rounded-xl bg-white  px-6 py-4 shadow-xl">
                         <div className="grid grid-cols-3 gap-3">
                             <div className="col-span-1">
-                                <BoxIcon />
+                                <ImgTraffic />
                             </div>
 
                             <div className="col-span-2 text-center ">
@@ -24,9 +26,8 @@ function Data() {
                             <p className="mr-2 text-sm ">Lưu lượng truy cập</p>
                             <div className="flex  rounded-[6px] bg-[#44AEC3] bg-opacity-30 px-2 py-1 text-[#44AEC3]">
                                 <div className="mr-2 flex items-center">
-                                    <FlowIcon />
+                                    <ImgTrafficPercent />
                                 </div>
-
                                 <span className=" block text-sm">2.1% </span>
                             </div>
                         </div>
@@ -59,11 +60,9 @@ function Data() {
                 <div className="col-span-3 flex flex-col items-center rounded-xl bg-white px-4 py-5 shadow-xl ">
                     <h2 className="text-xl font-semibold">Sản phẩm bán chạy</h2>
                     <p>Các sản phẩm bán chạy trong 7 ngày gần nhất</p>
-                    <img
-                        src="./public/image/noItem.svg"
-                        className="mt-8"
-                        alt=""
-                    />
+                    <div>
+                        <ImgCalendar />
+                    </div>
                     <p className="mt-10 text-lg">Chưa có sản phẩm nào </p>
                 </div>
             </div>

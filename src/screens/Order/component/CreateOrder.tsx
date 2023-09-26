@@ -1,14 +1,17 @@
 import { LinkDerectory } from '../../../components/LinkDerectory'
-import { CiSearch } from 'react-icons/ci'
 import { FilterIcon } from '../../Dashboard/components'
-import { listProduct } from '../../../constants'
 import { useState } from 'react'
-import Panigation from '../../../components/Panigation/Panigation'
-import { ProductProps } from '../../../components/Panigation/Panigation'
 import UserInfo from './UserInfo'
 import PurchaseOrder from './PurchaseOrder'
 import { useCreatOrderContext } from '../context/CreatOrderContext'
 import { SearchResult } from '../../Product/components/SearchResult'
+import PanigationQ from '../../../components/Panigation/PanigationQ'
+import { listProduct } from '../../../constants'
+interface ProductProps {
+    title: string
+    price: number
+    image: string
+}
 export const CreateOrder = () => {
     const [listItem, setListItem] = useState<ProductProps[]>([])
     const { handleAddProductToCart } = useCreatOrderContext()
@@ -57,7 +60,7 @@ export const CreateOrder = () => {
                             </li>
                         ))}
                     </ul>
-                    <Panigation
+                    <PanigationQ
                         onListItemChange={handleSetListItem}
                         listItemRender={listProduct}
                     />

@@ -11,7 +11,7 @@ export const MainLayout = () => {
                 <div className="relative flex w-full">
                     <Siderbar />
 
-                    <div className="flex-auto">
+                    <div className="w-[calc(100%-304px)] flex-auto ">
                         <Outlet />
                     </div>
                 </div>

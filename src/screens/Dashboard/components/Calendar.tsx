@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import { DropIcon } from '../../../icons/AccountIcon'
-import { DayPicker } from './DayPicker'
+
 import { Link } from 'react-router-dom'
+import { IconDrop } from '../../../svgs'
+
 const time = [
     {
         hour: '2:00 pm',
@@ -21,6 +22,7 @@ const time = [
     },
 ]
 const COLORS = ['#44AEC3', '#629AEE', '#FFC13A']
+
 export const Calendar = () => {
     const [openDate, setOpenDate] = useState(false)
     const handleOpenDate = () => {
@@ -36,8 +38,9 @@ export const Calendar = () => {
                         className="relative flex cursor-pointer items-center gap-2"
                     >
                         <button>Tháng 6</button>
-                        <DropIcon />
-                        {openDate ? <DayPicker /> : ''}
+
+                        <IconDrop />
+                        {openDate ? <Date /> : ''}
                     </div>
                 </div>
                 <div className="mt-4 flex justify-between rounded-xl px-4 pb-2">
