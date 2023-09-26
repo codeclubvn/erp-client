@@ -1,9 +1,8 @@
-import { ImageIcon } from '../../Dashboard/components/Icon'
 import { LinkDerectory } from '../../../components/LinkDerectory'
-import { StarIcon, SumIcon } from '../../Dashboard/components'
 import { useForm } from 'react-hook-form'
 import { useState } from 'react'
 import { handleKeyPress } from '../../../constants/handleKeyPressNumber'
+import { IconImage, IconStar, IconSum } from '../../../svgs'
 interface CreateProductProps {
     nameProduct: string
     unit: string
@@ -54,7 +53,7 @@ export const CreateProduct = () => {
                     <div className="col-span-2 w-[80%]">
                         <div>
                             <label htmlFor="" className="flex items-center">
-                                Tên sản phẩm <StarIcon className="ml-2" />
+                                Tên sản phẩm <IconStar className="ml-2" />
                             </label>
                             <input
                                 {...register('nameProduct', {
@@ -72,7 +71,7 @@ export const CreateProduct = () => {
                         <div className="flex w-full justify-between gap-4">
                             <div className="flex-1">
                                 <label htmlFor="" className="flex items-center">
-                                    Đơn vị tính <StarIcon className="ml-2" />
+                                    Đơn vị tính <IconStar className="ml-2" />
                                 </label>
                                 <input
                                     {...register('unit', {
@@ -89,7 +88,7 @@ export const CreateProduct = () => {
                             </div>
                             <div className="flex-1">
                                 <label htmlFor="" className="flex items-center">
-                                    Số lượng <StarIcon className="ml-2" />
+                                    Số lượng <IconStar className="ml-2" />
                                 </label>
                                 <input
                                     {...register('quatity', {
@@ -130,7 +129,7 @@ export const CreateProduct = () => {
                                     htmlFor=""
                                     className="mb-2 flex items-center"
                                 >
-                                    Giá bán <StarIcon className="ml-2" />
+                                    Giá bán <IconStar className="ml-2" />
                                 </label>
                                 <input
                                     {...register('sellPrice', {
@@ -176,8 +175,8 @@ export const CreateProduct = () => {
                             </div>
                         </div>
                         <div className="mb-6 mt-2 flex cursor-pointer items-center">
-                            <div className="h-6 w-6 rounded-full bg-[#44AEC3]">
-                                <SumIcon />
+                            <div className="h-5 w-5 rounded-full bg-[#44AEC3]">
+                                <IconSum />
                             </div>
                             <p className="ml-2 text-[#44AEC3]">Thêm giá sỉ</p>
                         </div>
@@ -197,7 +196,7 @@ export const CreateProduct = () => {
                                         htmlFor="image"
                                         className="h-6 w-6 cursor-pointer"
                                     >
-                                        <ImageIcon className="cursor-pointer" />
+                                        <IconImage className="cursor-pointer" />
                                     </label>
                                     <input
                                         {...register('image')}
@@ -212,8 +211,8 @@ export const CreateProduct = () => {
                         <div className="flex items-center">
                             <p>Phân loại</p>
                             <div className="my-2 flex cursor-pointer">
-                                <div className=" mx-2 h-6 w-6 rounded-full bg-[#44AEC3]">
-                                    <SumIcon />
+                                <div className=" mx-2 h-5 w-5 rounded-full bg-[#44AEC3]">
+                                    <IconSum />
                                 </div>
                                 <p className="text-[#44AEC3]">Thêm phân loại</p>
                             </div>

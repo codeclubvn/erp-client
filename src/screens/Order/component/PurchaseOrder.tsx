@@ -1,7 +1,6 @@
 import { useCreatOrderContext } from '../context/CreatOrderContext'
 import { useState } from 'react'
-import IconEdit from '../../../svgs/IconEdit'
-import { IconDelete, IconMore } from '../../../svgs'
+import { IconDelete, IconMore, IconNotes } from '../../../svgs'
 
 export default function PurchaseOrder() {
     const [voucherValue, setVoucherValue] = useState(0)
@@ -124,7 +123,7 @@ export default function PurchaseOrder() {
                 </li>
                 <li className="mb-2 flex items-center">
                     <p className="mr-2">Voucher giảm giá</p>
-                    <IconEdit className=" h-4 w-4 cursor-pointer object-cover" />
+                    <IconNotes className=" cursor-pointer object-cover" />
                 </li>
             </ul>
             <div className="mt-6 flex justify-between px-4 text-xl font-semibold text-[#02173F]">

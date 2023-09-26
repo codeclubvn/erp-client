@@ -2,7 +2,7 @@ import { LinkDerectory } from '../../components/LinkDerectory'
 import { DataGrid } from '@mui/x-data-grid'
 import { rows, columns } from '../../constants/dataProduct'
 import { Link } from 'react-router-dom'
-import { SumIcon } from '../../screens/Dashboard/components'
+import { IconSum } from '../../svgs'
 export const Product = () => {
     return (
         <div className="rounded-xl bg-[#f8f9fb] px-6 py-4 shadow-xl">
@@ -18,7 +18,7 @@ export const Product = () => {
                             state={'Danh mục sản phẩm'}
                             className="flex h-10 items-center  justify-center rounded-2xl border-none bg-[#44AEC3] px-4 text-white outline-none"
                         >
-                            <SumIcon />
+                            <IconSum />
                             <p className="ml-2">Danh mục sản phẩm</p>
                         </Link>
                         <Link
@@ -26,7 +26,7 @@ export const Product = () => {
                             state={'Tạo sản phẩm'}
                             className=" flex h-10 w-[160px] items-center justify-center rounded-2xl border-none bg-[#44AEC3] text-white outline-none"
                         >
-                            <SumIcon />
+                            <IconSum />
                             <p className="ml-2">Tạo sản phẩm</p>
                         </Link>
                     </div>

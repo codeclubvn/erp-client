@@ -1,5 +1,4 @@
 import { LinkDerectory } from '../../../components/LinkDerectory'
-import { FilterIcon } from '../../Dashboard/components'
 import { useState } from 'react'
 import UserInfo from './UserInfo'
 import PurchaseOrder from './PurchaseOrder'
@@ -7,6 +6,7 @@ import { useCreatOrderContext } from '../context/CreatOrderContext'
 import { SearchResult } from '../../Product/components/SearchResult'
 import PanigationQ from '../../../components/Panigation/PanigationQ'
 import { listProduct } from '../../../constants'
+import { IconSort } from '../../../svgs'
 interface ProductProps {
     title: string
     price: number
@@ -29,9 +29,9 @@ export const CreateOrder = () => {
                     </h2>
                     <div className="my-6 flex items-center">
                         <SearchResult />
-                        <div className="ml-4 flex rounded-full bg-[#bde0e4] px-4 py-2">
-                            <p className="mr-2 text-[#858D92]">Bộ lọc</p>
-                            <FilterIcon />
+                        <div className="ml-4 flex cursor-pointer items-center rounded-full bg-[#bde0e4] px-4 py-2">
+                            <IconSort />
+                            <p className="ml-2 text-[#858D92]">Bộ lọc</p>
                         </div>
                     </div>
                 </div>

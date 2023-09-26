@@ -1,8 +1,8 @@
 import { useForm } from 'react-hook-form'
 import { LinkDerectory } from '../../components/LinkDerectory'
-import { ImageIcon, StarIcon } from '../Dashboard/components/Icon'
 import { useState } from 'react'
 import { handleKeyPress } from '../../constants/handleKeyPressNumber'
+import { IconImage, IconStar } from '../../svgs'
 interface UserProps {
     nameUser: string
     numberPhone: number
@@ -52,7 +52,7 @@ export const User = () => {
                     <div className="col-span-2 w-[80%]">
                         <div>
                             <label htmlFor="" className="flex items-center">
-                                Tên khách hàng <StarIcon className="ml-2" />
+                                Tên khách hàng <IconStar className="ml-2" />
                             </label>
                             <input
                                 {...register('nameUser', {
@@ -73,7 +73,7 @@ export const User = () => {
                         <div className="flex w-full justify-between gap-4">
                             <div className="flex-1">
                                 <label htmlFor="" className="flex items-center">
-                                    Số điện thoại <StarIcon className="ml-2" />
+                                    Số điện thoại <IconStar className="ml-2" />
                                 </label>
                                 <input
                                     {...register('numberPhone', {
@@ -117,7 +117,7 @@ export const User = () => {
 
                         <div className="mb-6">
                             <label htmlFor="" className="flex items-center">
-                                Địa chỉ <StarIcon className="ml-2" />
+                                Địa chỉ <IconStar className="ml-2" />
                             </label>
                             <input
                                 {...register('location', {
@@ -154,7 +154,7 @@ export const User = () => {
                                         htmlFor="image"
                                         className="h-6 w-6 cursor-pointer"
                                     >
-                                        <ImageIcon className="cursor-pointer" />
+                                        <IconImage className="cursor-pointer" />
                                     </label>
                                     <input
                                         {...register('image')}

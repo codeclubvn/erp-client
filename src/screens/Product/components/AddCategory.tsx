@@ -1,8 +1,8 @@
 import { useForm } from 'react-hook-form'
-import { StarIcon } from '../../Dashboard/components'
 import { AiOutlineClose } from 'react-icons/ai'
 import { useState } from 'react'
 import { handleKeyPress } from '../../../constants/handleKeyPressNumber'
+import { IconStar } from '../../../svgs'
 interface AddCategoryProps {
     title: string
     quatity: number
@@ -68,7 +68,7 @@ export default function AddCategory({ onClick }) {
                                     <label htmlFor="title" className="mr-2">
                                         Tên danh mục
                                     </label>
-                                    <StarIcon />
+                                    <IconStar />
                                 </div>
                                 <input
                                     {...register('title', {
@@ -90,7 +90,7 @@ export default function AddCategory({ onClick }) {
                                     <label htmlFor="quatity" className="mr-2">
                                         Số lượng
                                     </label>
-                                    <StarIcon />
+                                    <IconStar />
                                 </div>
                                 <input
                                     {...register('quatity', {
@@ -114,7 +114,7 @@ export default function AddCategory({ onClick }) {
                                 <label htmlFor="image" className="mr-2">
                                     Chọn ảnh
                                 </label>
-                                <StarIcon />
+                                <IconStar />
                             </div>
 
                             <div className="mt-2">

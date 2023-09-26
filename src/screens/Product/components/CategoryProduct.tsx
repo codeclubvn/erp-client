@@ -4,7 +4,7 @@ import { useState } from 'react'
 import AddCategory from './AddCategory'
 import PanigationQ from '../../../components/Panigation/PanigationQ'
 import { listProduct } from '../../../constants'
-import { IconAdd } from '../../../svgs'
+import { IconAdd, IconSort } from '../../../svgs'
 interface ProductProps {
     title: string
     price: number
@@ -23,9 +23,9 @@ export function CategoryProduct() {
             <LinkDerectory />
             <div className="my-6 mt-10 flex items-center gap-4">
                 {/* <SearchResult /> */}
-                <div className="flex cursor-pointer rounded-full bg-[#bde0e4] px-4 py-2">
-                    <p className="mr-2 text-[#858D92]">Lọc</p>
-                    {/* <FilterIcon /> */}
+                <div className="flex cursor-pointer items-center rounded-full bg-[#bde0e4] px-4 py-2">
+                    <IconSort />
+                    <p className="ml-2 text-[#858D92]">Lọc</p>
                 </div>
                 <button
                     onClick={() => setIsAddCategory(true)}
