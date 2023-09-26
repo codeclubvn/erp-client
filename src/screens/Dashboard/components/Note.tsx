@@ -29,10 +29,11 @@ export const Note = () => (
                 <p className="text-2xl font-semibold">1000</p>
             </div>
         </div>
-        <div className=" mt-6 rounded-2xl bg-[#F8F9FB] px-4 pt-2 shadow-xl">
-            <div className="flex items-center justify-between rounded-xl py-2 shadow-2xl">
-                <h2 className="ml-2 font-semibold">ĐÃ GHIM</h2>
-                <IconPinned className="mr-2" />
+
+        <div className=" mt-6 rounded-2xl px-4 pt-2 shadow-xl">
+            <div className="flex items-center  justify-between rounded-xl px-2 py-2 shadow-2xl">
+                <h2 className="font-semibold">ĐÃ GHIM</h2>
+                <IconPinned />
             </div>
             <div className="mt-4 max-h-[300px] overflow-auto pl-3 pr-2">
                 <Client
