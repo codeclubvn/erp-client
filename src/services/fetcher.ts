@@ -5,3 +5,6 @@ const fecther = axios.create({
 })
 
 export default fecther
+export const url = axios.create({
+    baseURL: 'https://6512e551b8c6ce52b3967188.mockapi.io',
+})

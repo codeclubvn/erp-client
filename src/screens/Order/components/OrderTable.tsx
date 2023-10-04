@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
-import { GridRowId } from '@mui/x-data-grid'
+import { GridRowId, GridRowModel } from '@mui/x-data-grid'
 import { TableData, Status } from '../../../components'
 import { IconAction, IconSetting } from '../../../svgs'
 import {
@@ -103,7 +103,6 @@ export function OrderTable() {
     const handleSelectAction = (action: string, id: GridRowId) => {
         console.log(action, id)
     }
-
     const { data = [], isLoading } = useQuery({
         queryKey: ['orders'],
         queryFn: getOrders,
@@ -119,7 +118,8 @@ export function OrderTable() {
                     pageSizeOptions={[5, 10, 20]}
                     checkBox={true}
                     loading={isLoading}
-                    onHandleSearch={() => getOrders()}
+                    onHandleSearch={getOrders}
+                    onGetRowId={(row: GridRowModel) => row.orderId}
                 />
             </div>
         </div>

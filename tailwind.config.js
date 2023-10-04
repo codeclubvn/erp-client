@@ -9,6 +9,18 @@ export default {
             fontFamily: {
                 font: ['Raleway', 'sans'],
             },
+            boxShadow: {
+                base: '0 2px 2px 2px rgba(0, 0, 0, 0.3)',
+            },
+            keyframes: {
+                scale: {
+                    '0%': { opacity: 0 },
+                    '100%': { opacity: 1 },
+                },
+            },
+            animation: {
+                scale: 'scale 0.3s ease-in',
+            },
             spacing: {
                 [6.5]: '1.625rem',
             },

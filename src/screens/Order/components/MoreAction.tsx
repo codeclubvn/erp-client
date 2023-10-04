@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 
 export interface IPopupActions {
     items: IAction[]
+    // eslint-disable-next-line no-unused-vars
     onChange: (params: IAction) => void
     children: JSX.Element
     id: GridRowId

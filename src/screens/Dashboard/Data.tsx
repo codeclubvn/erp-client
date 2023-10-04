@@ -3,11 +3,11 @@ import { ChartPie } from './components/index'
 
 function Data() {
     return (
-        <div className="mt-6 shadow-xl">
+        <div className="mt-10 overflow-hidden rounded-xl ">
             <h2 className="mb-6 text-2xl ">Tổng hợp số liệu</h2>
             <div className="grid grid-cols-5 gap-4 ">
                 <div className="col-span-2">
-                    <div className="rounded-xl px-6 py-4 shadow-xl">
+                    <div className="rounded-xl bg-white  px-6 py-4 shadow-xl">
                         <div className="grid grid-cols-3 gap-3">
                             <div className="col-span-1">
                                 <ImgTraffic />
@@ -32,23 +32,23 @@ function Data() {
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-col  items-center rounded-xl px-4 py-5 shadow-xl">
+                    <div className="mt-4 flex flex-col items-center rounded-xl bg-white px-4 py-5 shadow-xl">
                         <h2 className="text-xl font-semibold">Tổng kho</h2>
                         <p>Số lượng hàng trong kho</p>
 
                         <ChartPie />
-                        <div className='flex flex-col items-start'>
-                            <div className="flex space-x-2 items-center">
+                        <div className="flex flex-col items-start">
+                            <div className="flex items-center space-x-2">
                                 <div className="block h-2 w-2 rounded-full bg-[#44AEC3]" />
                                 <div>Tổng kho </div>
                                 <div className="">24.3%</div>
                             </div>
-                            <div className="flex space-x-2 items-center">
+                            <div className="flex items-center space-x-2">
                                 <div className="block h-2 w-2 rounded-full bg-[#629AEE]" />
                                 <div>Còn hàng</div>
                                 <div className="">41.8%</div>
                             </div>
-                            <div className="flex space-x-2 items-center">
+                            <div className="flex items-center space-x-2">
                                 <div className="block h-2 w-2 rounded-full bg-[#FFC13A]" />
                                 <div>Hêt hàng</div>
                                 <div className="">10.8%</div>
@@ -56,7 +56,8 @@ function Data() {
                         </div>
                     </div>
                 </div>
-                <div className="col-span-3 flex flex-col items-center px-4 py-5 shadow-xl">
+
+                <div className="col-span-3 flex flex-col items-center rounded-xl bg-white px-4 py-5 shadow-xl ">
                     <h2 className="text-xl font-semibold">Sản phẩm bán chạy</h2>
                     <p>Các sản phẩm bán chạy trong 7 ngày gần nhất</p>
                     <div>

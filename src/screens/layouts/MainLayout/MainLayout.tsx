@@ -6,10 +6,12 @@ export const MainLayout = () => {
     return (
         <div className="flex min-h-screen max-w-[100vw] flex-col font-font">
             <Header />
-            <div className="page-content">
+
+            <div className="page-content mt-1">
                 <div className="relative flex w-full">
                     <Siderbar />
-                    <div className="w-[calc(100%-304px)] flex-auto bg-green-50">
+
+                    <div className="w-[calc(100%-304px)] flex-auto ">
                         <Outlet />
                     </div>
                 </div>

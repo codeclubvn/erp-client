@@ -7,11 +7,14 @@ import {
     IconOrder,
     IconWallet,
 } from '../svgs'
+import { CategoryProduct } from '../screens/Product/components/CategoryProduct'
+import { CreateProduct } from '../screens/Product/components/CreateProduct'
+import { CreatOrderContextProvider } from '../screens/Order/context/CreatOrderContext'
 
 export const ROUTES = {
     HomePage: '/',
     Order: '/order',
-    POS: '/pos',
+    Product: '/product',
     Manage: '/manage',
     Money: '/money',
     User: '/user',
@@ -31,12 +34,29 @@ const routerList = [
         icon: IconOrder,
         href: ROUTES.Order,
         component: Order,
+        children: [
+            {
+                url: 'order/tao-don-hang',
+                childComponent: CreatOrderContextProvider,
+            },
+        ],
     },
     {
         title: 'Sản phẩm',
+
         icon: IconProduct,
-        href: ROUTES.POS,
+        href: ROUTES.Product,
         component: Product,
+        children: [
+            {
+                url: 'product/danh-muc-san-pham',
+                childComponent: CategoryProduct,
+            },
+            {
+                url: 'product/tao-san-pham',
+                childComponent: CreateProduct,
+            },
+        ],
     },
     {
         title: 'Khách hàng',
@@ -62,7 +82,7 @@ export const defaultTitle = 'Default'
 
 export const routeTitleMapper = {
     [ROUTES.HomePage]: 'HomePage',
-    [ROUTES.POS]: 'POS',
+    [ROUTES.Product]: 'POS',
     [ROUTES.SignUp]: 'SignUp',
     [ROUTES.Login]: 'Login',
 }

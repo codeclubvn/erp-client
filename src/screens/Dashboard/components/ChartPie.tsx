@@ -11,11 +11,11 @@ export const ChartPie = () => {
     return (
         <div className="relative flex items-center justify-center">
             <span className="absolute text-3xl font-semibold">76%</span>
-            <PieChart width={200} height={200}>
+            <PieChart width={120} height={120}>
                 <Pie
                     data={data}
-                    innerRadius={60}
-                    outerRadius={80}
+                    innerRadius={42}
+                    outerRadius={50}
                     fill="#8884d8"
                     paddingAngle={5}
                     dataKey="value"

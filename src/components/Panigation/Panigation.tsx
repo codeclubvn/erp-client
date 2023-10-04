@@ -12,7 +12,9 @@ export interface IPanigation {
     pageSize: number
     pageOption: number[]
     labelPageOption?: string
+    // eslint-disable-next-line no-unused-vars
     onChangePage: (params: number) => void
+    // eslint-disable-next-line no-unused-vars
     onChangePageSize: (params: string) => void
 }
 

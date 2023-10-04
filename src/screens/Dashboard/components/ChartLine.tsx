@@ -1,12 +1,4 @@
-import {
-    LineChart,
-    Line,
-    XAxis,
-    YAxis,
-    CartesianGrid,
-    Tooltip,
-    Legend,
-} from 'recharts'
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts'
 const data = [
     {
         date: '11/08',
@@ -54,9 +46,9 @@ const data = [
 export const ChartLine = () => {
     const customYAxisTicks = [2000, 4000, 6000, 8000]
     return (
-        <div className="relative flex h-full w-full flex-col items-center">
-            <div className="flex w-[80%] justify-between">
-                <div className="ml-4 font-semibold text-[#858D92]">
+        <div className="relative flex w-full flex-col items-center rounded-xl bg-white">
+            <div className="flex w-[80%] justify-between ">
+                <div className="ml-4 mt-4 font-semibold text-[#858D92]">
                     Tổng thu chi tháng này
                     <p className="font-normal text-[#44AEC3]">
                         (+21%) so với tháng trước
@@ -74,8 +66,9 @@ export const ChartLine = () => {
                 </div>
             </div>
             <LineChart
+                className="h-full"
                 width={650}
-                height={400}
+                height={353}
                 data={data}
                 margin={{
                     top: 5,
@@ -88,7 +81,6 @@ export const ChartLine = () => {
                 <XAxis dataKey="date" />
                 <YAxis ticks={customYAxisTicks} />
                 <Tooltip />
-                <Legend />
                 <Line
                     type="monotone"
                     dataKey="pv"
