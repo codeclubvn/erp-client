@@ -6,9 +6,8 @@ import {
     GridColWithDefaultOptional,
     defaultGridColValues,
 } from '../../../components/TableData/table.interface'
-import { getOrders } from '../../../services/orderAPI'
-import { MoreAction } from './MoreAction'
-
+import { getProducts } from '../../../services/orderAPI'
+import { MoreAction } from '../../Order/components/MoreAction'
 const actions = [
     {
         title: 'Detail',
@@ -27,55 +26,49 @@ const actions = [
     },
 ]
 
-export function OrderTable() {
+export function ProductTable() {
     const columns: GridColWithDefaultOptional[] = [
         {
             ...defaultGridColValues,
-            field: 'date',
-            headerName: 'Ngày tạo đơn',
-            description: 'Ngày tạo đơn',
+            field: 'name',
+            headerName: 'Tên sản phẩm',
+            description: 'Tên sản phẩm',
             align: 'left',
             headerAlign: 'left',
             minWidth: 135,
         },
         {
             ...defaultGridColValues,
-            field: 'orderId',
-            headerName: 'Mã đơn',
-            description: 'Mã đơn',
+            field: 'category',
+            headerName: 'Danh mục',
+            description: 'Danh mục',
             minWidth: 130,
         },
         {
             ...defaultGridColValues,
-            field: 'customerName',
-            headerName: 'Tên khách hàng',
-            description: 'Tên khách hàng',
+            field: 'unit',
+            headerName: 'Đơn vị tính',
+            description: 'Đơn vị tính',
             minWidth: 200,
         },
         {
             ...defaultGridColValues,
-            field: 'shippingDate',
-            headerName: 'Ngày giao hàng',
-            description: 'Ngày giao hàng',
+            field: 'price',
+            headerName: 'Giá bán',
+            description: 'Giá bán',
             minWidth: 150,
         },
         {
             ...defaultGridColValues,
             field: 'status',
-            headerName: 'Trạng thái',
-            description: 'Trạng thái',
+            headerName: 'Hàng sẵn có',
+            description: 'Hàng sẵn có',
             minWidth: 160,
             renderCell: (params) => {
                 return <Status status={params.value} />
             },
         },
-        {
-            ...defaultGridColValues,
-            field: 'totalAmount',
-            headerName: 'Tổng tiền',
-            description: 'Tổng tiền',
-            minWidth: 120,
-        },
+
         {
             ...defaultGridColValues,
             field: 'action',
@@ -103,9 +96,10 @@ export function OrderTable() {
     const handleSelectAction = (action: string, id: GridRowId) => {
         console.log(action, id)
     }
+
     const { data = [], isLoading } = useQuery({
-        queryKey: ['orders'],
-        queryFn: getOrders,
+        queryKey: ['products'],
+        queryFn: getProducts,
     })
 
     return (
@@ -114,12 +108,12 @@ export function OrderTable() {
                 <TableData
                     columns={columns}
                     rows={data}
-                    someContentOptionRowPerPage={'trang'}
+                    someContentOptionRowPerPage={'sp'}
                     pageSizeOptions={[5, 10, 20]}
                     checkBox={true}
                     loading={isLoading}
-                    onHandleSearch={getOrders}
-                    onGetRowId={(row: GridRowModel) => row.orderId}
+                    onHandleSearch={getProducts}
+                    onGetRowId={(row: GridRowModel) => row.name}
                 />
             </div>
         </div>

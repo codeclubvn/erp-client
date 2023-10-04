@@ -5,6 +5,7 @@ import { SignUp } from './screens'
 import routerList from './constants/routes'
 import { PageNotFound } from './screens/PageNotFound'
 import { Fragment } from 'react'
+
 function Router() {
     return (
         <BrowserRouter>

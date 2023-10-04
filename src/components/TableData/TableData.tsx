@@ -22,6 +22,7 @@ export function TableData(props: IDataGridProps) {
         checkBox = true,
         loading,
         onHandleSearch,
+        onGetRowId,
     } = props
 
     const [filteredRows, setFilteredRows] = useState<IOrder[]>()
@@ -52,7 +53,7 @@ export function TableData(props: IDataGridProps) {
             autoHeight={true}
             pageSizeOptions={pageSizeOptions}
             columnBuffer={0}
-            getRowId={(row: GridRowModel) => row.orderId}
+            getRowId={onGetRowId}
             checkboxSelection={checkBox}
             disableRowSelectionOnClick={!checkBox}
             rowHeight={60}

@@ -1,4 +1,10 @@
-import { DataGridProps, GridColDef, GridActionsColDef } from '@mui/x-data-grid'
+import {
+    DataGridProps,
+    GridColDef,
+    GridActionsColDef,
+    GridRowModel,
+    GridValidRowModel,
+} from '@mui/x-data-grid'
 
 export interface IDataGridProps extends DataGridProps {
     pageSize?: number
@@ -7,6 +13,8 @@ export interface IDataGridProps extends DataGridProps {
     loading?: boolean
     onHandleSearch: () => void
     pageSizeOptions: number[]
+    // eslint-disable-next-line no-unused-vars
+    onGetRowId: (params: GridRowModel) => GridValidRowModel[string | symbol]
 }
 
 export interface IHandleNameChange {

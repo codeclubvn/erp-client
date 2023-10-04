@@ -4,7 +4,7 @@ import { IDataGridProps } from './table.interface'
 
 const StyledDataGrid = styled(DataGrid, {
     shouldForwardProp: (prop) => prop !== 'checkBox',
-})<Omit<IDataGridProps, 'onHandleSearch'>>(({ checkBox }) => ({
+})<Omit<IDataGridProps, 'onHandleSearch' | 'onGetRowId'>>(({ checkBox }) => ({
     border: 0,
     fontFamily: ['Nunito', 'sans-serif'].join(','),
     WebkitFontSmoothing: 'auto',

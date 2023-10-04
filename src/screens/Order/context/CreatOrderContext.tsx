@@ -1,11 +1,22 @@
 import { createContext, useContext } from 'react'
-import { ProductProps } from '../../../components/Panigation'
+
 import { CreateOrder } from '../component/CreateOrder'
 import { useLocalStorage } from '../../../hooks/useLocalStorage'
+interface ProductProps {
+    id: number
+    title: string
+    quantity?: number
+    price: number
+    image: string
+}
 type CreatOrderContext = {
+    // eslint-disable-next-line no-unused-vars
     increaseProductQuantity: (id: number) => void
+    // eslint-disable-next-line no-unused-vars
     decreaseProductQuantity: (id: number) => void
+    // eslint-disable-next-line no-unused-vars
     removeFromCart: (id: number) => void
+    // eslint-disable-next-line no-unused-vars
     handleAddProductToCart: (item: ProductProps) => void
     totalMoney: number
     listOrder: ProductProps[]
