@@ -1,4 +1,12 @@
-import { Dashboard, Manage, Money, Order, Product, User } from '../screens'
+import {
+    Dashboard,
+    Manage,
+    Transaction,
+    Cashbook,
+    Order,
+    Product,
+    User,
+} from '../screens'
 import {
     IconUser,
     IconManage,
@@ -13,10 +21,11 @@ export const ROUTES = {
     Order: '/order',
     POS: '/pos',
     Manage: '/manage',
-    Money: '/money',
+    Transaction: '/transaction',
     User: '/user',
     SignUp: '/signup',
     Login: '/login',
+    Cashbook: '/cashbook',
 }
 
 const routerList = [
@@ -45,10 +54,16 @@ const routerList = [
         component: User,
     },
     {
+        title: 'Giao dịch',
+        icon: IconWallet,
+        href: ROUTES.Transaction,
+        component: Transaction,
+    },
+    {
         title: 'Thu chi',
         icon: IconWallet,
-        href: ROUTES.Money,
-        component: Money,
+        href: ROUTES.Cashbook,
+        component: Cashbook,
     },
     {
         title: 'Quản lý kho',
