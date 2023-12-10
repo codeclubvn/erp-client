@@ -6,7 +6,7 @@ import {
     GridColWithDefaultOptional,
     defaultGridColValues,
 } from '../../../components/TableData/table.interface'
-import { getProducts } from '../../../services/productAPI'
+import { getCashbooks } from '../../../services/cashbookAPI'
 import { MoreAction } from './MoreAction'
 
 const actions = [
@@ -27,41 +27,48 @@ const actions = [
     },
 ]
 
-export function ProductTable() {
+export function CashbookTable() {
     const columns: GridColWithDefaultOptional[] = [
         {
             ...defaultGridColValues,
-            field: 'name',
-            headerName: 'Tên sản phẩm',
-            description: 'Tên sản phẩm',
+            field: 'created_at',
+            headerName: 'Ngày tạo đơn',
+            description: 'Ngày tạo đơn',
             align: 'left',
             headerAlign: 'left',
             minWidth: 135,
         },
         {
             ...defaultGridColValues,
-            field: 'image',
-            headerName: 'Danh mục',
-            description: 'Danh mục',
+            field: 'transaction_category.name',
+            headerName: 'Phân loại',
+            description: 'Phân loại',
             minWidth: 130,
         },
         {
             ...defaultGridColValues,
-            field: 'price',
-            headerName: 'Giá bán',
-            description: 'Giá bán',
+            field: 'wallet.name',
+            headerName: 'Nguồn tiền',
+            description: 'Nguồn tiền',
+            minWidth: 200,
+        },
+        {
+            ...defaultGridColValues,
+            field: 'amount',
+            headerName: 'Tổng tiền',
+            description: 'Tổng tiền',
             minWidth: 150,
         },
         {
             ...defaultGridColValues,
-            field: 'quantity',
-            headerName: 'Hàng sẵn có',
-            description: 'Hàng sẵn có',
+            field: 'status',
+            headerName: 'Trạng thái',
+            description: 'Trạng thái',
             minWidth: 160,
         },
         {
             ...defaultGridColValues,
-            field: 'sold',
+            field: 'action',
             headerName: 'Action',
             description: 'Action',
             type: 'actions',
@@ -88,8 +95,8 @@ export function ProductTable() {
     }
 
     const { data = [], isLoading } = useQuery({
-        queryKey: ['products'],
-        queryFn: getProducts,
+        queryKey: ['cashbooks'],
+        queryFn: getCashbooks,
     })
 
     return (
@@ -103,7 +110,7 @@ export function ProductTable() {
                     pageSizeOptions={[5, 10, 20]}
                     checkBox={true}
                     loading={isLoading}
-                    onHandleSearch={() => getProducts()}
+                    onHandleSearch={() => getCashbooks()}
                 />
             </div>
         </div>

@@ -31,7 +31,7 @@ export function OrderTable() {
     const columns: GridColWithDefaultOptional[] = [
         {
             ...defaultGridColValues,
-            field: 'date',
+            field: 'created_at',
             headerName: 'Ngày tạo đơn',
             description: 'Ngày tạo đơn',
             align: 'left',
@@ -40,24 +40,17 @@ export function OrderTable() {
         },
         {
             ...defaultGridColValues,
-            field: 'orderId',
+            field: 'code',
             headerName: 'Mã đơn',
             description: 'Mã đơn',
             minWidth: 130,
         },
         {
             ...defaultGridColValues,
-            field: 'customerName',
+            field: 'customer_name',
             headerName: 'Tên khách hàng',
             description: 'Tên khách hàng',
             minWidth: 200,
-        },
-        {
-            ...defaultGridColValues,
-            field: 'shippingDate',
-            headerName: 'Ngày giao hàng',
-            description: 'Ngày giao hàng',
-            minWidth: 150,
         },
         {
             ...defaultGridColValues,
@@ -65,13 +58,10 @@ export function OrderTable() {
             headerName: 'Trạng thái',
             description: 'Trạng thái',
             minWidth: 160,
-            renderCell: (params) => {
-                return <Status status={params.value} />
-            },
         },
         {
             ...defaultGridColValues,
-            field: 'totalAmount',
+            field: 'total',
             headerName: 'Tổng tiền',
             description: 'Tổng tiền',
             minWidth: 120,
@@ -115,6 +105,7 @@ export function OrderTable() {
                 <TableData
                     columns={columns}
                     rows={data}
+                    getRowId={(row) => row.id}
                     someContentOptionRowPerPage={'trang'}
                     pageSizeOptions={[5, 10, 20]}
                     checkBox={true}

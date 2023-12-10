@@ -6,7 +6,7 @@ import {
     GridColWithDefaultOptional,
     defaultGridColValues,
 } from '../../../components/TableData/table.interface'
-import { getCustomers } from '../../../services/customerAPI'
+import { getDebtbooks } from '../../../services/debtBookAPI'
 import { MoreAction } from './MoreAction'
 
 const actions = [
@@ -27,11 +27,11 @@ const actions = [
     },
 ]
 
-export function CashbookTable() {
+export function DebtbookTable() {
     const columns: GridColWithDefaultOptional[] = [
         {
             ...defaultGridColValues,
-            field: 'date',
+            field: 'created_at',
             headerName: 'Ngày tạo đơn',
             description: 'Ngày tạo đơn',
             align: 'left',
@@ -40,21 +40,21 @@ export function CashbookTable() {
         },
         {
             ...defaultGridColValues,
-            field: 'orderId',
+            field: 'transaction_category.name',
             headerName: 'Phân loại',
             description: 'Phân loại',
             minWidth: 130,
         },
         {
             ...defaultGridColValues,
-            field: 'customerName',
+            field: 'wallet.name',
             headerName: 'Nguồn tiền',
             description: 'Nguồn tiền',
             minWidth: 200,
         },
         {
             ...defaultGridColValues,
-            field: 'shippingDate',
+            field: 'amount',
             headerName: 'Tổng tiền',
             description: 'Tổng tiền',
             minWidth: 150,
@@ -65,9 +65,6 @@ export function CashbookTable() {
             headerName: 'Trạng thái',
             description: 'Trạng thái',
             minWidth: 160,
-            renderCell: (params) => {
-                return <Status status={params.value} />
-            },
         },
         {
             ...defaultGridColValues,
@@ -98,8 +95,8 @@ export function CashbookTable() {
     }
 
     const { data = [], isLoading } = useQuery({
-        queryKey: ['orders'],
-        queryFn: getCustomers,
+        queryKey: ['Debtbooks'],
+        queryFn: getDebtbooks,
     })
 
     return (
@@ -108,11 +105,12 @@ export function CashbookTable() {
                 <TableData
                     columns={columns}
                     rows={data}
+                    getRowId={(row) => row.id}
                     someContentOptionRowPerPage={'trang'}
                     pageSizeOptions={[5, 10, 20]}
                     checkBox={true}
                     loading={isLoading}
-                    onHandleSearch={() => getCustomers()}
+                    onHandleSearch={() => getDebtbooks()}
                 />
             </div>
         </div>

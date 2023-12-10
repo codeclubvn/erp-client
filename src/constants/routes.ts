@@ -3,6 +3,7 @@ import {
     Manage,
     Transaction,
     Cashbook,
+    Debtbook,
     Order,
     Product,
     User,
@@ -22,6 +23,7 @@ export const ROUTES = {
     POS: '/pos',
     Manage: '/manage',
     Transaction: '/transaction',
+    Debtbook: '/debtbook',
     User: '/user',
     SignUp: '/signup',
     Login: '/login',
@@ -64,6 +66,12 @@ const routerList = [
         icon: IconWallet,
         href: ROUTES.Cashbook,
         component: Cashbook,
+    },
+    {
+        title: 'Sổ nợ',
+        icon: IconWallet,
+        href: ROUTES.Debtbook,
+        component: Debtbook,
     },
     {
         title: 'Quản lý kho',

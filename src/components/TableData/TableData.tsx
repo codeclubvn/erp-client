@@ -18,6 +18,7 @@ export function TableData(props: IDataGridProps) {
         someContentOptionRowPerPage,
         disableColumnFilter,
         rows,
+        getRowId,
         columns,
         checkBox = true,
         loading,
@@ -52,7 +53,7 @@ export function TableData(props: IDataGridProps) {
             autoHeight={true}
             pageSizeOptions={pageSizeOptions}
             columnBuffer={0}
-            getRowId={(row: GridRowModel) => row.orderId}
+            getRowId={(row: GridRowModel) => row.id}
             checkboxSelection={checkBox}
             disableRowSelectionOnClick={!checkBox}
             rowHeight={60}

@@ -1,2 +1,2 @@
 export * from './Statistics'
-export * from './TransactionTable'
+export * from './CashbookTable'
