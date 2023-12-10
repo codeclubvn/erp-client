@@ -1,6 +1,15 @@
 import { get } from './fetch'
+
+interface Order {
+    data: {
+        id: number
+        name: string
+        type: string
+    }
+}
+
 export const getOrders = async () => {
-    const res = await get('http://localhost:8008/api/v1/order/', {
+    const res: Order = await get('http://localhost:8008/api/v1/order/', {
         headers: {
             'Content-Type': 'application/json',
             Authorization:

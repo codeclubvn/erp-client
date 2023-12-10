@@ -1,6 +1,15 @@
 import { get } from './fetch'
+
+interface Debtbook {
+    data: {
+        id: number
+        name: string
+        type: string
+    }
+}
+
 export const getDebtbooks = async () => {
-    const res = await get('http://localhost:8008/api/v1/debt-book/', {
+    const res: Debtbook = await get('http://localhost:8008/api/v1/debt/', {
         headers: {
             'Content-Type': 'application/json',
             Authorization:

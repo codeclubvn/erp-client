@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 import { GridRowId } from '@mui/x-data-grid'
-import { TableData, Status } from '../../../components'
+import { TableData } from '../../../components'
 import { IconAction, IconSetting } from '../../../svgs'
 import {
     GridColWithDefaultOptional,
@@ -8,6 +8,7 @@ import {
 } from '../../../components/TableData/table.interface'
 import { getDebtbooks } from '../../../services/debtBookAPI'
 import { MoreAction } from './MoreAction'
+import { useEffect, useState } from 'react'
 
 const actions = [
     {
@@ -28,6 +29,7 @@ const actions = [
 ]
 
 export function DebtbookTable() {
+    const [dataCustom, setDataCustom] = useState([])
     const columns: GridColWithDefaultOptional[] = [
         {
             ...defaultGridColValues,
@@ -40,14 +42,14 @@ export function DebtbookTable() {
         },
         {
             ...defaultGridColValues,
-            field: 'transaction_category.name',
+            field: 'cashbook_category_name',
             headerName: 'Phân loại',
             description: 'Phân loại',
             minWidth: 130,
         },
         {
             ...defaultGridColValues,
-            field: 'wallet.name',
+            field: 'wallet_name',
             headerName: 'Nguồn tiền',
             description: 'Nguồn tiền',
             minWidth: 200,
@@ -95,16 +97,31 @@ export function DebtbookTable() {
     }
 
     const { data = [], isLoading } = useQuery({
-        queryKey: ['Debtbooks'],
+        queryKey: ['debtbooks'],
         queryFn: getDebtbooks,
     })
+    console.log(data, 'datadata')
+
+    useEffect(() => {
+        if (data.length) {
+            const dataNew = data.map((value) => ({
+                ...value,
+                cashbook_category_name: value.cashbook_category.name,
+                wallet_name: value.wallet.name,
+            }))
+            setDataCustom(dataNew)
+        }
+    }, [data])
+
+    console.log(dataCustom, 'dataCustom')
+    console.log(data, 'dataCustomdatadata')
 
     return (
         <div className="h-auto ">
             <div className="h-auto min-h-[300px] w-auto rounded-[24px] bg-white">
                 <TableData
                     columns={columns}
-                    rows={data}
+                    rows={dataCustom}
                     getRowId={(row) => row.id}
                     someContentOptionRowPerPage={'trang'}
                     pageSizeOptions={[5, 10, 20]}

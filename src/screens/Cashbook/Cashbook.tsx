@@ -1,10 +1,25 @@
-import { Statistics, CashbookTable } from './components'
+import { Statistics, CashbookTable, BasicModal } from './components'
+import * as React from 'react'
 import { IconAddCircle } from '../../svgs'
 
 export const Cashbook = () => {
+    const [open, setOpen] = React.useState(false)
+
+    const handleOpenModal = () => {
+        setOpen(true)
+    }
+
+    const handleCloseModal = () => {
+        setOpen(false)
+    }
     return (
         <>
             <div className="px-[calc((100%-1060px)/2)] pb-[75px]">
+                <BasicModal
+                    open={open}
+                    handleClose={handleCloseModal}
+                    handleOpen={handleCloseModal}
+                />
                 <div className="mt-[40px] flex items-center justify-between">
                     <div>
                         <h2 className="text-[28px] font-semibold leading-[32px]">
@@ -14,7 +29,10 @@ export const Cashbook = () => {
                             Trang chủ • Thu chi
                         </span>
                     </div>
-                    <button className="flex gap-[2px] rounded-[16px] bg-[#44AEC3] px-[14px] py-[17.25px] text-white">
+                    <button
+                        className="flex gap-[2px] rounded-[16px] bg-[#44AEC3] px-[14px] py-[17.25px] text-white"
+                        onClick={handleOpenModal}
+                    >
                         <IconAddCircle /> <span>Tạo giao dịch</span>
                     </button>
                 </div>

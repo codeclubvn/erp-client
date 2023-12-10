@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 import { GridRowId } from '@mui/x-data-grid'
-import { TableData, Status } from '../../../components'
+import { TableData } from '../../../components'
 import { IconAction, IconSetting } from '../../../svgs'
 import {
     GridColWithDefaultOptional,
@@ -8,6 +8,7 @@ import {
 } from '../../../components/TableData/table.interface'
 import { getCashbooks } from '../../../services/cashbookAPI'
 import { MoreAction } from './MoreAction'
+import { useEffect } from 'react'
 
 const actions = [
     {
@@ -31,39 +32,55 @@ export function CashbookTable() {
     const columns: GridColWithDefaultOptional[] = [
         {
             ...defaultGridColValues,
-            field: 'created_at',
-            headerName: 'Ngày tạo đơn',
-            description: 'Ngày tạo đơn',
+            field: 'stt',
+            headerName: 'STT',
+            description: 'STT',
             align: 'left',
             headerAlign: 'left',
-            minWidth: 135,
+            minWidth: 30,
         },
         {
             ...defaultGridColValues,
-            field: 'transaction_category.name',
-            headerName: 'Phân loại',
+            field: 'created_at',
+            headerName: 'Ngày tạo',
+            description: 'Ngày tạo',
+            align: 'left',
+            headerAlign: 'left',
+            minWidth: 150,
+        },
+        {
+            ...defaultGridColValues,
+            field: 'cashbook_category_namee',
+            headerName: 'Phân loại  ',
             description: 'Phân loại',
-            minWidth: 130,
+            minWidth: 100,
         },
         {
             ...defaultGridColValues,
-            field: 'wallet.name',
+            field: 'wallet_name',
             headerName: 'Nguồn tiền',
             description: 'Nguồn tiền',
-            minWidth: 200,
+            minWidth: 100,
         },
         {
             ...defaultGridColValues,
             field: 'amount',
             headerName: 'Tổng tiền',
             description: 'Tổng tiền',
-            minWidth: 150,
+            minWidth: 50,
         },
         {
             ...defaultGridColValues,
             field: 'status',
             headerName: 'Trạng thái',
             description: 'Trạng thái',
+            minWidth: 160,
+        },
+        {
+            ...defaultGridColValues,
+            field: 'note',
+            headerName: 'Ghi chú',
+            description: 'Ghi chú',
             minWidth: 160,
         },
         {
@@ -98,6 +115,8 @@ export function CashbookTable() {
         queryKey: ['cashbooks'],
         queryFn: getCashbooks,
     })
+
+    useEffect(() => {}, [data])
 
     return (
         <div className="h-auto ">

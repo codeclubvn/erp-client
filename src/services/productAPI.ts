@@ -1,6 +1,15 @@
 import { get } from './fetch'
+
+interface Product {
+    data: {
+        id: number
+        name: string
+        type: string
+    }
+}
+
 export const getProducts = async () => {
-    const res = await get('http://localhost:8008/api/v1/product/', {
+    const res: Product = await get('http://localhost:8008/api/v1/product/', {
         headers: {
             'Content-Type': 'application/json',
             Authorization:

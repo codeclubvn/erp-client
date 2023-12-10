@@ -18,7 +18,6 @@ export function TableData(props: IDataGridProps) {
         someContentOptionRowPerPage,
         disableColumnFilter,
         rows,
-        getRowId,
         columns,
         checkBox = true,
         loading,
@@ -39,6 +38,7 @@ export function TableData(props: IDataGridProps) {
         }
     }
 
+    console.log(rows, 'rowsrows', columns)
     return (
         <StyledDataGrid
             rows={filteredRows || rows}
