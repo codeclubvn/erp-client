@@ -12,6 +12,7 @@ export const Cashbook = () => {
     const handleCloseModal = () => {
         setOpen(false)
     }
+
     return (
         <>
             <div className="px-[calc((100%-1060px)/2)] pb-[75px]">
@@ -47,8 +48,9 @@ export const Cashbook = () => {
                     <span className="mb-7 mt-[56px] flex text-[24px] font-semibold leading-[28px] text-[#485162]">
                         Sổ nợ{' '}
                     </span>
+                    http://127.0.0.1:3000/debtbook
                 </div>
-                <CashbookTable />
+                <CashbookTable handleOpen={handleOpenModal} />
             </div>
         </>
     )

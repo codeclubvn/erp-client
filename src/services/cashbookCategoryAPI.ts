@@ -1,15 +1,7 @@
 import { get } from './fetch'
 
-interface CashbookCategory {
-    data: {
-        id: number
-        name: string
-        type: string
-    }
-}
-
 export const getCashbookCategories = async () => {
-    const res: CashbookCategory = await get(
+    const res: any = await get(
         'http://localhost:8008/api/v1/cashbook_category/',
         {
             headers: {

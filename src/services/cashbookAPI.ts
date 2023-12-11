@@ -1,15 +1,7 @@
 import { get, post } from './fetch'
 
-interface Cashbook {
-    data: {
-        id: number
-        name: string
-        type: string
-    }
-}
-
 export const getCashbooks = async () => {
-    const res: Cashbook = await get('http://localhost:8008/api/v1/cashbook/', {
+    const res: any = await get('http://localhost:8008/api/v1/cashbook/', {
         headers: {
             'Content-Type': 'application/json',
             Authorization:

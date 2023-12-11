@@ -1,15 +1,7 @@
 import { get } from './fetch'
 
-interface Wallet {
-    data: {
-        id: number
-        name: string
-        type: string
-    }
-}
-
 export const getWallets = async () => {
-    const res: Wallet = await get('http://localhost:8008/api/v1/wallet/', {
+    const res: any = await get('http://localhost:8008/api/v1/wallet/', {
         headers: {
             'Content-Type': 'application/json',
             Authorization:

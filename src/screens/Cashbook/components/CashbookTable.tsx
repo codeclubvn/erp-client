@@ -28,7 +28,7 @@ const actions = [
     },
 ]
 
-export function CashbookTable() {
+export function CashbookTable({ handleOpen }) {
     const columns: GridColWithDefaultOptional[] = [
         {
             ...defaultGridColValues,
@@ -50,10 +50,13 @@ export function CashbookTable() {
         },
         {
             ...defaultGridColValues,
-            field: 'cashbook_category_namee',
+            field: 'cashbook_category',
             headerName: 'Phân loại  ',
             description: 'Phân loại',
             minWidth: 100,
+            valueGetter: (params) => {
+                return params.value?.name
+            },
         },
         {
             ...defaultGridColValues,
@@ -101,7 +104,7 @@ export function CashbookTable() {
                         handleSelectAction(action, params.row.id)
                     }}
                 >
-                    <IconAction />
+                    <IconAction onClick={() => handleUpdateCashbook()} />
                 </MoreAction>
             ),
         },
@@ -116,7 +119,10 @@ export function CashbookTable() {
         queryFn: getCashbooks,
     })
 
-    useEffect(() => {}, [data])
+    const handleUpdateCashbook = () => {
+        console.log('update')
+        handleOpen()
+    }
 
     return (
         <div className="h-auto ">
