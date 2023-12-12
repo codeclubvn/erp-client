@@ -11,6 +11,5 @@ export const getCashbookCategories = async () => {
             },
         },
     )
-    console.log('category: ', res.data)
     return res.data
 }
