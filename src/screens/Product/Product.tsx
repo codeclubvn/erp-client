@@ -19,7 +19,7 @@ export const Product = () => {
                 <BasicModal
                     open={open}
                     handleClose={handleCloseModal}
-                    handleOpen={handleCloseModal}
+                    handleOpen={handleOpenModal}
                 />
                 <div className="mt-[40px] flex items-center justify-between">
                     <div>
@@ -50,7 +50,7 @@ export const Product = () => {
                         className="ms-[24px]"
                     />
                 </h2>
-                <ProductTable />
+                <ProductTable handleOpen={handleOpenModal} />
             </div>
         </>
     )

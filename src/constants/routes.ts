@@ -5,6 +5,7 @@ import {
     Cashbook,
     Debtbook,
     Order,
+    CreateOrder,
     Product,
     User,
 } from '../screens'
@@ -28,6 +29,7 @@ export const ROUTES = {
     SignUp: '/signup',
     Login: '/login',
     Cashbook: '/cashbook',
+    CreateOrder: '/create_order',
 }
 
 const routerList = [
@@ -78,6 +80,12 @@ const routerList = [
         icon: IconManage,
         href: ROUTES.Manage,
         component: Manage,
+    },
+    {
+        title: 'Tạo đơn hàng',
+        icon: IconManage,
+        href: ROUTES.CreateOrder,
+        component: CreateOrder,
     },
 ]
 

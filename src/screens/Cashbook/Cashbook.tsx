@@ -18,8 +18,8 @@ export const Cashbook = () => {
             <div className="px-[calc((100%-1060px)/2)] pb-[75px]">
                 <BasicModal
                     open={open}
-                    handleClose={handleCloseModal}
                     handleOpen={handleCloseModal}
+                    handleClose={handleCloseModal}
                 />
                 <div className="mt-[40px] flex items-center justify-between">
                     <div>

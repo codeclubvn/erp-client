@@ -27,7 +27,12 @@ const actions = [
     },
 ]
 
-export function ProductTable() {
+export function ProductTable({ handleOpen }) {
+    const handleUpdateProduct = () => {
+        console.log('update')
+        handleOpen()
+    }
+
     const columns: GridColWithDefaultOptional[] = [
         {
             ...defaultGridColValues,
@@ -77,7 +82,7 @@ export function ProductTable() {
                         handleSelectAction(action, params.row.id)
                     }}
                 >
-                    <IconAction />
+                    <IconAction onClick={() => handleUpdateProduct()} />
                 </MoreAction>
             ),
         },
