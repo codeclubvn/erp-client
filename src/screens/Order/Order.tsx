@@ -1,7 +1,9 @@
 import { Statistics, OrderTable } from './components'
 import { IconAddCircle, IconDownload } from '../../svgs'
-
 export const Order = () => {
+    const handleCreateOrder = () => {
+        window.location.href = '/create_order'
+    }
     return (
         <>
             <div className="px-[calc((100%-1060px)/2)] pb-[75px]">
@@ -14,7 +16,10 @@ export const Order = () => {
                             Trang chủ • Đơn hàng
                         </span>
                     </div>
-                    <button className="flex gap-[2px] rounded-[16px] bg-[#44AEC3] px-[14px] py-[17.25px] text-white">
+                    <button
+                        className="flex gap-[2px] rounded-[16px] bg-[#44AEC3] px-[14px] py-[17.25px] text-white"
+                        onClick={handleCreateOrder}
+                    >
                         <IconAddCircle /> <span>Tạo đơn hàng</span>
                     </button>
                 </div>

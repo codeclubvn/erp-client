@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 import { GridRowId } from '@mui/x-data-grid'
-import { TableData, Status } from '../../../components'
+import { TableData } from '../../../components'
 import { IconAction, IconSetting } from '../../../svgs'
 import {
     GridColWithDefaultOptional,
@@ -28,6 +28,10 @@ const actions = [
 ]
 
 export function OrderTable() {
+    const popUpOrderDetail = (params) => {
+        console.log('popUpOrderDetail', params)
+    }
+
     const columns: GridColWithDefaultOptional[] = [
         {
             ...defaultGridColValues,
@@ -84,7 +88,10 @@ export function OrderTable() {
                         handleSelectAction(action, params.row.id)
                     }}
                 >
-                    <IconAction />
+                    <IconAction
+                        className="cursor-pointer"
+                        onClick={popUpOrderDetail(params.row)}
+                    />
                 </MoreAction>
             ),
         },
