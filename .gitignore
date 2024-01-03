@@ -12,7 +12,7 @@ dist
 dist-ssr
 *.local
 package-lock.json
-svgs
+# svgs
 
 # Editor directories and files
 # .vscode/*
