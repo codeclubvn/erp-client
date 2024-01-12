@@ -6,6 +6,7 @@ async function http<T>(
     isShowToast = false,
 ): Promise<T> {
     const request = new Request(path, config)
+
     const response = await fetch(request)
 
     const rsp = await response.json().catch(() => ({}))

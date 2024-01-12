@@ -9,7 +9,7 @@ export const MainLayout = () => {
             <div className="page-content">
                 <div className="relative flex w-full">
                     <Siderbar />
-                    <div className="w-[calc(100%-304px)] flex-auto bg-green-50">
+                    <div className="w-[calc(100%-304px)] flex-auto rounded-lg bg-slate-50 p-[45px] ">
                         <Outlet />
                     </div>
                 </div>
