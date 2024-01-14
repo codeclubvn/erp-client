@@ -23,9 +23,9 @@ export const Product = () => {
                 />
                 <div className="mt-[40px] flex items-center justify-between">
                     <div>
-                        <h2 className="text-[28px] font-semibold leading-[32px]">
+                        <h1 className="text-[28px] font-semibold leading-[32px]">
                             Sản phẩm
-                        </h2>
+                        </h1>
                         <span className="text-[#858D92]">
                             Trang chủ • Sản phẩm
                         </span>

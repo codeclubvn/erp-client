@@ -8,7 +8,9 @@ import {
     CreateOrder,
     Product,
     User,
+    Category,
 } from '../screens'
+
 import {
     IconUser,
     IconManage,
@@ -30,6 +32,7 @@ export const ROUTES = {
     Login: '/login',
     Cashbook: '/cashbook',
     CreateOrder: '/create_order',
+    Category: '/pos/category',
 }
 
 const routerList = [
@@ -86,6 +89,12 @@ const routerList = [
         icon: IconManage,
         href: ROUTES.CreateOrder,
         component: CreateOrder,
+    },
+    {
+        title: 'Danh mục sản phẩm',
+        icon: IconManage,
+        href: ROUTES.Category,
+        component: Category,
     },
 ]
 
