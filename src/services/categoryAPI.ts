@@ -1,10 +1,10 @@
 import { get, post } from './fetch'
 
-export const getCategory = async ({ currentPage }) => {
+export const getCategory = async ({ currentPage, searchText }) => {
     console.log('fetched')
 
     const res: any = await get(
-        `http://localhost:8008/api/v1/category/?page=${currentPage}`,
+        `http://localhost:8008/api/v1/category/?page=${currentPage}&search=${searchText}`,
         {
             headers: {
                 'Content-Type': 'application/json',
