@@ -54,9 +54,7 @@ export const Category = () => {
     const handleOnChange = (e) => {
         const searchText = e.target.value
 
-        if (searchText.length > 3) {
-            setSearchText(searchText)
-        }
+        setSearchText(searchText)
     }
 
     useEffect(() => {

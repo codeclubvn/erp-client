@@ -10,6 +10,7 @@ import {
     User,
     Category,
 } from '../screens'
+import CreateUser from '../screens/CreateUser'
 
 import {
     IconUser,
@@ -33,6 +34,7 @@ export const ROUTES = {
     Cashbook: '/cashbook',
     CreateOrder: '/create_order',
     Category: '/pos/category',
+    CreateUser: '/user/createuser',
 }
 
 const routerList = [
@@ -49,16 +51,34 @@ const routerList = [
         component: Order,
     },
     {
+        title: 'Tạo đơn hàng',
+        icon: IconManage,
+        href: ROUTES.CreateOrder,
+        component: CreateOrder,
+    },
+    {
         title: 'Sản phẩm',
         icon: IconProduct,
         href: ROUTES.POS,
         component: Product,
     },
     {
+        title: 'Danh mục sản phẩm',
+        icon: IconManage,
+        href: ROUTES.Category,
+        component: Category,
+    },
+    {
         title: 'Khách hàng',
         icon: IconUser,
         href: ROUTES.User,
         component: User,
+    },
+    {
+        title: 'Tạo Khách Hàng ',
+        icon: IconUser,
+        href: ROUTES.CreateUser,
+        component: CreateUser,
     },
     {
         title: 'Giao dịch',
@@ -83,18 +103,6 @@ const routerList = [
         icon: IconManage,
         href: ROUTES.Manage,
         component: Manage,
-    },
-    {
-        title: 'Tạo đơn hàng',
-        icon: IconManage,
-        href: ROUTES.CreateOrder,
-        component: CreateOrder,
-    },
-    {
-        title: 'Danh mục sản phẩm',
-        icon: IconManage,
-        href: ROUTES.Category,
-        component: Category,
     },
 ]
 

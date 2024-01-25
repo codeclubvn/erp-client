@@ -96,7 +96,7 @@ export function ProductTable({ handleOpen }) {
         queryKey: ['products'],
         queryFn: getProducts,
     })
-
+    console.log(data)
     return (
         <div className="h-auto ">
             <div className="h-auto min-h-[300px] w-auto rounded-[24px] bg-white">

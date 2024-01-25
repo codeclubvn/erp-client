@@ -4,7 +4,9 @@ export const getCategory = async ({ currentPage, searchText }) => {
     console.log('fetched')
 
     const res: any = await get(
-        `http://localhost:8008/api/v1/category/?page=${currentPage}&search=${searchText}`,
+        `http://localhost:8008/api/v1/category/?page=${currentPage}&search=${
+            searchText.length > 3 ? searchText : ''
+        }`,
         {
             headers: {
                 'Content-Type': 'application/json',
