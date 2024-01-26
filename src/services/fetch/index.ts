@@ -56,5 +56,13 @@ export async function put<T, U>(
     const init = { method: 'put', body: JSON.stringify(body), ...config }
     return await http<U>(path, init, isShowToast)
 }
+export async function del<T>(
+    path: string,
+    config?: RequestInit,
+    isShowToast = false,
+): Promise<T> {
+    const init = { method: 'delete', ...config }
+    return await http<T>(path, init, isShowToast)
+}
 
 export default { get, post, put }

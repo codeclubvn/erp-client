@@ -1,68 +1,46 @@
-import { GridRowId } from '@mui/x-data-grid'
 import { useEffect, useState } from 'react'
 
-export interface IPopupActions {
-    items: IAction[]
-    onChange: (params: IAction) => void
-    children: JSX.Element
-    id: GridRowId
-}
-
-export interface IAction {
-    title: string
-    icon: JSX.Element
-    action: string
-}
-
-export const MoreAction = ({
-    children,
-    items,
-    id,
-    onChange,
-}: IPopupActions) => {
-    const [listAction, setListAction] = useState<IAction[]>([])
+export const MoreAction = ({ children, items, id, onChange }) => {
+    const [listAction, setListAction] = useState(items)
     const [isActive, setIsActive] = useState(false)
 
     useEffect(() => {
         setListAction(items)
     }, [items])
 
-    console.log(id)
-
-    const handlSelectAction = (action: IAction) => {
+    const handleSelectAction = (action) => {
         onChange(action)
+        setIsActive(false)
     }
 
-    const renderDropdownAction = (
-        <div className="max-h-[min(80vh, 734px)] flex w-full flex-col overflow-y-auto overflow-x-hidden rounded-lg border-[1px] border-solid border-[#dfe1e6] py-2 ">
-            {listAction.map((action: IAction, index: number) => (
-                <button
-                    key={index}
-                    onClick={() => handlSelectAction(action)}
-                    className="text-red w-full bg-transparent"
-                >
-                    {action.title}
-                </button>
-            ))}
-        </div>
-    )
-
     return (
-        <div className="relative min-w-full">
-            <div
+        <div className="min-w-ful   ">
+            <button
                 onClick={(e) => {
                     e.stopPropagation()
-                    // setIsActive(!isActive)
+                    setIsActive(!isActive)
                 }}
                 className="flex justify-center text-[#858D92]"
             >
                 {children}
-            </div>
-            {isActive && (
-                <div className="absolute right-[100%] top-0">
-                    {renderDropdownAction}
+            </button>
+
+            <div
+                className={`absolute ${
+                    isActive ? 'opacity-100' : 'opacity-0 '
+                } bottom-4 right-16 text-neutral-500 transition-all    `}
+            >
+                <div>
+                    {listAction.map((action, index) => (
+                        <button
+                            key={index}
+                            onClick={() => handleSelectAction(action)}
+                        >
+                            {action.icon}
+                        </button>
+                    ))}
                 </div>
-            )}
+            </div>
         </div>
     )
 }

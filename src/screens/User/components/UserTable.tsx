@@ -1,37 +1,60 @@
 import { useQuery } from '@tanstack/react-query'
 import { GridRowId } from '@mui/x-data-grid'
 import { TableData, Status } from '../../../components'
+import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined'
+import AssignmentIndOutlinedIcon from '@mui/icons-material/AssignmentIndOutlined'
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined'
 import { IconAction, IconSetting } from '../../../svgs'
 import {
     GridColWithDefaultOptional,
     defaultGridColValues,
 } from '../../../components/TableData/table.interface'
-import { getCustomers } from '../../../services/customerAPI'
+import {
+    DelCustomers,
+    getCustomers,
+    getCustomersOne,
+} from '../../../services/customerAPI'
 import { MoreAction } from './MoreAction'
+import UserContext from './UserContext'
+import { useContext, useEffect, useState } from 'react'
 
 const actions = [
     {
         title: 'Detail',
-        icon: <div>detail</div>,
+        icon: (
+            <div>
+                <AssignmentIndOutlinedIcon />
+            </div>
+        ),
         action: 'detail',
     },
     {
         title: 'Setting',
-        icon: <div>setting</div>,
+        icon: (
+            <div>
+                <SettingsOutlinedIcon />
+            </div>
+        ),
         action: 'setting',
     },
     {
         title: 'Delete',
-        icon: <div>delete</div>,
+        icon: (
+            <div className="text-red-600">
+                <DeleteOutlinedIcon />
+            </div>
+        ),
         action: 'delete',
     },
 ]
 
-export function UserTable() {
+export function UserTable({ setSelectedCustomer, data, setData }) {
+    const { setIsShow } = useContext(UserContext)
+
     const columns: GridColWithDefaultOptional[] = [
         {
             ...defaultGridColValues,
-            field: 'date',
+            field: 'full_name',
             headerName: 'Khách hàng',
             description: 'Khách hàng',
             align: 'left',
@@ -40,34 +63,38 @@ export function UserTable() {
         },
         {
             ...defaultGridColValues,
-            field: 'orderId',
-            headerName: 'Đơn gần nhất',
-            description: 'Đơn gần nhất',
-            minWidth: 130,
+            field: 'gender',
+            headerName: 'Giới tính',
+            description: 'Giới tính',
+            minWidth: 30,
         },
         {
             ...defaultGridColValues,
-            field: 'customerName',
-            headerName: 'Tổng đơn giao',
-            description: 'Tổng đơn giao',
-            minWidth: 200,
+            field: 'age',
+            headerName: 'Tuổi',
+            description: 'Tuổi',
+            minWidth: 30,
         },
         {
             ...defaultGridColValues,
-            field: 'shippingDate',
-            headerName: 'Số tiền',
-            description: 'Số tiền',
+            field: 'address',
+            headerName: 'Địa chỉ ',
+            description: 'Địa chỉ',
             minWidth: 150,
         },
         {
             ...defaultGridColValues,
-            field: 'status',
-            headerName: 'Nợ',
-            description: 'Nợ',
+            field: 'phone_number',
+            headerName: 'Số điện thoại',
+            description: 'Số điện thoại',
             minWidth: 160,
-            renderCell: (params) => {
-                return <Status status={params.value} />
-            },
+        },
+        {
+            ...defaultGridColValues,
+            field: 'email',
+            headerName: 'Email',
+            description: 'Email',
+            minWidth: 160,
         },
         {
             ...defaultGridColValues,
@@ -84,6 +111,7 @@ export function UserTable() {
                     items={actions}
                     id={params.row.id}
                     onChange={({ action }) => {
+                        console.log(action)
                         handleSelectAction(action, params.row.id)
                     }}
                 >
@@ -93,14 +121,33 @@ export function UserTable() {
         },
     ]
 
-    const handleSelectAction = (action: string, id: GridRowId) => {
-        console.log(action, id)
+    const handleSelectAction = async (action: string, id: GridRowId) => {
+        if (action === 'detail') {
+            setIsShow(true)
+            const selectCustomer = await getCustomersOne(id)
+
+            setSelectedCustomer(selectCustomer)
+        } else if (action === 'delete') {
+            try {
+                await DelCustomers(id)
+
+                setData((prevData) =>
+                    prevData.filter((customer) => customer.id !== id),
+                )
+            } catch (error) {
+                console.error("error ,don't delete")
+            }
+        }
     }
 
-    const { data = [], isLoading } = useQuery({
-        queryKey: ['orders'],
-        queryFn: getCustomers,
-    })
+    const { data: fetchData = [], isLoading } = useQuery(
+        ['orders'],
+        getCustomers,
+    )
+
+    useEffect(() => {
+        setData(fetchData as any[])
+    }, [fetchData])
 
     return (
         <div className="h-auto ">
