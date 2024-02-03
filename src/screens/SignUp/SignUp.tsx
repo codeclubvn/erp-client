@@ -1,18 +1,32 @@
 import { useForm } from 'react-hook-form'
 import { Button, FormControl, FormHelperText, Input } from '../../components'
 import { PasswordInput } from '../../components/Button/PasswordButton'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { IconFace, IconGmail, IconZalo } from '../../svgs'
 import Background from '../../assets/images/imgSignupBG.png'
-
+import axios from 'axios'
 export const SignUp = () => {
+    const navigate = useNavigate()
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm()
 
-    const onSubmit = (data) => console.log('duy submit', data)
+    const onSubmit = async (data) => {
+        try {
+            await axios.post('http://localhost:8008/api/v1/auth/register', {
+                email: data.email,
+                password: data.password,
+                first_name: data.first_name,
+                last_name: data.last_name,
+            })
+
+            navigate('/login')
+        } catch (error) {
+            console.error('error', error)
+        }
+    }
 
     return (
         <div className="flex justify-between font-[Raleway] ">
@@ -46,7 +60,9 @@ export const SignUp = () => {
                                 <Input
                                     placeholder="Tên"
                                     defaultValue=""
-                                    {...register('name', { required: true })}
+                                    {...register('first_name', {
+                                        required: true,
+                                    })}
                                 />
                                 {errors.input && (
                                     <FormHelperText className="text-red-600">
@@ -58,7 +74,9 @@ export const SignUp = () => {
                                 <Input
                                     placeholder="Họ"
                                     defaultValue=""
-                                    {...register('last', { required: true })}
+                                    {...register('last_name', {
+                                        required: true,
+                                    })}
                                 />
                             </FormControl>
                         </div>
@@ -66,7 +84,7 @@ export const SignUp = () => {
                             <Input
                                 placeholder="Tên đăng nhập"
                                 defaultValue=""
-                                {...register('username', { required: true })}
+                                {...register('email', { required: true })}
                             />
                         </FormControl>
                         <FormControl error={!!errors.password}>

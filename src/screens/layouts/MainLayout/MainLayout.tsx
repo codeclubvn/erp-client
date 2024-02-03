@@ -1,9 +1,10 @@
 import { Outlet } from 'react-router-dom'
 import { Header } from './components/Header'
 import { Siderbar } from './Siderbar'
-
+import { Navigate } from 'react-router-dom'
 export const MainLayout = () => {
-    return (
+    const isAuthenticated = localStorage.getItem('access_token') !== null
+    return isAuthenticated ? (
         <div className="flex min-h-screen max-w-[100vw] flex-col font-font">
             <Header />
             <div className="page-content">
@@ -15,5 +16,7 @@ export const MainLayout = () => {
                 </div>
             </div>
         </div>
+    ) : (
+        <Navigate to="/login" />
     )
 }

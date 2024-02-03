@@ -1,5 +1,7 @@
 import { get, post } from './fetch'
 
+const token = localStorage.getItem('access_token')
+
 export const getCategory = async ({ currentPage, searchText }) => {
     console.log('fetched')
 
@@ -10,9 +12,7 @@ export const getCategory = async ({ currentPage, searchText }) => {
         {
             headers: {
                 'Content-Type': 'application/json',
-                Authorization:
-                    // 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDA4ODU3MTIsImlhdCI6MTcwNDg4NTcxMiwiaXNzIjoiZXJwIiwic3ViIjoiMjliYTVmZjgtYjI3Yy00YmNlLWJhYTAtYjg5ZGYyNTY3OTMxIiwidG9rZW5fdHlwZSI6ImFjY2Vzc190b2tlbiJ9.33E148-317NNyZe0xIjDWga0F2QGeDqao7Q92NP2TZI',
-                    'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDA4ODU3MTIsImlhdCI6MTcwNDg4NTcxMiwiaXNzIjoiZXJwIiwic3ViIjoiMjliYTVmZjgtYjI3Yy00YmNlLWJhYTAtYjg5ZGYyNTY3OTMxIiwidG9rZW5fdHlwZSI6ImFjY2Vzc190b2tlbiJ9.33E148-317NNyZe0xIjDWga0F2QGeDqao7Q92NP2TZI',
+                Authorization: `Bearer ${token} `,
             },
 
             // mode: 'no-cors', // Set the request's mode to 'no-cors'
@@ -28,8 +28,7 @@ export const createCategory = async (newData: any) => {
         {
             headers: {
                 'Content-Type': 'application/json',
-                Authorization:
-                    'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDA2OTk1NTgsImlhdCI6MTcwNDY5OTU1OCwiaXNzIjoiZXJwIiwic3ViIjoiMDM0ODE5YTAtNDU4My00MDE4LTk2MDEtYTQ3ODMwNjM3MjNiIiwidG9rZW5fdHlwZSI6ImFjY2Vzc190b2tlbiJ9.66fflqTVDu1bUgjScHz8Jz19u5MUkeLNi7iOy3aJEG0',
+                Authorization: `Bearer ${token} `,
             },
         },
         true,

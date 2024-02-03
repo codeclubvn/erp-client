@@ -4,7 +4,6 @@ import UserContext from './UserContext'
 function UserProvider({ children }) {
     const [isShow, setIsShow] = useState(false)
 
-    console.log(isShow)
     return (
         <UserContext.Provider value={{ isShow, setIsShow }}>
             {children}
