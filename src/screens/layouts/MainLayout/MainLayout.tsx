@@ -2,6 +2,7 @@ import { Outlet } from 'react-router-dom'
 import { Header } from './components/Header'
 import { Siderbar } from './Siderbar'
 import { Navigate } from 'react-router-dom'
+
 export const MainLayout = () => {
     const isAuthenticated = localStorage.getItem('access_token') !== null
     return isAuthenticated ? (

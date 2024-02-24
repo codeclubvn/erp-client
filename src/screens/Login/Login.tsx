@@ -24,14 +24,15 @@ export const Login = () => {
             )
 
             const { access_token, refresh_token } = response.data.data.token
-            const { first_name, last_name, email } = response.data.data.user
+            const { first_name, last_name, email, full_name } =
+                response.data.data.user
 
             localStorage.setItem('access_token', access_token)
             localStorage.setItem('refresh_token', refresh_token)
             localStorage.setItem('first_name', first_name)
             localStorage.setItem('last_name', last_name)
             localStorage.setItem('email', email)
-
+            localStorage.setItem('full_name', full_name)
             navigate('/')
         } catch (error) {
             console.error('error', error)
@@ -39,7 +40,7 @@ export const Login = () => {
         }
     }
     return (
-        <div className="flex max-h-[1024px] max-w-[1440px] items-center">
+        <div className="flex max-h-[1024px] max-w-[1440px] items-center  ">
             <LoginImages />
             <div className="item-center mr-4 flex grow flex-col items-center">
                 <div>
@@ -56,14 +57,14 @@ export const Login = () => {
                     </div>
                 </div>
                 <form action="" className="flex flex-col ">
-                    <FormControl className="h-[60px] w-[520px]">
+                    <FormControl className="h-[80px] w-[520px]">
                         <Input
                             placeholder="Tên đăng nhập"
                             value={userName}
                             onChange={(e) => setUserName(e.target.value)}
                         />
                     </FormControl>
-                    <FormControl className="mt-4 h-[60px] w-[520px]">
+                    <FormControl className="mt-4 h-[80px] w-[520px]">
                         <PasswordInput
                             defaultValue=""
                             value={passWord}
@@ -80,7 +81,10 @@ export const Login = () => {
                         ''
                     )}
 
-                    <a href="/" className="m-4 flex justify-end text-xl">
+                    <a
+                        href="/forgot-password"
+                        className="m-4 flex justify-end text-xl"
+                    >
                         Quên mật khẩu ?
                     </a>
 
