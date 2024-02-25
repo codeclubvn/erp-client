@@ -1,7 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { MainLayout } from './screens/layouts'
-import { Login } from './screens'
+import { ChangePassword, Login } from './screens'
 import { SignUp } from './screens'
+import { ForgotPassword } from './screens'
 import routerList from './constants/routes'
 import UserProvider from './screens/User/components/UserProvider'
 function Layout() {
@@ -24,6 +25,14 @@ function Layout() {
 
                     <Route path="/login" element={<Login />} />
                     <Route path="/signup" element={<SignUp />} />
+                    <Route
+                        path="/forgot-password"
+                        element={<ForgotPassword />}
+                    />
+                    <Route
+                        path="/auth/reset-password/:token"
+                        element={<ChangePassword />}
+                    />
                 </Routes>
             </BrowserRouter>
         </UserProvider>
