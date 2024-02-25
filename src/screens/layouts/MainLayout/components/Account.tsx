@@ -15,10 +15,8 @@ export const Account = () => {
         navigate('/login')
     }
 
-    const Name =
-        localStorage.getItem('last_name') +
-        ' ' +
-        localStorage.getItem('first_name')
+    const Name = localStorage.getItem('full_name')
+
     const email = localStorage.getItem('email')
     return (
         <div className="relative flex items-center">

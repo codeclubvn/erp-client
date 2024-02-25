@@ -47,6 +47,22 @@ export async function post<T, U>(
     return await http<U>(path, init, isShowToast)
 }
 
+export async function upload<U>(
+    path: string,
+    body: FormData,
+    config?: RequestInit,
+    isShowToast = false,
+): Promise<U> {
+    const init: RequestInit = {
+        method: 'POST',
+        body: body,
+        headers: {
+            ...config?.headers,
+        },
+    }
+    return await http<U>(path, init, isShowToast)
+}
+
 export async function put<T, U>(
     path: string,
     body: T,
