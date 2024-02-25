@@ -14,24 +14,24 @@ export const AddCategory = ({ show, setShow, setRefCategory, innerRef }) => {
     const [imageUrl, setImageUrl] = useState('')
     const categoryRef = useRef()
 
-    const handleUpload = async (selectFile) => {
-        console.log(selectFile)
+    const handleUpload = async (selectedFile) => {
+        if (!selectedFile) {
+            console.error('Không có file được chọn.')
+            return
+        }
 
         try {
             const formData = new FormData()
-            console.log(selectFile)
-            formData.append('file_request', selectFile)
-            console.log(formData)
-            console.log(formData.get('file_request'))
-            console.log(selectFile)
+            formData.append('file_request', selectedFile)
             const response = await uploadFile(formData)
-            console.log(response)
 
-            if (response && response.data.url) {
+            if (response?.data?.url) {
                 setImageUrl(response.data.url)
+            } else {
+                console.error('Không nhận được URL từ server.')
             }
         } catch (error) {
-            console.error('error updating category with image URL: ', error)
+            console.error('Lỗi khi tải file: ', error)
         }
     }
 
@@ -46,7 +46,6 @@ export const AddCategory = ({ show, setShow, setRefCategory, innerRef }) => {
                 })
                 categoryRef.current = postCategoryName
                 // setCategories([...categories, postCategoryName])
-                console.log(categoryRef)
                 setRefCategory(categoryRef)
                 setShow(!show)
             } catch (error) {
@@ -67,8 +66,10 @@ export const AddCategory = ({ show, setShow, setRefCategory, innerRef }) => {
     }, [show, innerRef])
 
     const handleFileChange = (event) => {
-        // setFile(event.target.files[0])
-        handleUpload(event.target.files[0])
+        if (event.target.files.length > 0) {
+            console.log('data request: ', event.target.files[0])
+            handleUpload(event.target.files[0])
+        }
     }
 
     return (
